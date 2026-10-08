@@ -29,12 +29,20 @@
 
 <table>
 <tr><td width="50%"><a href="https://github.com/Zhiyuan-Xiong/poisonous-mushrooms"><img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/images/mushrooms-cover-1280.webp" alt="《毒蘑菇》" width="100%"></a><br><strong>《毒蘑菇》</strong><br>AI 素材 → Godot 游戏 → 在线体验</td><td width="50%"><a href="https://github.com/Zhiyuan-Xiong/spring-skeleton-collection"><img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/images/bone-cover-white-1280.webp" alt="骨骸共生系统" width="100%"></a><br><strong>骨骸共生系统</strong><br>AI 图像与建模 → 人工雕刻 → 品牌与首饰</td></tr>
-<tr><td width="50%"><a href="https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/infinite-cosmos.md"><img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/images/cosmos-cover-1280.webp" alt="无垠的宇宙" width="100%"></a><br><strong>无垠的宇宙</strong><br>参数化模型 → Processing → ComfyUI 影像</td><td width="50%"><a href="https://github.com/Zhiyuan-Xiong/BARC0074-Digital-Skills-Report-Codebook-25097154"><img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/images/earthquake-cover-1280.webp" alt="地震：数据转译" width="100%"></a><br><strong>地震：数据转译</strong><br>多模态分析 → 人工映射 → 空间与动态视觉</td></tr>
+<tr><td width="50%"><a href="https://github.com/Zhiyuan-Xiong/infinite-cosmos"><img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/images/cosmos-cover-1280.webp" alt="无垠的宇宙" width="100%"></a><br><strong>无垠的宇宙</strong><br>参数化模型 → Processing → ComfyUI 影像</td><td width="50%"><a href="https://github.com/Zhiyuan-Xiong/BARC0074-Digital-Skills-Report-Codebook-25097154"><img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/images/earthquake-cover-1280.webp" alt="地震：数据转译" width="100%"></a><br><strong>地震：数据转译</strong><br>多模态分析 → 人工映射 → 空间与动态视觉</td></tr>
 </table>
 
 ## 我的 AI 设计与迭代方法
 
 我会针对任务选择 AI 的介入方式：从灵感发散、多渠道检索和个人思考，到方案设立、原型实现、测试，再回到对话改写提示词和补充信息。我的审美判断和专业制作贯穿整个过程。
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/docs/media/ai-workflow-dark.svg">
+  <img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/docs/media/ai-workflow-light.svg" alt="我的 AI 设计工作流：发散检索、个人判断、原型、专业评审、反馈与交付" width="100%">
+</picture>
+
+<details>
+<summary>展开查看可交互流程图</summary>
 
 ```mermaid
 flowchart LR
@@ -49,6 +57,8 @@ flowchart LR
   classDef ai fill:#eee8fa,stroke:#ada0d0,color:#392c57;
   classDef output fill:#fbefd3,stroke:#cbb574,color:#58461c;
 ```
+
+</details>
 
 | 我的能力 | 怎样让结果可控 | 项目例子 |
 | --- | --- | --- |
@@ -65,9 +75,9 @@ flowchart LR
 | --- | --- | --- | --- |
 | **《毒蘑菇》** | 视觉概念与分镜；AI 素材、Godot 搭建和体验验证；参与 MV 视觉统一 | [查看](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms) | [打开](https://xiongzhiyuan-portfolio.pages.dev/zh/work/poisonous-mushrooms/) |
 | **骨骸共生系统** | SPRING 品牌视觉与 Logo；Midjourney、Tripo 3D 与 ZBrush／Nomad 首饰制作 | [查看](https://github.com/Zhiyuan-Xiong/spring-skeleton-collection) | [打开](https://xiongzhiyuan-portfolio.pages.dev/zh/work/bone-series/) |
-| **无垠的宇宙** | 参数化建模、交互编程与生成影像设计 | [查看](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/infinite-cosmos.md) | [打开](https://xiongzhiyuan-portfolio.pages.dev/zh/work/infinite-cosmos/) |
+| **无垠的宇宙** | 参数化建模、交互编程与生成影像设计 | [查看](https://github.com/Zhiyuan-Xiong/infinite-cosmos) | [打开](https://xiongzhiyuan-portfolio.pages.dev/zh/work/infinite-cosmos/) |
 | **地震：数据转译** | Python 数据处理、参数映射与空间可视化 | [查看](https://github.com/Zhiyuan-Xiong/BARC0074-Digital-Skills-Report-Codebook-25097154) | [打开](https://xiongzhiyuan-portfolio.pages.dev/zh/work/earthquake/) |
-| **蜕变** | 模型处理、节点编程、声音映射与视觉合成 | [查看](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/metamorphosis.md) | [打开](https://xiongzhiyuan-portfolio.pages.dev/zh/work/metamorphosis/) |
+| **蜕变** | 模型处理、节点编程、声音映射与视觉合成 | [查看](https://github.com/Zhiyuan-Xiong/metamorphosis) | [打开](https://xiongzhiyuan-portfolio.pages.dev/zh/work/metamorphosis/) |
 | **饭搭子** | 产品概念、饮食记录与食宠 UX、Godot 原型和 AI 照片工作流（进行中） | [查看](https://github.com/Zhiyuan-Xiong/fandazi) | [打开](https://xiongzhiyuan-portfolio.pages.dev/zh/works/?project=fandazi) |
 | **病名异化实验场** | 交互体验与视觉设计（协作项目） | [查看](https://github.com/Zhiyuan-Xiong/the-big-bang-stigma) | [打开](https://xiongzhiyuan-portfolio.pages.dev/zh/work/stigma/) |
 | **相亲营销嘉年华** | 交互叙事、场景与视觉设计 | [查看](https://github.com/Zhiyuan-Xiong/dating-carnival) | [打开](https://xiongzhiyuan-portfolio.pages.dev/zh/work/dating-carnival/) |

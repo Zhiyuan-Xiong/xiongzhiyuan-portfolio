@@ -4,6 +4,14 @@
 
 ## 从灵感到交付的循环
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="media/ai-workflow-dark.svg">
+  <img src="media/ai-workflow-light.svg" alt="我的 AI 设计工作流：发散检索、个人判断、原型、专业评审、反馈与交付" width="100%">
+</picture>
+
+<details>
+<summary>展开查看可交互流程图</summary>
+
 ```mermaid
 flowchart LR
   A["发散与检索<br/>Chat + 多渠道信息"]:::ai
@@ -17,6 +25,8 @@ flowchart LR
   classDef ai fill:#eee8fa,stroke:#ada0d0,color:#392c57;
   classDef output fill:#fbefd3,stroke:#cbb574,color:#58461c;
 ```
+
+</details>
 
 绿色节点代表我的判断与专业细化，紫色代表 AI 协作，金色代表可以查看和验证的交付。实际项目会在视觉、代码、数据或制作环节之间多次往返。
 
@@ -89,7 +99,7 @@ flowchart LR
 - **毒蘑菇**：[制作提示词](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms/blob/main/制作提示词.json)、[角色生成记录](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms/blob/main/source_assets/runner/生成提示词.json)、[测试和运行](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms/tree/main/verification)。
 - **骨骸共生系统**：[完整工作流](https://github.com/Zhiyuan-Xiong/spring-skeleton-collection/blob/main/工作流.md)。工具依据作者补充；现有仓库展示品牌与渲染，原生模型和原提示词仍待归档。
 - **Earthquake**：[Notebook 与映射证据](https://github.com/Zhiyuan-Xiong/BARC0074-Digital-Skills-Report-Codebook-25097154)。
-- **无垠的宇宙**：[模型、粒子与 ComfyUI 过程](projects/infinite-cosmos.md)。
+- **无垠的宇宙**：[模型、粒子与 ComfyUI 过程](https://github.com/Zhiyuan-Xiong/infinite-cosmos)。
 - **饭搭子**：[可编辑原型与服务代码](https://github.com/Zhiyuan-Xiong/fandazi)。产品进行中，真实付费 AI 端到端质量仍在验证。
 
 这里结合作者说明的通用 AI 方法、已保存提示词、代码、数据与案例资料组织工作流。原项目制作与本次 AI 辅助数字呈现分别说明，协作职责以案例署名为准。

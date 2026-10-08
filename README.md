@@ -20,9 +20,9 @@
 | --- | --- | --- |
 | **《毒蘑菇》** | 前期概念、场景与分镜；AI 素材生成与整理、Godot 小游戏搭建和体验验证；参与 MV 调色与视觉统一 | [查看](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms) |
 | **骨骸共生系统** | SPRING 品牌视觉与 Logo；Midjourney 图像探索、Tripo 3D 初始建模、ZBrush／Nomad 人工雕刻与首饰细化 | [查看](https://github.com/Zhiyuan-Xiong/spring-skeleton-collection) |
-| **无垠的宇宙** | 参数化建模、交互编程与生成影像设计 | [查看](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/infinite-cosmos.md) |
+| **无垠的宇宙** | 参数化建模、交互编程与生成影像设计 | [查看](https://github.com/Zhiyuan-Xiong/infinite-cosmos) |
 | **地震：数据转译** | Python 数据处理、参数映射与空间可视化 | [查看](https://github.com/Zhiyuan-Xiong/BARC0074-Digital-Skills-Report-Codebook-25097154) |
-| **蜕变** | 模型处理、节点编程、声音映射与视觉合成 | [查看](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/metamorphosis.md) |
+| **蜕变** | 模型处理、节点编程、声音映射与视觉合成 | [查看](https://github.com/Zhiyuan-Xiong/metamorphosis) |
 | **饭搭子** | 产品概念、饮食记录与食宠 UX 流程、Godot 交互原型和 AI 照片工作流；进行中 | [查看](https://github.com/Zhiyuan-Xiong/fandazi) |
 
 **[查看精选项目个人贡献](docs/个人贡献.md) · [GitHub 真实贡献与活动](https://github.com/Zhiyuan-Xiong)**
@@ -33,13 +33,21 @@
 <td width="50%"><a href="https://github.com/Zhiyuan-Xiong/poisonous-mushrooms"><img src="public/images/mushrooms-cover-1280.webp" alt="《毒蘑菇》" width="100%"></a><br><strong>《毒蘑菇》</strong><br>AI 素材工作流、可编辑 Godot 跑酷游戏与浏览器试玩。</td>
 <td width="50%"><a href="https://github.com/Zhiyuan-Xiong/spring-skeleton-collection"><img src="public/images/bone-cover-white-1280.webp" alt="骨骸共生系统" width="100%"></a><br><strong>骨骸共生系统</strong><br>SPRING 品牌视觉与骨骸首饰：AI 图像、辅助建模和人工细化。</td>
 </tr><tr>
-<td width="50%"><a href="https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/infinite-cosmos.md"><img src="public/images/cosmos-cover-1280.webp" alt="无垠的宇宙" width="100%"></a><br><strong>无垠的宇宙</strong><br>Rhino、Grasshopper、Processing 与 ComfyUI 的跨工具创作。</td>
-<td width="50%"><a href="https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/metamorphosis.md"><img src="public/images/metamorphosis-cover-1280.webp" alt="蜕变" width="100%"></a><br><strong>蜕变</strong><br>TouchDesigner 几何、粒子与实时声音响应。</td>
+<td width="50%"><a href="https://github.com/Zhiyuan-Xiong/infinite-cosmos"><img src="public/images/cosmos-cover-1280.webp" alt="无垠的宇宙" width="100%"></a><br><strong>无垠的宇宙</strong><br>Rhino、Grasshopper、Processing 与 ComfyUI 的跨工具创作。</td>
+<td width="50%"><a href="https://github.com/Zhiyuan-Xiong/metamorphosis"><img src="public/images/metamorphosis-cover-1280.webp" alt="蜕变" width="100%"></a><br><strong>蜕变</strong><br>TouchDesigner 几何、粒子与实时声音响应。</td>
 </tr></table>
 
 ## 我的 AI 工作方式
 
 我用 AI 扩展灵感、检索与比较信息，再用自己的思考确定问题、审美和约束。针对不同任务选择生成工具与专业软件，通过 Codex 形成原型、迭代和测试；发现问题后，重新回到 Chat 改写提示词与补充检索。
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/media/ai-workflow-dark.svg">
+  <img src="docs/media/ai-workflow-light.svg" alt="我的 AI 设计工作流：发散检索、个人判断、原型、专业评审、反馈与交付" width="100%">
+</picture>
+
+<details>
+<summary>展开查看可交互流程图</summary>
 
 ```mermaid
 flowchart LR
@@ -54,6 +62,8 @@ flowchart LR
   classDef ai fill:#eee8fa,stroke:#ada0d0,color:#392c57;
   classDef output fill:#fbefd3,stroke:#cbb574,color:#58461c;
 ```
+
+</details>
 
 | 项目任务 | 我的 AI 策略 | 我掌握的质量判断 |
 | --- | --- | --- |
@@ -79,7 +89,7 @@ flowchart LR
 
 ## 求职项目索引
 
-10 个精选项目，8 个独立项目仓库已发布；无垠的宇宙与蜕变的中文说明和完整材料可从本仓库查看，独立仓库待 GitHub 临时限流解除后发布。饭搭子为进行中的 UX 原型。
+10 个精选项目均已建立独立仓库，分别保存详细中文说明、工作流、过程材料与个人贡献。饭搭子为进行中的 UX 原型。
 
 | 项目 | 类型 | 项目说明／仓库 | 完整案例 |
 | --- | --- | --- | --- |
@@ -90,9 +100,9 @@ flowchart LR
 | 机械文明计划 | 叙事向概念游戏场景设计 | [仓库](https://github.com/Zhiyuan-Xiong/nexus-mechanical-civilization) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/nexus/) |
 | 骨骸共生系统 | 品牌视觉／3D 首饰设计 | [仓库](https://github.com/Zhiyuan-Xiong/spring-skeleton-collection) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/bone-series/) |
 | 声学弹性 | Bartlett School 设计项目 · 协作装置 | [仓库](https://github.com/Zhiyuan-Xiong/sonic-elasticity) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/sonic-elasticity/) |
-| 无垠的宇宙 | 参数化空间／创意编程／生成影像 | [仓库](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/infinite-cosmos.md) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/infinite-cosmos/) |
+| 无垠的宇宙 | 参数化空间／创意编程／生成影像 | [仓库](https://github.com/Zhiyuan-Xiong/infinite-cosmos) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/infinite-cosmos/) |
 | 地震：数据转译 | Bartlett School 设计项目 · 数据驱动设计 | [仓库](https://github.com/Zhiyuan-Xiong/BARC0074-Digital-Skills-Report-Codebook-25097154) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/earthquake/) |
-| 蜕变 | 创意编程／实时视听交互 | [仓库](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/metamorphosis.md) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/metamorphosis/) |
+| 蜕变 | 创意编程／实时视听交互 | [仓库](https://github.com/Zhiyuan-Xiong/metamorphosis) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/metamorphosis/) |
 
 ## 从这里开始
 
