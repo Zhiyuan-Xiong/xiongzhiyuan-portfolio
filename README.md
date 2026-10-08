@@ -47,7 +47,7 @@
 
 12 个项目条目，10 个独立项目仓库已发布；无垠的宇宙与蜕变的中文说明和完整材料可从本仓库查看，独立仓库待 GitHub 临时限流解除后发布。饭搭子为进行中的 UX 原型。
 
-| 项目 | 类型 | 独立仓库 | 完整案例 |
+| 项目 | 类型 | 项目说明／仓库 | 完整案例 |
 | --- | --- | --- | --- |
 | 病名异化实验场 | XR／交互体验 · 协作项目 | [仓库](https://github.com/Zhiyuan-Xiong/the-big-bang-stigma) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/stigma/) |
 | 相亲营销嘉年华 | 交互叙事／三维空间 | [仓库](https://github.com/Zhiyuan-Xiong/dating-carnival) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/dating-carnival/) |
@@ -66,7 +66,7 @@
 
 - 查看作品与影片：[在线作品集](https://xiongzhiyuan-portfolio.pages.dev/)。
 - 实际体验：[毒蘑菇在线试玩](https://zhiyuan-xiong.github.io/poisonous-mushrooms/)、[游戏素材浏览](https://zhiyuan-xiong.github.io/poisonous-mushrooms/resources.html)。
-- 阅读代码与工作流：从上方各项目仓库进入。
+- 阅读代码与工作流：从上方各项目入口进入。
 - 查看完整网站源码：本仓库的 `src/`、`public/` 与 `scripts/`。
 
 <details><summary>网站运行与技术说明</summary>
