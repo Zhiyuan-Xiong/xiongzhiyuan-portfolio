@@ -16,3 +16,7 @@ __pycache__/
 *.log
 .DS_Store
 Thumbs.db
+
+/games/poisonous-mushrooms/
+
+/docs/play/mushrooms/
