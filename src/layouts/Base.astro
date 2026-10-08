@@ -7,7 +7,7 @@ import '../styles/design-system.css';
 import '../styles/page-transitions.css';
 import ProjectPortal from '../components/ProjectPortal.astro';
 import entryAtlas from '../data/entry-atlas.json';
-import { name, ui, email, type Lang } from '../data/site';
+import { name, ui, email, githubURL, type Lang } from '../data/site';
 interface Props { lang: Lang; title: string; description?: string; active?: 'home'|'explore'|'works'|'about'; alternate?: string; immersive?: boolean; gallery?: boolean; spatial?: boolean; festival?: boolean; restored?: boolean; lightCase?: boolean; cosmicAbout?: boolean }
 const { lang, title, active='home', alternate, immersive=false, gallery=false, spatial=false, festival=false, restored=false, lightCase=false, cosmicAbout=false }=Astro.props;
 const description=Astro.props.description ?? (lang==='zh' ? '熊志愿的个人作品集：用户体验、产品思维与视觉设计。' : 'Xiong Zhiyuan’s portfolio of user experience, product thinking, and visual design.');
@@ -70,7 +70,7 @@ const alternatePath=alternate ?? canonicalPath.replace(`/${lang}/`,`/${other}/`)
       </nav>
     </div></header>
     <main id="main" tabindex="-1"><slot /></main>
-    <footer class="site-footer"><div><a href={`/${lang}/`}>{name[lang]}</a><span>{lang==='zh' ? '用户体验 · 产品思维 · 视觉设计' : 'User experience · Product thinking · Visual design'}</span></div><div><a href={`mailto:${email}`}>{lang==='zh' ? '联系' : 'CONTACT'}</a><a href="https://xiongzhiyuan.cargo.site/" target="_blank" rel="noopener noreferrer">{ui.old[lang]}<span class="sr-only">{lang==='zh' ? '（新窗口）' : ' (new tab)'}</span></a><span>© {new Date().getFullYear()}</span></div></footer>
+    <footer class="site-footer"><div><a href={`/${lang}/`}>{name[lang]}</a><span>{lang==='zh' ? '用户体验 · 产品思维 · 视觉设计' : 'User experience · Product thinking · Visual design'}</span></div><div><a href={`mailto:${email}`}>{lang==='zh' ? '联系' : 'CONTACT'}</a><a href={githubURL} target="_blank" rel="noopener noreferrer">{lang==='zh' ? 'GitHub 主页' : 'GitHub'}</a><a href="https://xiongzhiyuan.cargo.site/" target="_blank" rel="noopener noreferrer">{ui.old[lang]}<span class="sr-only">{lang==='zh' ? '（新窗口）' : ' (new tab)'}</span></a><span>© {new Date().getFullYear()}</span></div></footer>
     <dialog class="lightbox" aria-label={lang==='zh' ? '图片查看器' : 'Image viewer'}><button type="button" class="lightbox-close">{ui.close[lang]}</button><figure><img alt="" /><figcaption></figcaption></figure></dialog>
     {(active==='home'||active==='explore'||active==='works')&&<ProjectPortal lang={lang}/>}
     <script src="../scripts/site.ts"></script>

@@ -1,1 +1,1 @@
-{"extends":"astro/tsconfigs/strict"}
+{"extends":"astro/tsconfigs/strict","exclude":["node_modules","dist",".cache","qa","games","docs/play"]}

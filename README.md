@@ -4,7 +4,7 @@
 
 我把视觉概念转化为品牌、三维、影像与交互作品。关注 AI 辅助的创作流程，也重视人工选择、结构细化和实际体验。
 
-**[GitHub 项目导航](https://zhiyuan-xiong.github.io/xiongzhiyuan-portfolio/) · [打开完整作品集](https://xiongzhiyuan-portfolio.pages.dev/) · [立即试玩《毒蘑菇》](https://zhiyuan-xiong.github.io/poisonous-mushrooms/) · [关于我与简历](https://xiongzhiyuan-portfolio.pages.dev/zh/about/) · [英文作品集](https://xiongzhiyuan-portfolio.pages.dev/en/)**
+**[GitHub 个人主页](https://github.com/Zhiyuan-Xiong) · [GitHub 项目导航](https://zhiyuan-xiong.github.io/xiongzhiyuan-portfolio/) · [打开完整作品集](https://xiongzhiyuan-portfolio.pages.dev/) · [立即试玩《毒蘑菇》](https://zhiyuan-xiong.github.io/poisonous-mushrooms/) · [关于我与简历](https://xiongzhiyuan-portfolio.pages.dev/zh/about/) · [英文作品集](https://xiongzhiyuan-portfolio.pages.dev/en/)**
 
 本科毕业于华中科技大学设计学院，现于 UCL Bartlett 攻读性能与交互设计硕士。求职方向：AI 设计、视觉设计、创意设计。
 

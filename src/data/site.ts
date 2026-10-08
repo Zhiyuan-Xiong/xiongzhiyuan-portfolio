@@ -1,6 +1,7 @@
 export type Lang = 'zh' | 'en';
 export type Copy = { zh: string; en: string };
 export const c = (zh: string, en: string): Copy => ({ zh, en });
+export const githubURL = 'https://github.com/Zhiyuan-Xiong';
 export const email = 'xiongzhiyuan1027@163.com';
 export const name = c('熊志愿', 'Xiong Zhiyuan');
 export const categories = [
