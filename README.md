@@ -19,7 +19,7 @@
 | **蜕变** | 模型处理、节点编程、声音映射与视觉合成 | [查看](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/metamorphosis.md) |
 | **饭搭子** | 产品概念、饮食记录与食宠 UX 流程、Godot 交互原型和 AI 照片工作流；进行中 | [查看](https://github.com/Zhiyuan-Xiong/fandazi) |
 
-**[查看全部 12 项个人贡献](docs/个人贡献.md) · [GitHub 真实贡献与活动](https://github.com/Zhiyuan-Xiong)**
+**[查看精选项目个人贡献](docs/个人贡献.md) · [GitHub 真实贡献与活动](https://github.com/Zhiyuan-Xiong)**
 
 ## 作品预览
 
@@ -43,9 +43,9 @@
 
 各项目仓库分别保留目标、个人贡献、流程与实际材料。效率通过减少重复探索、整理和实现工作来说明；没有用未记录的百分比替代过程证据。
 
-## 全部项目索引
+## 求职项目索引
 
-12 个项目条目，10 个独立项目仓库已发布；无垠的宇宙与蜕变的中文说明和完整材料可从本仓库查看，独立仓库待 GitHub 临时限流解除后发布。饭搭子为进行中的 UX 原型。
+10 个精选项目，8 个独立项目仓库已发布；无垠的宇宙与蜕变的中文说明和完整材料可从本仓库查看，独立仓库待 GitHub 临时限流解除后发布。饭搭子为进行中的 UX 原型。
 
 | 项目 | 类型 | 项目说明／仓库 | 完整案例 |
 | --- | --- | --- | --- |
@@ -53,10 +53,8 @@
 | 相亲营销嘉年华 | 交互叙事／三维空间 | [仓库](https://github.com/Zhiyuan-Xiong/dating-carnival) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/dating-carnival/) |
 | 《毒蘑菇》 | 音乐影像／商业协作 | [仓库](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/poisonous-mushrooms/) |
 | 饭搭子 | UX／产品设计 | [仓库](https://github.com/Zhiyuan-Xiong/fandazi) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/works/?project=fandazi) |
-| ALILAGUNA | 概念音乐影像 · 协作项目 | [仓库](https://github.com/Zhiyuan-Xiong/alilaguna) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/alilaguna/) |
 | 机械文明计划 | 叙事向概念游戏场景设计 | [仓库](https://github.com/Zhiyuan-Xiong/nexus-mechanical-civilization) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/nexus/) |
 | 骨骸共生系统 | 品牌视觉／3D 首饰设计 | [仓库](https://github.com/Zhiyuan-Xiong/spring-skeleton-collection) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/bone-series/) |
-| NO.3 后数字物种 | 未来概念世界观／三维场景设计 | [仓库](https://github.com/Zhiyuan-Xiong/post-digital-species) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/post-digital-species/) |
 | 声学弹性 | Bartlett School 设计项目 · 协作装置 | [仓库](https://github.com/Zhiyuan-Xiong/sonic-elasticity) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/sonic-elasticity/) |
 | 无垠的宇宙 | 参数化空间／创意编程／生成影像 | [仓库](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/infinite-cosmos.md) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/infinite-cosmos/) |
 | 地震：数据转译 | Bartlett School 设计项目 · 数据驱动设计 | [仓库](https://github.com/Zhiyuan-Xiong/BARC0074-Digital-Skills-Report-Codebook-25097154) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/earthquake/) |
