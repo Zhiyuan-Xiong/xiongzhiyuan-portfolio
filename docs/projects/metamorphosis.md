@@ -55,6 +55,8 @@ flowchart LR
 
 **过程证据：** [完整节点网络](https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/media/metamorphosis/operator-network-large.webp) · [演进过程](https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/media/metamorphosis/development-sequence-large.webp) · [声音响应序列](https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/media/metamorphosis/reactive-sequence-large.webp) · [网页交互代码](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/tree/main/src/)
 
+**指令控制：** 先用完整任务说明组织案例结构与视觉基准，再以精准短指令调整声音响应、密度、辉光与过渡衔接，通过实际画面与原作对照验收。
+
 [阅读完整的项目工作流](metamorphosis-工作流.md) · [我的 AI 设计方法](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/AI设计工作流.md)
 
 ## 仓库内容

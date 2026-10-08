@@ -39,25 +39,36 @@
 
 ## 我的 AI 工作方式
 
-我用 AI 扩展灵感、检索与比较信息，再用自己的思考确定问题、审美和约束。针对不同任务选择生成工具与专业软件，通过 Codex 形成原型、迭代和测试；发现问题后，重新回到 Chat 改写提示词与补充检索。
+我先用完整的任务说明建立上下文：交代项目目标、参考资料、审美方向、实现约束、输出格式与验收标准，让 ChatGPT 和 Codex 理解要完成什么。得到初步方案或原型后，我再以精准的短指令逐轮控制修改，明确本轮改什么、保留什么，并对照实际结果继续判断。**完整指令建立方向，短指令控制细节，专业判断决定交付。**
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/media/ai-workflow-dark.svg">
-  <img src="docs/media/ai-workflow-light.svg" alt="我的 AI 设计工作流：发散检索、个人判断、原型、专业评审、反馈与交付" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="docs/media/ai-workflow-8steps-dark.svg">
+  <img src="docs/media/ai-workflow-8steps-light.svg" alt="八阶段 AI 设计工作流：完整指令建立上下文，精准短指令逐轮控制，我负责审美与验收" width="100%">
 </picture>
 
+| 控制方式 | 我怎样使用 | 体现的能力 |
+| --- | --- | --- |
+| **完整任务说明** | 目标、参考、结构、风格、规格与验收一次交代清楚 | 把设计问题组织成可执行任务 |
+| **精准短指令** | 在既有上下文中限定本轮修改对象、幅度和保留项 | 用审美判断控制局部结果 |
+| **逐轮对照验收** | 看画面、运行原型，核对修改结果与已有约束 | 保持视觉一致性和专业可用性 |
+
 <details>
-<summary>展开查看可交互流程图</summary>
+<summary>展开八阶段流程与反馈路径</summary>
 
 ```mermaid
-flowchart LR
-  A["发散与检索<br/>Chat + 多渠道信息"]:::ai
-  B["我定义方向<br/>问题 / 审美 / 约束"]:::human
-  C["方案与原型<br/>生成工具 + Codex"]:::ai
-  D["我评审和细化<br/>专业工具 + 实际测试"]:::human
-  E["可查看的交付<br/>作品 / 原型 / 记录"]:::output
-  A --> B --> C --> D --> E
-  D -. "根据评审回到提示词与检索" .-> A
+flowchart TB
+  A["1 灵感发散<br/>问题与候选方向"]:::ai
+  B["2 多渠道检索<br/>资料与来源核对"]:::ai
+  C["3 个人思维组织<br/>我定义目标与审美"]:::human
+  D["4 AI 辅助方案<br/>完整任务说明与分工"]:::ai
+  E["5 原型实现<br/>Codex / 生成与专业工具"]:::ai
+  F["6 迭代与测试<br/>我评审 + 精准短指令"]:::human
+  G["7 反馈与再检索<br/>Chat 改写提示词 / 补信息"]:::ai
+  H["8 精修与交付<br/>我验收作品与过程证据"]:::output
+  A --> B --> C --> D --> E --> F --> G --> H
+  G -. "补知识" .-> B
+  G -. "调整方向" .-> C
+  G -. "修改素材或实现" .-> E
   classDef human fill:#dcefe5,stroke:#7caa96,color:#183d30;
   classDef ai fill:#eee8fa,stroke:#ada0d0,color:#392c57;
   classDef output fill:#fbefd3,stroke:#cbb574,color:#58461c;
@@ -74,7 +85,9 @@ flowchart LR
 | **饭搭子：带 AI 的 UX** | 将识别、人工核对、贴纸生成与降级路径放入产品 | 用户控制、风格一致、等待状态与失败体验 |
 | **作品集网站：数字交付** | Chat 梳理 → 我确定设计要求 → Codex 实现、检查与迭代 | 内容结构、页面审美、交互、类型和素材引用 |
 
-**[完整八阶段方法、提示词组织与质量控制](docs/AI设计工作流.md)**
+**[完整八阶段方法、指令控制与精选迭代案例](docs/AI设计工作流.md)**
+
+工具按任务选择：ChatGPT 与 Codex 用于研究组织和实现；Midjourney、Tripo 3D、ComfyUI、imagegen 用于图像与三维探索；即梦／Seedance 用于 AI 视频生成；专业软件负责人工细化。
 
 ### 这个网站怎样从设计要求形成原型
 

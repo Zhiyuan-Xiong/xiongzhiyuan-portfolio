@@ -21,7 +21,7 @@
 
 | 我关注的方向 | 我如何把想法落地 | 代表实践 |
 | --- | --- | --- |
-| **AI 设计工作流** | 图像探索 → 初始模型或原型 → 人工调整 → 验证与交付 | 骨骸共生系统、毒蘑菇、Earthquake |
+| **AI 设计工作流** | 完整任务说明 → 精准短指令迭代 → 人工评审与交付 | 骨骸共生系统、毒蘑菇、Earthquake |
 | **视觉与品牌设计** | 从概念、视觉语言与 Logo，延展到首饰、三维场景和影像 | SPRING、机械文明计划 |
 | **创意交互** | 用游戏、实时视觉、参数化设计与声音映射，让作品可以体验 | 毒蘑菇、无垠的宇宙、蜕变 |
 
@@ -34,25 +34,36 @@
 
 ## 我的 AI 设计与迭代方法
 
-我会针对任务选择 AI 的介入方式：从灵感发散、多渠道检索和个人思考，到方案设立、原型实现、测试，再回到对话改写提示词和补充信息。我的审美判断和专业制作贯穿整个过程。
+我先用完整的任务说明建立上下文：交代项目目标、参考资料、审美方向、实现约束、输出格式与验收标准，让 ChatGPT 和 Codex 理解要完成什么。得到初步方案或原型后，我再以精准的短指令逐轮控制修改，明确本轮改什么、保留什么，并对照实际结果继续判断。**完整指令建立方向，短指令控制细节，专业判断决定交付。**
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/docs/media/ai-workflow-dark.svg">
-  <img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/docs/media/ai-workflow-light.svg" alt="我的 AI 设计工作流：发散检索、个人判断、原型、专业评审、反馈与交付" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/docs/media/ai-workflow-8steps-dark.svg">
+  <img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/docs/media/ai-workflow-8steps-light.svg" alt="八阶段 AI 设计工作流：完整指令建立上下文，精准短指令逐轮控制，我负责审美与验收" width="100%">
 </picture>
 
+| 控制方式 | 我怎样使用 | 体现的能力 |
+| --- | --- | --- |
+| **完整任务说明** | 目标、参考、结构、风格、规格与验收一次交代清楚 | 把设计问题组织成可执行任务 |
+| **精准短指令** | 在既有上下文中限定本轮修改对象、幅度和保留项 | 用审美判断控制局部结果 |
+| **逐轮对照验收** | 看画面、运行原型，核对修改结果与已有约束 | 保持视觉一致性和专业可用性 |
+
 <details>
-<summary>展开查看可交互流程图</summary>
+<summary>展开八阶段流程与反馈路径</summary>
 
 ```mermaid
-flowchart LR
-  A["发散与检索<br/>Chat + 多渠道信息"]:::ai
-  B["我定义方向<br/>问题 / 审美 / 约束"]:::human
-  C["方案与原型<br/>生成工具 + Codex"]:::ai
-  D["我评审和细化<br/>专业工具 + 实际测试"]:::human
-  E["可查看的交付<br/>作品 / 原型 / 记录"]:::output
-  A --> B --> C --> D --> E
-  D -. "根据评审回到提示词与检索" .-> A
+flowchart TB
+  A["1 灵感发散<br/>问题与候选方向"]:::ai
+  B["2 多渠道检索<br/>资料与来源核对"]:::ai
+  C["3 个人思维组织<br/>我定义目标与审美"]:::human
+  D["4 AI 辅助方案<br/>完整任务说明与分工"]:::ai
+  E["5 原型实现<br/>Codex / 生成与专业工具"]:::ai
+  F["6 迭代与测试<br/>我评审 + 精准短指令"]:::human
+  G["7 反馈与再检索<br/>Chat 改写提示词 / 补信息"]:::ai
+  H["8 精修与交付<br/>我验收作品与过程证据"]:::output
+  A --> B --> C --> D --> E --> F --> G --> H
+  G -. "补知识" .-> B
+  G -. "调整方向" .-> C
+  G -. "修改素材或实现" .-> E
   classDef human fill:#dcefe5,stroke:#7caa96,color:#183d30;
   classDef ai fill:#eee8fa,stroke:#ada0d0,color:#392c57;
   classDef output fill:#fbefd3,stroke:#cbb574,color:#58461c;
@@ -94,6 +105,7 @@ flowchart LR
 | 制作环节 | 使用的工具 |
 | --- | --- |
 | AI 探索与实现 | ChatGPT、Midjourney、Tripo 3D、ComfyUI、imagegen、Codex |
+| AI 视频生成 | 即梦／Seedance |
 | 视觉、三维与人工细化 | Photoshop、Illustrator、Figma、Blender、C4D、Rhino、ZBrush、Nomad |
 | 交互与数据原型 | Godot、TouchDesigner、Processing、Grasshopper、Python |
 

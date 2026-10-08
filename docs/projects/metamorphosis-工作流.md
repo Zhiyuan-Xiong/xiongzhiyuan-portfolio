@@ -48,6 +48,21 @@ flowchart LR
 | **审美层次** | 比较密度、辉光、色彩和背景的主次。 |
 | **过程表达** | 节点网络、五阶段和最终影像能够相互对照。 |
 
+## 操作、输入输出与指令控制
+
+我先用完整的任务说明建立上下文：交代项目目标、参考资料、审美方向、实现约束、输出格式与验收标准，让 ChatGPT 和 Codex 理解要完成什么。得到初步方案或原型后，我再以精准的短指令逐轮控制修改，明确本轮改什么、保留什么，并对照实际结果继续判断。**完整指令建立方向，短指令控制细节，专业判断决定交付。**
+
+| 操作阶段 | 输入 | 我的控制与 AI 协作 | 输出与验收 |
+| --- | --- | --- | --- |
+| 建立方向 | 模型、节点网络、声音与演进序列 | 我定义设计目标，AI 辅助当前资料整理 | 明确主题与范围，核对原资料 |
+| 组织方案 | 研究、参考与既有成果 | 我决定结构、视觉与专业约束 | 方案与任务；检查逻辑是否成立 |
+| 专业制作 | 明确的设计方案 | 原作依照专业工具和团队分工完成 | 模型、场景或体验；由我核对效果 |
+| 数字原型 | 作品资料、完整页面说明 | Codex 辅助当前网页与交互呈现 | 可浏览案例；核对原项目表达 |
+| 精准迭代 | 页面、录屏与具体问题 | 短指令限定 声音响应、密度、辉光与过渡衔接 | 局部更新；与前轮和原参考对照 |
+| 验收交付 | 通过评审的内容与实现 | 我核对完整性、职责和观看顺序 | 节点关系、实时视觉与网页交互 |
+
+本段说明原项目的专业制作与当前 AI 辅助数字案例整理。修改前保留已有方案，以明确的修改对象和验收条件控制本轮结果。
+
 ## 过程证据
 
 [完整节点网络](https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/media/metamorphosis/operator-network-large.webp) · [演进过程](https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/media/metamorphosis/development-sequence-large.webp) · [声音响应序列](https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/media/metamorphosis/reactive-sequence-large.webp) · [网页交互代码](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/tree/main/src/)
