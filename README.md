@@ -14,9 +14,9 @@
 | --- | --- | --- |
 | **《毒蘑菇》** | AI 素材工作流、可编辑 Godot 跑酷游戏与浏览器试玩。 | [查看](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms) |
 | **骨骸共生系统** | SPRING 品牌视觉与骨骸首饰：AI 图像、辅助建模和人工细化。 | [查看](https://github.com/Zhiyuan-Xiong/spring-skeleton-collection) |
-| **无垠的宇宙** | Rhino、Grasshopper、Processing 与 ComfyUI 的跨工具创作。 | [查看](https://github.com/Zhiyuan-Xiong/infinite-cosmos) |
+| **无垠的宇宙** | Rhino、Grasshopper、Processing 与 ComfyUI 的跨工具创作。 | [查看](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/infinite-cosmos.md) |
 | **地震：数据转译** | CLIP、文本向量与多源数据融合驱动空间生成。 | [查看](https://github.com/Zhiyuan-Xiong/BARC0074-Digital-Skills-Report-Codebook-25097154) |
-| **蜕变** | TouchDesigner 几何、粒子与实时声音响应。 | [查看](https://github.com/Zhiyuan-Xiong/metamorphosis) |
+| **蜕变** | TouchDesigner 几何、粒子与实时声音响应。 | [查看](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/metamorphosis.md) |
 | **饭搭子** | 饮食记录、食宠与 AI 照片工作流的 UX 原型，进行中。 | [查看](https://github.com/Zhiyuan-Xiong/fandazi) |
 
 ## 作品预览
@@ -25,8 +25,8 @@
 <td width="50%"><a href="https://github.com/Zhiyuan-Xiong/poisonous-mushrooms"><img src="public/images/mushrooms-cover-1280.webp" alt="《毒蘑菇》" width="100%"></a><br><strong>《毒蘑菇》</strong><br>AI 素材工作流、可编辑 Godot 跑酷游戏与浏览器试玩。</td>
 <td width="50%"><a href="https://github.com/Zhiyuan-Xiong/spring-skeleton-collection"><img src="public/images/bone-cover-white-1280.webp" alt="骨骸共生系统" width="100%"></a><br><strong>骨骸共生系统</strong><br>SPRING 品牌视觉与骨骸首饰：AI 图像、辅助建模和人工细化。</td>
 </tr><tr>
-<td width="50%"><a href="https://github.com/Zhiyuan-Xiong/infinite-cosmos"><img src="public/images/cosmos-cover-1280.webp" alt="无垠的宇宙" width="100%"></a><br><strong>无垠的宇宙</strong><br>Rhino、Grasshopper、Processing 与 ComfyUI 的跨工具创作。</td>
-<td width="50%"><a href="https://github.com/Zhiyuan-Xiong/metamorphosis"><img src="public/images/metamorphosis-cover-1280.webp" alt="蜕变" width="100%"></a><br><strong>蜕变</strong><br>TouchDesigner 几何、粒子与实时声音响应。</td>
+<td width="50%"><a href="https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/infinite-cosmos.md"><img src="public/images/cosmos-cover-1280.webp" alt="无垠的宇宙" width="100%"></a><br><strong>无垠的宇宙</strong><br>Rhino、Grasshopper、Processing 与 ComfyUI 的跨工具创作。</td>
+<td width="50%"><a href="https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/metamorphosis.md"><img src="public/images/metamorphosis-cover-1280.webp" alt="蜕变" width="100%"></a><br><strong>蜕变</strong><br>TouchDesigner 几何、粒子与实时声音响应。</td>
 </tr></table>
 
 ## 我的 AI 工作方式
@@ -43,7 +43,7 @@
 
 ## 全部项目索引
 
-12 个项目条目，分别有独立仓库；饭搭子为进行中的 UX 原型。
+12 个项目条目，10 个独立项目仓库已发布；无垠的宇宙与蜕变的中文说明和完整材料可从本仓库查看，独立仓库待 GitHub 临时限流解除后发布。饭搭子为进行中的 UX 原型。
 
 | 项目 | 类型 | 独立仓库 | 完整案例 |
 | --- | --- | --- | --- |
@@ -56,9 +56,9 @@
 | 骨骸共生系统 | 品牌视觉／3D 首饰设计 | [仓库](https://github.com/Zhiyuan-Xiong/spring-skeleton-collection) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/bone-series/) |
 | NO.3 后数字物种 | 未来概念世界观／三维场景设计 | [仓库](https://github.com/Zhiyuan-Xiong/post-digital-species) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/post-digital-species/) |
 | 声学弹性 | Bartlett School 设计项目 · 协作装置 | [仓库](https://github.com/Zhiyuan-Xiong/sonic-elasticity) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/sonic-elasticity/) |
-| 无垠的宇宙 | 参数化空间／创意编程／生成影像 | [仓库](https://github.com/Zhiyuan-Xiong/infinite-cosmos) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/infinite-cosmos/) |
+| 无垠的宇宙 | 参数化空间／创意编程／生成影像 | [仓库](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/infinite-cosmos.md) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/infinite-cosmos/) |
 | 地震：数据转译 | Bartlett School 设计项目 · 数据驱动设计 | [仓库](https://github.com/Zhiyuan-Xiong/BARC0074-Digital-Skills-Report-Codebook-25097154) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/earthquake/) |
-| 蜕变 | 创意编程／实时视听交互 | [仓库](https://github.com/Zhiyuan-Xiong/metamorphosis) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/metamorphosis/) |
+| 蜕变 | 创意编程／实时视听交互 | [仓库](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/metamorphosis.md) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/metamorphosis/) |
 
 ## 从这里开始
 
