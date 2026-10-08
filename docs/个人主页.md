@@ -32,6 +32,33 @@
 <tr><td width="50%"><a href="https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/infinite-cosmos.md"><img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/images/cosmos-cover-1280.webp" alt="无垠的宇宙" width="100%"></a><br><strong>无垠的宇宙</strong><br>参数化模型 → Processing → ComfyUI 影像</td><td width="50%"><a href="https://github.com/Zhiyuan-Xiong/BARC0074-Digital-Skills-Report-Codebook-25097154"><img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/images/earthquake-cover-1280.webp" alt="地震：数据转译" width="100%"></a><br><strong>地震：数据转译</strong><br>多模态分析 → 人工映射 → 空间与动态视觉</td></tr>
 </table>
 
+## 我的 AI 设计与迭代方法
+
+我会针对任务选择 AI 的介入方式：从灵感发散、多渠道检索和个人思考，到方案设立、原型实现、测试，再回到对话改写提示词和补充信息。我的审美判断和专业制作贯穿整个过程。
+
+```mermaid
+flowchart LR
+  A["发散与检索<br/>Chat + 多渠道信息"]:::ai
+  B["我定义方向<br/>问题 / 审美 / 约束"]:::human
+  C["方案与原型<br/>生成工具 + Codex"]:::ai
+  D["我评审和细化<br/>专业工具 + 实际测试"]:::human
+  E["可查看的交付<br/>作品 / 原型 / 记录"]:::output
+  A --> B --> C --> D --> E
+  D -. "根据评审回到提示词与检索" .-> A
+  classDef human fill:#dcefe5,stroke:#7caa96,color:#183d30;
+  classDef ai fill:#eee8fa,stroke:#ada0d0,color:#392c57;
+  classDef output fill:#fbefd3,stroke:#cbb574,color:#58461c;
+```
+
+| 我的能力 | 怎样让结果可控 | 项目例子 |
+| --- | --- | --- |
+| **把审美转成约束** | 明确参考、角色比例、色彩、形态、构图与可变区域 | 毒蘑菇：一致的角色、动画、UI 与游戏场景 |
+| **连接 AI 与专业制作** | AI 探索方向或初始形体，我用专业工具完成结构与细节 | 骨骸共生：Midjourney → Tripo 3D → ZBrush／Nomad |
+| **按任务设计策略** | 区分资产生成、多模态分析、产品 UX 和生成影像 | Earthquake、饭搭子、无垠的宇宙 |
+| **用实际反馈迭代** | 视觉评审、原型运行与测试，推动提示词、代码和方案更新 | 毒蘑菇在线试玩、作品集交互与公开制作记录 |
+
+**[查看完整八阶段流程、项目策略与质量控制](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/AI设计工作流.md)**
+
 ## 项目精选与我的贡献
 
 | 项目 | 我的具体贡献 | 项目材料 | 在线案例 |
@@ -47,13 +74,6 @@
 | **机械文明计划** | 概念场景、三维建模与渲染 | [查看](https://github.com/Zhiyuan-Xiong/nexus-mechanical-civilization) | [打开](https://xiongzhiyuan-portfolio.pages.dev/zh/work/nexus/) |
 | **声学弹性** | 装置设计与制作（协作项目） | [查看](https://github.com/Zhiyuan-Xiong/sonic-elasticity) | [打开](https://xiongzhiyuan-portfolio.pages.dev/zh/work/sonic-elasticity/) |
 
-## AI 工作流示例
-
-- **毒蘑菇**：imagegen 素材生成与编辑 → 人工视觉筛选 → AI 辅助 Godot 搭建 → 体验验证。
-- **骨骸共生**：Midjourney 图像探索 → Tripo 3D 初始建模 → ZBrush／Nomad 人工雕刻与细节调整。
-- **无垠的宇宙**：Rhino／Grasshopper 参数化形态 → Processing 粒子 → ComfyUI 图像与视频 → 人工视觉控制。
-- **Earthquake**：CLIP／文本向量 → 多源数据融合 → 人工定义映射规则 → 空间与动态视觉。
-
 ## 教育背景
 
 - **伦敦大学学院 UCL · Bartlett 建筑学院**：性能与交互设计硕士在读。
@@ -63,7 +83,7 @@
 
 | 制作环节 | 使用的工具 |
 | --- | --- |
-| AI 探索与实现 | Midjourney、Tripo 3D、ComfyUI、imagegen、Codex |
+| AI 探索与实现 | ChatGPT、Midjourney、Tripo 3D、ComfyUI、imagegen、Codex |
 | 视觉、三维与人工细化 | Photoshop、Illustrator、Figma、Blender、C4D、Rhino、ZBrush、Nomad |
 | 交互与数据原型 | Godot、TouchDesigner、Processing、Grasshopper、Python |
 
