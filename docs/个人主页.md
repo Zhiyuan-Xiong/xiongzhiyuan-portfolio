@@ -1,4 +1,10 @@
-<p align="center"><img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/docs/media/github-banner.svg" alt="熊志愿｜AI 视觉、品牌与创意交互" width="100%"></p>
+<p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/docs/media/github-banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/docs/media/github-banner-light.svg">
+  <img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/docs/media/github-banner-light.svg" alt="熊志愿｜AI 视觉设计、品牌视觉与创意交互" width="100%">
+</picture>
+</p>
 
 <h1 align="center">熊志愿 · Xiong Zhiyuan</h1>
 <p align="center"><strong>AI 设计 / 视觉设计 / 创意交互</strong></p>

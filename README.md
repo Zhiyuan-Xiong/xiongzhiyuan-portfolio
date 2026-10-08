@@ -1,4 +1,10 @@
-<p align="center"><img src="docs/media/github-banner.svg" alt="熊志愿：AI 视觉设计、品牌视觉与创意交互" width="100%"></p>
+<p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/media/github-banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="docs/media/github-banner-light.svg">
+  <img src="docs/media/github-banner-light.svg" alt="熊志愿｜AI 视觉设计、品牌视觉与创意交互" width="100%">
+</picture>
+</p>
 
 # 熊志愿｜AI 视觉与创意设计作品集
 

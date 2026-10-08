@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-labelledby="title desc">
+<title id="title">熊志愿 · AI 视觉设计、品牌视觉与创意交互</title><desc id="desc">light theme，薄荷绿色星球与明亮的文字。</desc>
+<defs>
+<linearGradient id="background" x2="1" y2="1"><stop stop-color="#f6f7f0"/><stop offset="1" stop-color="#e8f2ed"/></linearGradient>
+<radialGradient id="sphere" cx="35%" cy="26%" r="78%"><stop stop-color="#f0ffe9"/><stop offset=".56" stop-color="#b7decb"/><stop offset="1" stop-color="#77a8b2"/></radialGradient>
+<radialGradient id="glow"><stop stop-color="#b1e6c9" stop-opacity=".23"/><stop offset="1" stop-color="#b1e6c9" stop-opacity="0"/></radialGradient>
+<clipPath id="round"><rect width="1200" height="400" rx="18"/></clipPath>
+</defs>
+<g clip-path="url(#round)"><rect width="1200" height="400" fill="url(#background)"/><circle cx="943" cy="207" r="245" fill="url(#glow)"/>
+<g fill="none" stroke="#d4e2dc" opacity=".3"><path d="M64 345h666M720 54h420"/><path d="M720 46v16M1140 46v16"/></g>
+<circle cx="943" cy="207" r="154" fill="url(#sphere)" stroke="#397780" stroke-width="1.5"/>
+<g fill="none" stroke="#397780" opacity=".75"><ellipse cx="943" cy="207" rx="154" ry="50"/><ellipse cx="943" cy="207" rx="91" ry="154"/><ellipse cx="943" cy="207" rx="30" ry="154"/><path d="M789 207h308M803 148h280M803 266h280"/></g>
+<path d="M751 269C796 383 1131 247 1131 144" fill="none" stroke="#3c8881" stroke-width="2.5"/><circle cx="1064" cy="104" r="7" fill="#238a80"/><circle cx="758" cy="287" r="3" fill="#3c8881"/>
+<text x="64" y="78" fill="#39575f" font-family="Arial,sans-serif" font-size="17" font-weight="600" letter-spacing="5">EUAN PLANET</text>
+<text x="60" y="154" fill="#20343d" font-family="Arial,Microsoft YaHei,PingFang SC,sans-serif" font-size="52" font-weight="600">熊志愿 · Xiong Zhiyuan</text>
+<text x="64" y="221" fill="#39575f" font-family="Microsoft YaHei,PingFang SC,Arial,sans-serif" font-size="26">AI 视觉设计 / 品牌视觉 / 创意交互</text>
+<text x="64" y="304" fill="#526970" font-family="Microsoft YaHei,PingFang SC,Arial,sans-serif" font-size="20">从视觉概念，到三维、影像与可体验的作品。</text>
+</g><rect x=".5" y=".5" width="1199" height="399" rx="18" fill="none" stroke="#d4e2dc"/></svg>
