@@ -8,16 +8,18 @@
 
 本科毕业于华中科技大学设计学院，现于 UCL Bartlett 攻读性能与交互设计硕士。求职方向：AI 设计、视觉设计、创意设计。
 
-## 代表项目
+## 代表项目与我的贡献
 
-| 项目 | 重点展示的能力 | 项目仓库 |
+| 项目 | 我的具体贡献 | 项目入口 |
 | --- | --- | --- |
-| **《毒蘑菇》** | AI 素材工作流、可编辑 Godot 跑酷游戏与浏览器试玩。 | [查看](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms) |
-| **骨骸共生系统** | SPRING 品牌视觉与骨骸首饰：AI 图像、辅助建模和人工细化。 | [查看](https://github.com/Zhiyuan-Xiong/spring-skeleton-collection) |
-| **无垠的宇宙** | Rhino、Grasshopper、Processing 与 ComfyUI 的跨工具创作。 | [查看](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/infinite-cosmos.md) |
-| **地震：数据转译** | CLIP、文本向量与多源数据融合驱动空间生成。 | [查看](https://github.com/Zhiyuan-Xiong/BARC0074-Digital-Skills-Report-Codebook-25097154) |
-| **蜕变** | TouchDesigner 几何、粒子与实时声音响应。 | [查看](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/metamorphosis.md) |
-| **饭搭子** | 饮食记录、食宠与 AI 照片工作流的 UX 原型，进行中。 | [查看](https://github.com/Zhiyuan-Xiong/fandazi) |
+| **《毒蘑菇》** | 前期概念、场景与分镜；AI 素材生成与整理、Godot 小游戏搭建和体验验证；参与 MV 调色与视觉统一 | [查看](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms) |
+| **骨骸共生系统** | SPRING 品牌视觉与 Logo；Midjourney 图像探索、Tripo 3D 初始建模、ZBrush／Nomad 人工雕刻与首饰细化 | [查看](https://github.com/Zhiyuan-Xiong/spring-skeleton-collection) |
+| **无垠的宇宙** | 参数化建模、交互编程与生成影像设计 | [查看](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/infinite-cosmos.md) |
+| **地震：数据转译** | Python 数据处理、参数映射与空间可视化 | [查看](https://github.com/Zhiyuan-Xiong/BARC0074-Digital-Skills-Report-Codebook-25097154) |
+| **蜕变** | 模型处理、节点编程、声音映射与视觉合成 | [查看](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/metamorphosis.md) |
+| **饭搭子** | 产品概念、饮食记录与食宠 UX 流程、Godot 交互原型和 AI 照片工作流；进行中 | [查看](https://github.com/Zhiyuan-Xiong/fandazi) |
+
+**[查看全部 12 项个人贡献](docs/个人贡献.md) · [GitHub 真实贡献与活动](https://github.com/Zhiyuan-Xiong)**
 
 ## 作品预览
 
