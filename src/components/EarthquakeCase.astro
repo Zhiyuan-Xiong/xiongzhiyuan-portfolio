@@ -1,0 +1,85 @@
+---
+import RestoredCaseShell from './RestoredCaseShell.astro';
+import EarthquakeFigure from './EarthquakeFigure.astro';
+import EarthquakeExplorer from './EarthquakeExplorer.astro';
+import {earthquake} from '../data/earthquake';
+import assets from '../data/earthquake-assets.json';
+import type {Lang} from '../data/site';
+import type {Project} from '../data/projects';
+import '../styles/earthquake-case.css';
+const {lang,project}=Astro.props as {lang:Lang;project:Project};const t=(zh:string,en:string)=>lang==='zh'?zh:en;
+const mapping=[
+ ['magnitude_norm','1 + magnitude_norm × 4',t('控制几何尺度与震动幅度','Geometry scale and shake amplitude')],
+ ['depth_norm','z = −depth_norm',t('转化为垂直位移','Vertical displacement')],
+ ['longitude_norm / latitude_norm','x / y',t('建立归一化空间坐标','Normalised spatial coordinates')],
+ ['emotion_intensity','fragmentation / noise',t('控制碎片化与扰动强度','Fragmentation and disturbance intensity')],
+ ['emotion_label','rotation_chaos',t('切换旋转与运动状态','Rotation and motion behaviour')],
+ ['cluster_id','material_index',t('选择材质或资产分组','Material or asset family')]
+];
+const iterations=[
+ ['extrusion',t('直接挤出','Direct extrusion'),t('先检验数值与高度之间的关系。','Test the relationship between values and height.')],
+ ['distribution',t('空间分布','Spatial distribution'),t('将独立对象展开为可比较的空间场。','Spread individual objects into a comparable spatial field.')],
+ ['density',t('聚类与密度','Clustering and density'),t('以分组与密度差异形成局部结构。','Use grouping and density to organise local structures.')],
+ ['fragmentation',t('碎片化与失稳','Fragmentation and instability'),t('引入方向变化、断裂与不规则构造。','Introduce variation in orientation, fracture, and irregularity.')],
+ ['composition',t('整合构成','Integrated composition'),t('将高度、密度、裂隙与波纹整合为同一场景。','Integrate height, density, fractures, and waves in one scene.')]
+] as const;
+---
+<RestoredCaseShell lang={lang} project={project} theme="earthquake" englishTitle="Earthquake: Data into Space" chapters={earthquake.chapters} hero={{...assets['hero-poster'],alt:project.coverAlt!}} video="/media/earthquake/hero.mp4">
+ <div slot="intro"><p>{earthquake.introduction[lang]}</p></div>
+ <div slot="hero-caption" class="quake-hero-caption"><span>JUPYTER / PYTHON / DATA-DRIVEN DESIGN</span><p>{t('地震：数据转译','Earthquake: Data into Space')}</p></div>
+ {earthquake.chapters.map((chapter,index)=><section id={chapter.id} class="restored-chapter case-section" aria-labelledby={'quake-'+chapter.id}>
+  <header class="restored-section-heading"><span class="restored-number">{String(index+1).padStart(2,'0')}</span><h2 id={'quake-'+chapter.id}>{chapter.label[lang]}</h2></header>
+  {chapter.id==='data-workflow'&&<>
+   <p class="restored-question">{t('如何让地震数据成为空间形态与动态行为的生成规则？','How can earthquake data become rules for spatial form and dynamic behaviour?')}</p>
+   <p>{t('地震通常通过统计、照片或新闻被理解，每种媒介都呈现不同的信息。本项目把这些信息转化为可处理的特征，再建立清晰的参数接口，让数据分析、程序建模和实时可视化在不同工具之间衔接。','Statistics, photographs, and news each describe different aspects of earthquakes. This project converts those descriptions into computable features and a shared parameter interface, connecting analysis, procedural modelling, and real-time visualisation across tools.')}</p>
+   <div class="quake-stats"><div><strong>240</strong><span>{t('清洗后的图像','cleaned images')}</span></div><div><strong>232</strong><span>{t('新闻标题与摘要','news titles and summaries')}</span></div><div><strong>240</strong><span>{t('融合设计样本','fusion design samples')}</span></div><div><strong>20</strong><span>{t('空间场景实例','spatial instances')}</span></div></div>
+   <ol class="quake-pipeline"><li><span>01 / Jupyter · Python</span><h3>{t('采集与清洗','Collect and clean')}</h3><p>{t('处理图像、文本与地震记录，去重、清洗并建立结构化表格。','Collect images, text, and seismic records; remove duplicates and structure the data.')}</p></li><li><span>02 / Python</span><h3>{t('分析与融合','Analyse and fuse')}</h3><p>{t('提取特征，完成标准化、聚类与降维，输出统一设计参数。','Extract features, standardise, cluster, and reduce dimensions into shared design parameters.')}</p></li><li><span>03 / Blender · Python</span><h3>{t('规则与空间','Rules and space')}</h3><p>{t('将参数转化为建筑碎片、地表位移、裂隙、波纹与烟尘。','Translate parameters into fragments, ground displacement, fractures, waves, and dust.')}</p></li><li><span>04 / Processing</span><h3>{t('行为与反馈','Behaviour and feedback')}</h3><p>{t('逐条读取记录，驱动粒子释放、波纹传播与数据面板。','Read records sequentially to drive particles, propagating waves, and a data panel.')}</p></li></ol>
+   <EarthquakeFigure lang={lang} image="multi-instance" alt={t('黑色背景上建筑碎片与发光波纹组成的完整多实例空间场','Complete multi-instance field of architectural fragments and luminous waves on black')} caption={t('最终空间场：同一组规则生成可比较的不同实例。','The spatial field: shared rules generate distinct, comparable instances.')}/>
+  </>}
+  {chapter.id==='image-analysis'&&<>
+   <p>{t('通过 icrawler 获取建筑坍塌、城市废墟与救援相关图像，再清除无效文件并使用图像哈希去重。保留的 240 张图像由 OpenCV 与 PIL 处理，提取平均亮度、灰度对比度和 Canny 边缘密度。','icrawler collects images of collapsed buildings, urban rubble, and rescue operations. Invalid files and hash-based duplicates are removed. OpenCV and PIL extract average brightness, grayscale contrast, and Canny edge density from the remaining 240 images.')}</p>
+   <EarthquakeFigure lang={lang} image="image-collection" alt={t('报告中的完整地震图像样本拼贴，包含废墟、建筑碎片与救援场景','Complete original image-sample collage of rubble, architectural fragments, and rescue scenes')} caption={t('图像样本拼贴：从视觉参考转向可计算特征。','Image-sample collage: from visual references to computable features.')}/>
+   <div class="quake-grid three"><EarthquakeFigure lang={lang} image="image-brightness" alt={t('图像平均亮度分布直方图','Image brightness histogram')} caption={t('亮度分布','Brightness distribution')}/><EarthquakeFigure lang={lang} image="image-edge" alt={t('Canny 边缘密度分布直方图','Canny edge-density histogram')} caption={t('边缘密度分布','Edge-density distribution')}/><EarthquakeFigure lang={lang} image="image-damage" alt={t('图像 damage proxy 参数分布图','Image damage-proxy distribution')} caption={t('视觉破碎程度的近似参数','Visual fragmentation proxy')}/></div>
+   <p>{t('把边缘密度、对比度和暗度组合为 damage_proxy，作为形态破碎程度的设计线索。这个指标是视觉特征的近似组合；它不等于实际建筑损伤等级。特征标准化后使用 K-means 分为四组，再通过 PCA 查看样本的分布。','Edge density, contrast, and darkness form damage_proxy, a design cue for fragmentation. It is an approximation based on visual features, rather than a measured structural-damage rating. Standardised features enter four K-means groups, with PCA used to inspect their distribution.')}</p>
+   <div class="quake-grid"><EarthquakeFigure lang={lang} image="image-clusters" alt={t('四组图像聚类的样本数量分布','Counts of the four image clusters')} caption={t('四组样本数量：71 / 54 / 78 / 37。','Four cluster counts: 71 / 54 / 78 / 37.')}/><EarthquakeFigure lang={lang} image="image-pca" alt={t('图像特征经 PCA 降维后的聚类散点图','PCA projection of clustered image features')} caption={t('PCA 投影用于观察视觉特征之间的关系。','PCA projection reveals relationships between visual features.')}/></div>
+   <details class="quake-code"><summary>{t('查看原始 Python 特征与聚类逻辑','Inspect the original Python feature and clustering logic')}</summary><pre><code>{earthquake.code.visual}</code></pre></details>
+   <h3>{t('让人的存在进入数据','Introduce human presence')}</h3><p>{t('使用 YOLOv8 检测人物和物体，记录 person_count 与 total_objects，为后续碎片密度和空间复杂度提供补充信号。','YOLOv8 records person_count and total_objects, adding signals for later fragment density and spatial complexity.')}</p>
+   <div class="quake-grid"><EarthquakeFigure lang={lang} image="detected-people" alt={t('YOLOv8 人物检测数量分布','YOLOv8 person-count distribution')} caption={t('人物检测数量','Detected people')}/><EarthquakeFigure lang={lang} image="detected-objects" alt={t('YOLOv8 总物体检测数量分布','YOLOv8 total-object distribution')} caption={t('物体检测数量','Detected objects')}/></div>
+  </>}
+  {chapter.id==='text-analysis'&&<>
+   <p>{t('获取地震相关新闻的标题与摘要，经过合并、去重与文本清洗，形成 232 条记录。提取 damage、death、rescue、collapse 等关键词；使用 TextBlob 的极性分数区分正向、中性与负向表达，将叙事内容转换为可以参与设计的变量。','Earthquake-related headlines and summaries are combined, deduplicated, and cleaned into 232 records. Keywords such as damage, death, rescue, and collapse are extracted. TextBlob polarity distinguishes positive, neutral, and negative wording, turning narrative content into design variables.')}</p>
+   <div class="quake-grid"><EarthquakeFigure lang={lang} image="news-keywords" alt={t('地震新闻关键词频率柱状图','Keyword frequencies in the earthquake news sample')} caption={t('新闻关键词频率','News keyword frequencies')}/><EarthquakeFigure lang={lang} image="news-sentiment" alt={t('新闻文本正向、中性和负向表达的数量分布','Positive, neutral, and negative text counts')} caption={t('文本极性是语言表达的特征，并非受灾者真实情绪测量。','Text polarity describes wording; it does not measure affected people’s emotions.')}/></div>
+   <p>{t('比较 Count Vectorizer 与 TF-IDF 的文本表示，使用 TF-IDF 特征进行四组 K-means 聚类，并以 PCA 展示二维分布。关键词为失稳和坍塌提供叙事线索，聚类与极性为形态差异和动态强度提供参数。','Count Vectorizer and TF-IDF representations are compared. TF-IDF features enter four K-means clusters, and PCA displays a two-dimensional projection. Keywords suggest instability and collapse, while clusters and polarity introduce variation in form and motion.')}</p>
+   <div class="quake-grid"><EarthquakeFigure lang={lang} image="news-clusters" alt={t('新闻文本四组聚类的数量分布','Four news-text cluster counts')} caption={t('文本分组','Text groups')}/><EarthquakeFigure lang={lang} image="news-pca" alt={t('新闻文本 TF-IDF 特征的 PCA 投影','PCA projection of news TF-IDF features')} caption={t('语义特征的二维投影','Two-dimensional text-feature projection')}/></div>
+  </>}
+  {chapter.id==='fusion-analysis'&&<>
+   <p>{t('引入 Significant Earthquakes, 1965–2016 数据集中的日期、震级、震源深度与经纬度。用 Pandas 清理无效记录，将不同量纲的变量归一化，建立可以跨工具读取的数值接口。','Date, magnitude, depth, latitude, and longitude come from the Significant Earthquakes, 1965–2016 dataset. Pandas removes invalid records and normalises variables with different units into a shared numerical interface.')}</p>
+   <div class="quake-grid"><EarthquakeFigure lang={lang} image="magnitude" alt={t('融合工作流中抽样地震记录的震级分布','Magnitude distribution of sampled seismic records')} caption={t('抽样记录的震级分布','Magnitude distribution in the sample')}/><EarthquakeFigure lang={lang} image="depth-magnitude" alt={t('抽样记录的震源深度与震级散点图','Depth and magnitude of sampled records')} caption={t('震源深度与震级：用于观察变量范围与分布。','Depth and magnitude: inspect the ranges and distribution of variables.')}/></div>
+   <p>{t('融合 Notebook 进一步引入灾害文本样本与卫星图块特征，比较 TF-IDF、Sentence-BERT 和图像特征的表示方式。降维后的特征与数值、情绪强度共同标准化，再进行五组 K-means 聚类。最终输出 240 条设计样本。','The fusion notebook adds disaster-text samples and satellite-tile features, comparing TF-IDF, Sentence-BERT, and image representations. Reduced features are standardised alongside numerical variables and emotion-intensity signals before five-group K-means clustering. The output contains 240 design samples.')}</p>
+   <div class="quake-grid"><EarthquakeFigure lang={lang} image="fusion-clusters" alt={t('融合后的五组聚类数量分布','Counts of the five fusion clusters')} caption={t('多源特征融合后的五组样本','Five clusters after multimodal fusion')}/><EarthquakeFigure lang={lang} image="fusion-space" alt={t('以经纬度与震级显示的融合样本三维散点图','Three-dimensional preview of longitude, latitude, and magnitude')} caption={t('经度、纬度与震级的三维预览','Longitude, latitude, and magnitude in three dimensions')}/></div>
+   <div class="quake-grid"><EarthquakeFigure lang={lang} image="fusion-emotion" alt={t('融合样本 chaos、fear 和 calm 标签分布','Chaos, fear, and calm labels in the fusion sample')} caption={t('规则或模型生成的语义标签','Semantic labels generated by rules or a model')}/><EarthquakeFigure lang={lang} image="fusion-keywords" alt={t('融合工作流灾害文本关键词频率图','Disaster-text keyword frequencies in the fusion workflow')} caption={t('灾害文本样本的关键词分布','Keyword distribution of the disaster-text sample')}/></div>
+   <div class="quake-method-note"><h3>{t('数据组合的边界','Scope of the fusion')}</h3><p>{t('图像与新闻分析是独立的数据分支。最终融合文件按样本组合地震记录、灾害文本与图像特征，并未建立同一事件的时间、地点匹配。情绪与破碎程度用于探索设计参数，这是一套数据驱动的生成实验。','Image and news analyses are separate branches. The final fusion pairs seismic records, disaster texts, and image features by sample without establishing a time-and-location match to the same event. Emotion and fragmentation signals explore design parameters in a data-driven generative experiment.')}</p></div>
+  </>}
+  {chapter.id==='design-mapping'&&<>
+   <p>{t('数据转译的关键是把抽象的特征明确地交给设计工具。每个参数都有输入、映射方式与空间作用，CSV 成为 Jupyter、Blender 和 Processing 之间的接口。下方可以直接选择原始样本，查看震级、深度如何改变输出参数。','Data translation makes the connection between features and design tools explicit. Each parameter has an input, a mapping, and a spatial effect. CSV acts as the interface between Jupyter, Blender, and Processing. Select a source sample below to inspect how magnitude and depth change its parameters.')}</p>
+   <EarthquakeExplorer lang={lang}/>
+   <div class="quake-mapping-table"><table><thead><tr><th>{t('数据变量','Input variable')}</th><th>{t('映射规则','Mapping rule')}</th><th>{t('设计作用','Design effect')}</th></tr></thead><tbody>{mapping.map(([input,rule,effect])=><tr><td><code>{input}</code></td><td><code>{rule}</code></td><td>{effect}</td></tr>)}</tbody></table></div>
+   <details class="quake-code"><summary>{t('查看原始 Python 映射与输出逻辑','Inspect the original Python mapping and export logic')}</summary><pre><code>{earthquake.code.mapping}</code></pre></details>
+   <a class="quake-download" href="/media/earthquake/design-samples.csv" download>{t('下载数值设计样本 CSV','Download the numerical design samples')} ↗</a>
+  </>}
+  {chapter.id==='spatial-generation'&&<>
+   <p>{t('在 Blender 中用 Python 导入数据，先从高度挤出与平面分布验证规则，再加入聚类密度、结构断裂、发光裂隙与震中波纹。以下保留报告中的五组完整模型视图，展示从直接映射到综合空间构成的演化。','Python imports the data into Blender. Height extrusion and planar distribution first test the mappings; clustering density, structural fracture, emissive cracks, and epicentral waves follow. These five complete model views from the report show the progression from direct mapping to integrated spatial composition.')}</p>
+   <div class="quake-iterations">{iterations.map(([image,title,text],i)=><article><EarthquakeFigure lang={lang} image={image} alt={title+' / '+text}/><div><span>{String(i+1).padStart(2,'0')}</span><h3>{title}</h3><p>{text}</p></div></article>)}</div>
+   <h3>{t('从单一场景到多实例系统','From one scene to multiple instances')}</h3><p>{t('在规则验证后，将 20 个不同参数组合放入网格中比较。每个实例包含建筑碎片、地表位移、裂隙、波纹、碎石和烟尘；数据共同影响场景的密度、变形与动态强度。','After testing the rules, 20 parameter combinations form a grid for comparison. Each instance combines architectural fragments, displaced ground, fractures, waves, rubble, and dust. Data influences scene density, deformation, and motion intensity.')}</p>
+   <EarthquakeFigure lang={lang} image="grid-light" alt={t('20 个建筑碎片实例与环形冲击波构成的完整网格渲染','Complete grid render of 20 fragment instances and circular shockwaves')} caption={t('多实例场景：在共同规则下比较不同数据条件。','Compare different data conditions under shared rules.')}/>
+   <EarthquakeFigure lang={lang} image="spatial-detail" alt={t('建筑碎片、地表裂隙、发光环与烟尘的完整局部渲染','Complete detail render of fragments, ground fractures, luminous rings, and dust')} caption={t('图像成为表面纹理，数据参数决定尺度与扰动。','Images become surface textures; data parameters drive scale and disturbance.')}/>
+   <details class="quake-code"><summary>{t('查看 Blender Python 编程与场景记录','Inspect Blender Python programming and scene development')}</summary><EarthquakeFigure lang={lang} image="blender-programming" alt={t('Blender 场景和生成该场景的 Python 脚本工作记录','Original Blender scene and Python script development record')}/></details>
+  </>}
+  {chapter.id==='realtime'&&<>
+   <p>{t('把 Blender 导出的模型与 final_fusion_data.csv 带入 Processing。程序每 25 帧读取一条记录，以震级控制粒子数量、释放力度、颜色和波纹传播速度；震源深度与经纬度同步显示在数据面板中。自动旋转的场景让静态数据转变为可观察的时间过程。','The exported Blender model and final_fusion_data.csv enter Processing. Every 25 frames, the program reads a record. Magnitude controls particle count, emission force, colour, and wave speed; depth and coordinates appear in the data panel. Automatic scene rotation turns static data into an observable temporal process.')}</p>
+   <video class="quake-demo" controls playsinline preload="none" poster={assets['processing-poster'].src} aria-label={t('原始 Processing 地震数据驱动粒子与波纹演示','Original Processing demonstration of data-driven particles and waves')}><source src="/media/earthquake/processing-demo.mp4" type="video/mp4"/></video>
+   <EarthquakeFigure lang={lang} image="processing-sequence" alt={t('报告中八个 Processing 阶段的完整分析拼贴，保留数据面板、粒子扩散和环形波纹','Complete eight-frame Processing sequence with data panels, particles, and circular waves')} caption={t('完整动态序列：数据读取 → 能量释放 → 波纹扩张 → 粒子消散。','Complete sequence: read data → release energy → expand waves → dissipate particles.')}/>
+   <div class="quake-outcomes"><h3>{t('这个项目呈现的能力','Capabilities demonstrated')}</h3><p>{t('用 Python 将不同来源的数据组织成可分析的表格；以特征提取、标准化、聚类和降维解释数据差异；把数值转化为可复用的空间规则，并通过 CSV 连接分析、建模、动画与实时反馈。','Python structures disparate sources into analysable tables. Feature extraction, standardisation, clustering, and dimension reduction explain variation. Numerical values become reusable spatial rules, with CSV connecting analysis, modelling, animation, and real-time feedback.')}</p><span>Jupyter / Pandas / NumPy / OpenCV / scikit-learn / Blender Python / Processing</span></div>
+  </>}
+ </section>)}
+</RestoredCaseShell>

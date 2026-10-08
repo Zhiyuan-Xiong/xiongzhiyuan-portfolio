@@ -1,0 +1,72 @@
+{
+  "hero": {
+    "src": "/media/nexus/hero.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  "clay-side": {
+    "src": "/media/nexus/clay-side.webp",
+    "width": 2000,
+    "height": 814
+  },
+  "clay-isometric": {
+    "src": "/media/nexus/clay-isometric.webp",
+    "width": 1947,
+    "height": 1500
+  },
+  "concept-line": {
+    "src": "/media/nexus/concept-line.webp",
+    "width": 1956,
+    "height": 1500
+  },
+  "characters": {
+    "src": "/media/nexus/characters.webp",
+    "width": 1889,
+    "height": 1376
+  },
+  "texture": {
+    "src": "/media/nexus/texture.webp",
+    "width": 1536,
+    "height": 1024
+  },
+  "logo": {
+    "src": "/media/nexus/logo.webp",
+    "width": 1359,
+    "height": 340
+  },
+  "furnace": {
+    "src": "/media/nexus/furnace.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  "workshop": {
+    "src": "/media/nexus/workshop.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  "becoming": {
+    "src": "/media/nexus/becoming.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  "observer": {
+    "src": "/media/nexus/observer.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  "core": {
+    "src": "/media/nexus/core.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  "devourer": {
+    "src": "/media/nexus/devourer.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  "characters-render": {
+    "src": "/media/nexus/characters-render.webp",
+    "width": 1920,
+    "height": 1080
+  }
+}

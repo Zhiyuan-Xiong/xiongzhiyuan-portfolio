@@ -1,0 +1,117 @@
+/* NO.3: original Figma Page 2 imagery, editable copy, and transparent study assets. */
+@font-face{font-family:SpeciesBody;src:url('/fonts/pingfang-portfolio-v2.woff2') format('woff2');font-weight:400;font-display:swap}
+.restored-case.species{--case-accent:#132bec;--case-line:#263fea24;background:#fff;color:#223343;font-family:SwissPortfolio,SpeciesBody,var(--font-ui)}
+.species .restored-hero{background:#f4ffff;isolation:isolate;height:100svh;min-height:560px}
+.species .restored-hero-main{object-fit:cover;object-position:center}
+.species .restored-hero:after{content:'';position:absolute;inset:72% 0 0;background:linear-gradient(transparent,#fff);pointer-events:none}
+.species-hero-caption{position:absolute;left:30px;right:30px;bottom:5.5%;z-index:2;text-align:center;color:#162beb}
+.species-hero-caption p{font:400 clamp(31px,3.5vw,60px)/1.5 SpeciesBody,var(--font-ui);margin:0;letter-spacing:.1em}
+.species-hero-caption span{display:block;font-size:clamp(11px,1vw,17px);letter-spacing:.035em;margin-top:10px}
+html[lang=en] .species-hero-caption p{font-family:SwissPortfolio,var(--font-ui);letter-spacing:.02em}
+.species .restored-heading h1{font:400 clamp(32px,3.1vw,55px)/1.5 SpeciesBody,var(--font-ui)}
+.species .restored-english{font-family:SwissPortfolio,var(--font-ui)}
+.species .restored-subtitle,.species .restored-introduction p,.species .restored-chapter p{color:#354d62;line-height:2.05}
+.species .restored-breadcrumbs,.species .restored-kicker,.species .restored-number{color:#687da0}
+.species .restored-introduction p{font-size:14px}
+.species .restored-facts dt{color:#687a92}.species .restored-facts dd{color:#344760}
+.species .restored-toc summary,.species .restored-toc a{color:#76849a}.species .restored-toc a[aria-current=true]{color:#142eed}
+.species .restored-section-heading h2,.species-phase-heading h2{font:400 clamp(27px,2.2vw,40px)/1.5 SpeciesBody,var(--font-ui);color:#1228e6;margin:15px 0 20px;letter-spacing:.025em}
+html[lang=en] .species .restored-section-heading h2,html[lang=en] .species-phase-heading h2{font-family:SwissPortfolio,var(--font-ui);letter-spacing:0}
+.species .restored-chapter h3{color:#172ce4;font-size:18px}
+.species .restored-chapter p{font-size:14px}
+.species .species-figure figcaption{color:#708198}
+.species .zoom-label{background:#ffffffe5;color:#1836ca}
+.species-world-stage{position:relative;isolation:isolate;text-align:center;overflow:hidden;padding:25px 55px 0;margin:0 0 45px}
+.species-world-grid{position:absolute;inset:8% -5% auto;width:110%;height:78%;object-fit:contain;opacity:.10;pointer-events:none;z-index:-2}
+.species-world-people{position:absolute;inset:13% 0 0;width:100%;height:80%;object-fit:cover;pointer-events:none;z-index:-1;opacity:.7}
+.species-wordmark{display:flex;flex-direction:column;align-items:center;margin:0 auto 38px;height:165px;position:relative}
+.species-wordmark img:first-child{width:245px;height:145px;object-fit:contain;position:absolute;top:-30px}
+.species-wordmark img:last-child{width:475px;max-width:90%;height:132px;object-fit:contain;position:absolute;top:25px}
+.species-question{font-size:clamp(19px,1.6vw,26px)!important;color:#2135d9!important;max-width:950px!important;margin:30px auto 38px}
+.species-introduction{max-width:880px;margin:auto;text-align:left;position:relative}
+.species-introduction p{margin-bottom:26px;font-size:14px!important}
+.species-world-city{display:flex;margin-top:40px;height:230px;overflow:hidden;opacity:.65;pointer-events:none}
+.species-world-city img{width:55%;height:100%;object-fit:contain;object-position:bottom;flex:none}
+.species-world-city img:last-child{transform:scaleX(-1);margin-left:-10%}
+.species-worldview>.species-figure{margin-top:30px}
+.species-thinking{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;margin:60px 0}
+.species-thinking img{max-height:490px;object-fit:contain}
+.species-stage-links{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px}
+.species-stage-links a{font-size:11px;color:#1437d7;border-bottom:1px solid #264fe444;padding:7px 0}
+.species-phase-heading{display:grid;grid-template-columns:90px 1fr;gap:25px;align-items:center;margin-bottom:40px}
+.species-phase-heading>img{width:90px;height:130px;object-fit:contain}
+.species-phase-heading p{margin:0;max-width:900px}
+.species-death-layout{display:grid;grid-template-columns:1.08fr 1fr;gap:45px;align-items:start}
+.species-process{border:1px solid #3149f13a;padding:25px;background:linear-gradient(135deg,#edfafa45,transparent)}
+.species-process>h3{font-size:18px;margin:0 0 25px}
+.species-death-steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 20px}
+.species-death-steps li{min-width:0;position:relative;border-top:1px solid #1839fa55;padding-top:12px}
+.species-step-number{font-size:10px;color:#203cea}
+.species-death-steps h4{font-weight:400;font-size:14px;color:#1c32e0;line-height:1.5;margin:6px 0}
+.species-death-steps p{font-size:11px!important;line-height:1.8!important;margin:8px 0 12px;min-height:59px}
+.species-death-steps img{width:100%;height:135px;object-fit:contain;object-position:top}
+.species-death-model>.species-figure{margin-top:50px}
+.species-death-model>.species-figure img{min-height:280px;object-fit:contain}
+.species-death-features{display:grid;grid-template-columns:1fr 1fr;gap:25px;margin-top:35px}
+.species-death-features h3{font-size:16px!important;margin:0 0 8px}
+.species-death-features p{font-size:12px!important;margin:0}
+.species-film{margin:45px 0 0}
+.species-film video{width:100%;height:auto;aspect-ratio:16/9;display:block;object-fit:contain;background:#eff7f8}
+.species-film figcaption{font-size:11px;color:#697f97;line-height:1.8;margin-top:13px}
+.species-two-phases{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:start}
+.species-two-phases .species-phase-heading{grid-template-columns:60px 1fr;gap:18px}
+.species-two-phases .species-phase-heading>img{width:60px;height:100px}
+.species-two-phases .species-phase-heading h2{font-size:clamp(24px,1.9vw,33px)}
+.species-two-phases .species-phase-heading p{font-size:12px}
+.species-convert-model{display:grid;grid-template-columns:45% 55%;align-items:stretch;min-height:610px}
+.species-convert-model>.species-figure{display:grid;align-items:center;margin-left:-60%}
+.species-convert-model>.species-figure img{height:580px;object-fit:contain}
+.species-conversion-steps{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;justify-content:space-around;gap:30px;position:relative}
+.species-conversion-steps h3{font-size:16px!important;margin:0 0 12px}
+.species-conversion-steps img{width:100%;height:auto;object-fit:contain}
+.species-conversion-steps p{font-size:11px!important;margin:10px 0 0}
+.species-reborn-model{display:grid;grid-template-columns:36% 64%;min-height:610px;gap:0;align-items:center}
+.species-reborn-model>.species-figure{margin-right:-30%;position:relative}
+.species-reborn-model>.species-figure img{height:570px;object-fit:contain}
+.species-reborn-features{display:flex;flex-direction:column;gap:55px;position:relative;z-index:1}
+.species-reborn-features h3{font-size:16px!important;line-height:1.6;margin:0 0 10px}
+.species-reborn-features p{font-size:12px!important;margin:0}
+.species-archive-layout{display:grid;grid-template-columns:1fr 1.15fr;gap:65px}
+.species-specimens{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:35px}
+.species-records{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:35px}
+.species-records img{height:330px;object-fit:contain}
+.species-archive-art{margin:60px auto 0!important;max-width:700px}
+.species-archive-art img{max-height:960px;object-fit:contain}
+.species-extension>p{margin-bottom:30px}
+.species-extension-loop{display:grid;grid-template-columns:repeat(4,1fr);gap:25px;margin:55px 0 0;border-top:1px solid #2f43ee36;padding-top:25px}
+.species-extension-loop span{color:#1e35d5;font-size:13px;position:relative}
+.species-extension-loop span:not(:last-child):after{content:'→';position:absolute;right:0;color:#5374cc}
+.species .card-meta,.species .project-card p{color:#677894}.species .card-action{color:#213bed}
+body.has-light-case .lightbox{color:#243344;background:transparent}body.has-light-case .lightbox::backdrop{background:#fffffff2}body.has-light-case .lightbox-close,body.has-light-case .lightbox figcaption{color:#45545f}
+@media(min-width:1800px){.species .restored-body{max-width:1760px}.species-death-steps p{font-size:12px!important}.species-world-stage{padding-inline:80px}}
+@media(max-width:1100px){.species-thinking{gap:35px}.species-two-phases{grid-template-columns:1fr;gap:0}.species-convert-model{grid-template-columns:43% 57%}.species-reborn-model{grid-template-columns:32% 68%}.species-reborn-model>.species-figure{margin-right:0}.species-convert-model>.species-figure{margin-left:0}.species-death-layout{grid-template-columns:1fr;gap:35px}.species-death-model>.species-figure{margin-top:0}.species-archive-layout{gap:35px}.species-world-stage{padding-inline:10px}.species-world-city{height:150px}}
+@media(max-width:760px){.species .restored-hero{height:82svh;min-height:480px}.species .restored-hero-main{object-fit:cover}.species-hero-caption{left:20px;right:20px;bottom:6%}.species-hero-caption p{font-size:32px}.species-hero-caption span{font-size:11px}.species .restored-heading h1{font-size:32px}.species-world-stage{padding:10px 0 0;margin-bottom:35px}.species-wordmark{height:130px;margin-bottom:20px}.species-wordmark img:first-child{width:190px;height:115px}.species-wordmark img:last-child{width:330px;height:100px;top:18px}.species-introduction p{font-size:13px!important}.species-world-people{opacity:.3}.species-world-city{height:120px;margin-top:25px}.species-thinking{grid-template-columns:1fr;gap:25px;margin:40px 0}.species-thinking img{max-height:380px}.species-phase-heading{grid-template-columns:60px 1fr;gap:15px}.species-phase-heading>img{width:60px;height:100px}.species-phase-heading h2{font-size:26px}.species-process{padding:18px}.species-death-steps{gap:24px 15px}.species-death-steps h4{font-size:13px}.species-death-steps p{font-size:11px!important;min-height:80px}.species-death-steps img{height:110px}.species-death-features{gap:25px 20px}.species-convert-model,.species-reborn-model{min-height:480px}.species-convert-model>.species-figure img,.species-reborn-model>.species-figure img{height:440px}.species-reborn-features{gap:35px}.species-reborn-features h3{font-size:14px!important}.species-reborn-features p{font-size:11px!important}.species-film{margin-top:30px}.species-archive-layout{grid-template-columns:1fr;gap:40px}.species-records img{height:340px}.species-archive-art{max-width:100%;margin-top:40px!important}.species-extension-loop{grid-template-columns:1fr 1fr;gap:25px;font-size:12px}.species .restored-related h2{color:#1b2fdc}}
+@media(max-width:430px){.species-death-steps{grid-template-columns:1fr 1fr}.species-death-steps p{min-height:65px}.species-records img{height:250px}.species-convert-model{grid-template-columns:35% 65%}.species-convert-model>.species-figure img{height:360px}.species-reborn-model{grid-template-columns:40% 60%}.species-reborn-model>.species-figure img{height:370px}.species-phase-heading{grid-template-columns:45px 1fr}.species-phase-heading>img{width:45px}}
+
+
+/* Separate transparent source layers retain the full Figma cover composition. */
+.species .restored-hero-main{position:absolute;z-index:1;height:111.3%;width:auto;aspect-ratio:1;max-width:none;left:50%;top:5.1%;transform:translateX(-50%);object-fit:contain}
+.species-hero-atmosphere{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.species-hero-background{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.species-hero-ornaments{position:absolute;left:-5.27%;top:8.33%;width:110.54%;height:83.33%;object-fit:fill;mix-blend-mode:multiply}
+.species-hero-caption p{color:#1b2cdb}
+.species .restored-hero:after{z-index:1}
+.species-reborn-model>.species-figure{margin-right:0}
+.species-specimen-card{position:relative;background:linear-gradient(130deg,#7c95df,#bce7e8 60%,#738adb);border:1px solid #4060d87a;padding:15px;color:#fff;min-width:0}
+.species-specimen-card header{position:relative;z-index:1}.species-specimen-card h4{font:400 16px/1.5 SwissPortfolio,var(--font-ui);margin:0;color:#fff}
+.species-specimen-card header>span{font-size:10px;color:#f4fcff}
+.species-specimen-card .species-figure{margin:8px 0 14px}
+.species-specimen-card img{aspect-ratio:1;object-fit:contain}
+.species-specimen-card dl{font-size:10px;line-height:1.7;margin:0}
+.species-specimen-card dl>div{display:flex;gap:8px}.species-specimen-card dd{margin:0;color:#fff}.species-specimen-card dt{color:#eef9ff}
+@media(max-width:760px){.species .restored-hero-main{height:100%;top:6%;}.species-hero-ornaments{width:220%;left:-60%;height:80%;top:8%;opacity:.8}.species-specimen-card{padding:12px}.species-specimen-card h4{font-size:14px}}
+
+.species-world-people{mix-blend-mode:multiply}
+.species-wordmark:before{content:'';position:absolute;inset:-5% 16%;background:radial-gradient(ellipse,#bddce759,transparent 68%);pointer-events:none}
+.species-convert-model{overflow:hidden}
+html[lang=en] .species .restored-heading h1{font-family:SwissPortfolio,SpeciesBody,var(--font-ui)}

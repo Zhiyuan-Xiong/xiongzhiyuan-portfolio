@@ -1,0 +1,20 @@
+---
+import { categories, ui, type Lang } from '../data/site';
+import type { Project } from '../data/projects';
+import Artwork from './Artwork.astro';
+interface Props { project: Project; lang: Lang; index?: number }
+const { project: p, lang, index=9 } = Astro.props;
+const isPublished = p.status === 'published';
+const Tag = isPublished ? 'a' : 'div';
+---
+<article class:list={['project-card', { 'is-draft': !isPublished }]} data-project data-categories={p.categories.join(' ')}>
+  <Tag class="card-body" {...(isPublished ? { href: `/${lang}/work/${p.slug}/`, 'data-case-link': '' } : {})}>
+    <div class="card-image">
+      {p.cover ? <Artwork image={p.cover} alt={p.coverAlt![lang]} lang={lang} eager={index < 2} /> : <div class="placeholder" aria-hidden="true"><span class="placeholder-number">{p.slug==='fandazi' ? 'UX' : p.slug==='alilaguna' ? 'FILM' : '3D'}</span><span>{p.subtitle[lang]}</span></div>}
+      {!isPublished && <span class="status-badge">{p.status==='progress' ? ui.progress[lang] : ui.pending[lang]}</span>}
+    </div>
+    <div class="card-meta"><span>{p.categories.map(cat=>categories.find(x=>x.id===cat)!.label[lang]).join(' · ')}</span>{p.year && <time>{p.year}</time>}</div>
+    <div class="card-title"><h3>{p.title[lang]}</h3>{isPublished && <span class="card-action">{ui.view[lang]}</span>}</div>
+    <p>{p.description[lang]}</p>
+  </Tag>
+</article>

@@ -1,0 +1,22 @@
+/* Continuous star cloud covers the document handoff; the next scene is already
+   drawn when the cloud clears. Native snapshots also bridge the network gap. */
+@view-transition{navigation:auto}
+.page-nebula{position:fixed;inset:0;width:100vw;height:100svh;z-index:900;pointer-events:none;opacity:0;visibility:hidden;background:radial-gradient(ellipse at 55% 50%,#262b39,#080a10 76%);contain:strict}
+html[data-nav-phase=departing] .page-nebula,html[data-nav-phase=arriving] .page-nebula,html[data-nav-phase=revealing] .page-nebula{visibility:visible}
+html[data-nav-phase=departing] #main{animation:page-space-depart .65s cubic-bezier(.3,.04,.55,1) both;transform-origin:var(--nav-origin,55% 50%)}
+html[data-nav-phase=departing] .site-header,html[data-nav-phase=departing] .site-footer{animation:page-nav-depart .4s ease both}
+html[data-nav-phase=arriving] #main{opacity:0;transform:scale(.95);filter:blur(7px);transform-origin:var(--nav-origin,55% 50%)}
+html[data-nav-phase=arriving] .site-header,html[data-nav-phase=arriving] .site-footer{opacity:0}
+html[data-nav-phase=revealing] #main{animation:page-space-arrive .9s cubic-bezier(.18,.67,.27,1) both;transform-origin:var(--nav-origin,55% 50%)}
+html[data-nav-phase=revealing] .site-header,html[data-nav-phase=revealing] .site-footer{animation:page-nav-arrive .7s ease .15s both}
+::view-transition-old(root){animation:page-snapshot-depart .38s ease both;mix-blend-mode:normal}
+::view-transition-new(root){animation:page-snapshot-arrive .38s ease both;mix-blend-mode:normal}
+::view-transition-group(root){animation-duration:.38s}
+@keyframes page-space-depart{to{transform:scale(1.24);filter:blur(12px);opacity:.12}}
+@keyframes page-space-arrive{from{transform:scale(.95);filter:blur(7px);opacity:.15}to{transform:scale(1);filter:blur(0);opacity:1}}
+@keyframes page-nav-depart{to{opacity:0;filter:blur(3px)}}
+@keyframes page-nav-arrive{from{opacity:0}to{opacity:1}}
+@keyframes page-snapshot-depart{to{opacity:0;transform:scale(1.03);filter:blur(4px)}}
+@keyframes page-snapshot-arrive{from{opacity:.1}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){@view-transition{navigation:none}::view-transition-old(root),::view-transition-new(root){animation:none}.page-nebula{display:none!important}html[data-nav-phase] #main{animation:none;transform:none;filter:none;opacity:1}html[data-nav-phase] .site-header,html[data-nav-phase] .site-footer{animation:none;opacity:1}}
+@media print{.page-nebula{display:none!important}}

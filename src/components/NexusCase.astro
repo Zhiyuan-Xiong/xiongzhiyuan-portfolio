@@ -1,0 +1,35 @@
+---
+import RestoredCaseShell from './RestoredCaseShell.astro';
+import NexusFigure from './NexusFigure.astro';
+import {nexus,nexusScenes} from '../data/nexus';
+import assets from '../data/nexus-assets.json';
+import type {Lang} from '../data/site';
+import type {Project} from '../data/projects';
+import '../styles/nexus-case.css';
+const {lang,project}=Astro.props as {lang:Lang;project:Project};
+const t=(zh:string,en:string)=>lang==='zh'?zh:en;
+const chapters=[{id:'worldview',label:{zh:'机械文明与造物循环',en:'The civilisation'}},{id:'concept',label:{zh:'概念设计拆解',en:'Concept breakdown'}},...nexusScenes.map(s=>({id:s.id,label:s.title}))];
+---
+<RestoredCaseShell lang={lang} project={project} theme="nexus" englishTitle={nexus.english} chapters={chapters} hero={{...assets.hero,alt:project.coverAlt!}} video="/media/nexus/hero.mp4">
+  <div slot="hero-caption" class="nexus-hero-overlay"><img class="nexus-hero-mark" src={assets.logo.src} width={assets.logo.width} height={assets.logo.height} alt="NEXUS" loading="eager"/><div class="nexus-hero-caption"><p>{nexus.title[lang]}</p><span>{lang==='zh'?nexus.subtitle.zh:'Narrative-Driven Concept Game Environment Design'}</span></div></div>
+  <div slot="intro"><p>{t('以工业流水线为原型，构建一个不断自我复制的机械文明。机械兔与机械猪在六个相连的生产空间中，经历创造、改造、监管与循环。','An industrial assembly line becomes a self-replicating mechanical civilisation. Mechanical rabbits and pigs pass through six connected production spaces, experiencing creation, modification, surveillance, and recirculation.')}</p></div>
+  <section id="worldview" class="restored-chapter case-section nexus-worldview">
+    <div class="nexus-wordmark" aria-hidden="true"><span></span><img src={assets.logo.src} width={assets.logo.width} height={assets.logo.height} alt=""/><span></span></div>
+    <header class="restored-section-heading"><span class="restored-number">01 / THE CYCLE OF CREATION</span><h2>{t('机械文明计划','The mechanical civilisation')}</h2></header>
+    <blockquote class="nexus-question">{nexus.question[lang]}</blockquote>
+    {nexus.worldview.map(p=><p>{p[lang]}</p>)}<p class="nexus-closing">{nexus.closing[lang]}</p>
+    <NexusFigure image="clay-side" alt={t('机械文明生产空间的侧面白模全景','Side-view clay render of the mechanical civilisation')} lang={lang}/>
+  </section>
+  <section id="concept" class="restored-chapter case-section nexus-concept">
+    <header class="restored-section-heading"><span class="restored-number">02 / CONCEPT BREAKDOWN</span><h2>{t('概念设计拆解','Concept Breakdown')}</h2>{lang==='zh'&&<p class="nexus-section-english">Concept Breakdown</p>}</header>
+    <div class="nexus-concept-layout"><div><p>{nexus.concept[lang]}</p><div class="nexus-character-copy">{nexus.characters.map(character=><div><h3>{character.title[lang]}{lang==='zh'&&<span>{character.title.en}</span>}</h3><p>{character.text[lang]}</p></div>)}</div><NexusFigure image="characters" alt={t('机械猪与机械兔角色造型','Mechanical pig and rabbit character designs')} lang={lang} blend/></div><NexusFigure image="concept-line" alt={t('机械文明模块化空间的概念线稿','Concept drawing of the modular mechanical civilisation')} lang={lang}/></div>
+    <div class="nexus-model-study"><NexusFigure image="clay-isometric" alt={t('机械文明场景的等轴白模结构','Isometric clay render of the mechanical civilisation')} lang={lang}/><NexusFigure image="characters-render" alt={t('生产空间中的机械兔与机械猪','Mechanical rabbits and pigs in the production environment')} lang={lang}/></div>
+  </section>
+  <div class="nexus-scenes-heading"><div class="nexus-wordmark" aria-hidden="true"><span></span><img src={assets.logo.src} width={assets.logo.width} height={assets.logo.height} alt=""/><span></span></div><p class="restored-number">03 / SIX CONNECTED SYSTEMS</p><h2>{t('六个系统，一个循环','Six systems. One cycle.')}</h2></div>
+  <div class="nexus-scenes">{nexusScenes.map((scene,i)=><section id={scene.id} class="case-section nexus-scene"><NexusFigure image={scene.image as keyof typeof assets} alt={scene.title[lang]} lang={lang}/><h3><span class="nexus-scene-number">{String(i+1).padStart(2,'0')}.</span>{scene.title[lang]}</h3>{lang==='zh'&&<p class="nexus-scene-english">{scene.english}</p>}<p>{scene.text[lang]}</p></section>)}</div>
+</RestoredCaseShell>
+
+<script>
+import {initializeCaseMedia} from '../scripts/dating-festival';
+initializeCaseMedia();
+</script>

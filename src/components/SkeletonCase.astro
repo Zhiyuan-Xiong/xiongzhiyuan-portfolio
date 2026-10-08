@@ -1,0 +1,30 @@
+---
+import RestoredCaseShell from './RestoredCaseShell.astro';
+import SkeletonFigure from './SkeletonFigure.astro';
+import {skeleton,skeletonGroups,skeletonPieces} from '../data/skeleton';
+import assets from '../data/skeleton-assets.json';
+import type {Lang} from '../data/site';
+import type {Project} from '../data/projects';
+import '../styles/skeleton-case.css';
+const {lang,project}=Astro.props as {lang:Lang;project:Project};
+const t=(zh:string,en:string)=>lang==='zh'?zh:en;
+const chapters=[{id:'brand',label:{zh:'品牌视觉设计',en:'Brand visual identity'}},{id:'collection',label:{zh:'骨骸系列首饰设计',en:'Skeleton Collection'}},...skeletonGroups.map(group=>({id:group.id,label:group.title})),{id:'wear',label:{zh:'穿戴呈现',en:'On the body'}}];
+---
+<RestoredCaseShell lang={lang} project={project} theme="skeleton" englishTitle={skeleton.english} chapters={chapters} hero={{...assets['body-render'],alt:project.coverAlt!}}>
+ <div slot="hero-caption" class="skeleton-hero-atmosphere" aria-hidden="true"><img class="skeleton-spine-left" src={assets.spines.src} width={assets.spines.width} height={assets.spines.height} alt=""/><img class="skeleton-spine-right" src={assets.spines.src} width={assets.spines.width} height={assets.spines.height} alt=""/></div>
+ <div slot="hero-caption" class="skeleton-hero-caption"><img src={assets.logo.src} width={assets.logo.width} height={assets.logo.height} alt="SPRING"/></div>
+ <div slot="intro">{skeleton.introduction.slice(0,1).map(copy=><p>{copy[lang]}</p>)}</div>
+ <section id="brand" class="restored-chapter case-section skeleton-brand">
+  <header class="restored-section-heading"><span class="restored-number">01 / BRAND VISUAL IDENTITY</span><h2>{t('品牌视觉设计','Brand Visual Identity')}</h2></header>
+  <p>{skeleton.brand[lang]}</p>
+  <div class="skeleton-brand-stage"><img src={assets.spines.src} width={assets.spines.width} height={assets.spines.height} alt="" aria-hidden="true" loading="lazy"/><SkeletonFigure image="logo" alt={t('SPRING 金属字标与骨骼纹样','SPRING metallic wordmark and skeletal ornament')} lang={lang} class="skeleton-logo-figure"/></div>
+  <div class="skeleton-brand-symbols" id="piece-19"><SkeletonFigure image="piece-19" alt={t('镜翼：系列中的镂空镜像骨翼','Mirror Wings: open mirrored skeletal wings from the collection')} lang={lang} caption={t('镜翼 / Mirror Wings','Mirror Wings')}/><div><p class="restored-number">SPRING / SKELETON COLLECTION</p><h3>{t('从字标到骨骼纹样','From Wordmark to Skeletal Motif')}</h3><p>{t('金属字形、对称骨刺与留白，在字标和首饰之间形成共同的视觉语言。','Metallic lettering, mirrored skeletal spurs, and open spaces connect the wordmark with the jewellery.')}</p></div></div>
+ </section>
+ <section id="collection" class="restored-chapter case-section skeleton-collection">
+  <header class="restored-section-heading"><span class="restored-number">02 / SKELETON COLLECTION</span><h2>{t('骨骸系列首饰设计','Skeleton Collection')}</h2></header>
+  <div class="skeleton-collection-intro"><div><p>{skeleton.introduction[1][lang]}</p><p>{skeleton.introduction[2][lang]}</p><p>{skeleton.collection[lang]}</p></div><SkeletonFigure image="piece-10" alt={t('圣笼：肋骨与脊柱构成的首饰','Reliquary: jewellery formed from ribs and vertebrae')} lang={lang}/></div>
+ </section>
+ {skeletonGroups.map(group=><section id={group.id} class="restored-chapter case-section skeleton-group"><header class="restored-section-heading"><h2>{group.title[lang]}</h2><p>{group.intro[lang]}</p></header><div class="skeleton-pieces">{skeletonPieces.filter(piece=>piece.group===group.id).map(piece=><article class="skeleton-piece" id={'piece-'+piece.number}><SkeletonFigure image={('piece-'+String(piece.number).padStart(2,'0')) as keyof typeof assets} alt={piece.name[lang]} lang={lang} caption={piece.description[lang]}/><div class="skeleton-piece-title"><span>{String(piece.number).padStart(2,'0')}</span><div><h3>{piece.name[lang]}</h3>{lang==='zh'&&<p>{piece.name.en}</p>}</div></div></article>)}</div></section>)}
+ <span id="body-forms" class="skeleton-legacy-anchor" aria-hidden="true"></span>
+ <section id="wear" class="restored-chapter case-section skeleton-wear"><header class="restored-section-heading"><span class="restored-number">03 / ON THE BODY</span><h2>{t('穿戴呈现','On the Body')}</h2></header><p>{skeleton.display[lang]}</p><div class="skeleton-wear-stage"><img class="skeleton-wear-spines" src={assets.spines.src} width={assets.spines.width} height={assets.spines.height} alt="" aria-hidden="true" loading="lazy"/><SkeletonFigure image="body-render" alt={t('身体上的骨骸首饰：颈部的 choker、胸前的项链与额部展示的戒指','Skeleton jewellery on the body: a neck choker, chest pieces, and a ring displayed on the forehead')} lang={lang}/></div></section>
+</RestoredCaseShell>

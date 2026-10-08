@@ -1,0 +1,8 @@
+---
+import Base from '../../layouts/Base.astro';
+import PortfolioSpace from '../../components/PortfolioSpace.astro';
+import { ui, intro, type Lang } from '../../data/site';
+export function getStaticPaths() { return ['zh','en'].map(lang => ({ params: { lang } })); }
+const lang = Astro.params.lang as Lang;
+---
+<Base lang={lang} title={ui.home[lang]} description={intro[lang]} active="home" spatial><PortfolioSpace lang={lang} /></Base>

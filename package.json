@@ -1,0 +1,28 @@
+{
+  "name": "xiongzhiyuan-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/project.mjs dev --host 127.0.0.1 --port 4321",
+    "build": "node scripts/project.mjs build",
+    "preview": "node scripts/project.mjs preview --host 127.0.0.1 --port 4321",
+    "check": "node scripts/project.mjs check",
+    "test": "node scripts/project.mjs test",
+    "wrangler": "node scripts/project.mjs wrangler",
+    "prepare:font": "node scripts/project.mjs font",
+    "prepare:images": "node scripts/project.mjs images",
+    "prepare:resumes": "node scripts/project.mjs resumes",
+    "deploy": "node scripts/deploy.mjs",
+    "verify:public": "node scripts/verify-public-site.mjs"
+  },
+  "dependencies": {
+    "astro": "^6.0.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "sharp": "^0.34.0",
+    "typescript": "^5.9.0",
+    "wrangler": "^4.145.0"
+  }
+}

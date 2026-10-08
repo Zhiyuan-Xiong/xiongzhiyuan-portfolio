@@ -1,0 +1,75 @@
+---
+import FestivalMapAsset from './FestivalMapAsset.astro';
+interface Props { animated?: boolean; links?: boolean; lang?: 'zh'|'en' }
+const { animated=false, links=false, lang='zh' }=Astro.props;
+const base='/media/dating/';
+// Original 1920 × 1080 frame coordinates, in the reference's reading direction.
+const slot=(x:number,y:number,w:number,h:number)=>`left:${x/19.2}%;top:${y/10.8}%;width:${w/19.2}%;height:${h/10.8}%;`;
+const places=[
+  {id:'invitation-hall',key:'hall',label:'Invitation Hall',image:[90,165,425,235],title:[90,101,425,50],size:[1024,576]},
+  {id:'love-factory',key:'factory',label:'Love Factory',image:[1405,165,425,235],title:[1405,101,425,50],size:[1024,553]},
+  {id:'theater-of-gaze',key:'gaze',label:'Theater of Gaze',image:[100,589.81,389.95,375.33],title:[90,950,425,50],size:[1024,982]},
+  {id:'dating-paradise',key:'paradise',label:'Dating Paradise',image:[1424.93,600.01,399.94,364.98],title:[1405,950,425,50],size:[1024,935]},
+];
+const connectors=[
+  {key:'imgVector3',x:340,w:65},{key:'imgVector3',x:185,w:65},{key:'imgVector4',x:495,w:310},
+  {key:'imgVector5',x:1515,w:65},{key:'imgVector5',x:1670,w:65},{key:'imgVector6',x:1115,w:310},
+];
+const symbols=[
+  {x:95,label:'双喜临门',circle:'imgEllipse444',glyphs:[{key:'imgGroup',rect:[104.25,505.00,71,69.8207]}]},
+  {x:250,label:'心门密锁',circle:'imgEllipse445',glyphs:[{key:'imgGroup1',rect:[261.07,509.25,67.5004,66.6966]}]},
+  {x:405,label:'缘钥相契',circle:'imgEllipse446',glyphs:[{key:'imgVector7',rect:[419.38,510.50,61.4979,58.4989]}]},
+  {x:1425,label:'凝视观察',circle:'imgEllipse442',glyphs:[{key:'imgGroup2',rect:[1436.03,515,66.947,50.0001]}]},
+  {x:1580,label:'倾耳聆听',circle:'imgEllipse442',glyphs:[{key:'imgGroup3',rect:[1624.54,515,33.4736,50.0005]},{key:'imgGroup4',rect:[1591.07,515,33.4736,50.0005]}]},
+  {x:1735,label:'言语表达',circle:'imgEllipse441',glyphs:[{key:'imgGroup5',rect:[1742.00,519.02,76.0003,41.9989]}]},
+];
+---
+<div class:list={['festival-map',{'map-animated':animated}]} aria-label={lang==='zh'?'相亲营销嘉年华的六个场景':'The six spaces of Blind Dating Market Festival'}>
+  <div class="map-background" aria-hidden="true">
+    <FestivalMapAsset file="1-2462-imgVector.svg" rect={[0,0,1920,1080]} native={[1920,1080]} />
+    <FestivalMapAsset file="1-2462-imgGroup50.svg" rect={[-546.5,-3.5,1087,1087]} native={[1087,1087]} />
+    <FestivalMapAsset file="1-2462-imgGroup50.svg" rect={[1379.5,-3.5,1087,1087]} native={[1087,1087]} />
+    <FestivalMapAsset file="map-gradient.webp" rect={[0,540,1920,540]} native={[1024,288]} />
+    {[0,1].map(()=> <>
+      <FestivalMapAsset file="map-ellipse-a.webp" rect={[541.63,12.2,836.74,1055.6]} native={[1268,1600]} />
+      <FestivalMapAsset file="map-ellipse-b.webp" rect={[541.63,12.2,836.74,1055.6]} native={[1268,1600]} />
+      <FestivalMapAsset file="circle.webp" rect={[385,-35,1150,1150]} native={[1200,1200]} />
+      <FestivalMapAsset file="ring.webp" rect={[540,120,840,840]} native={[1200,1197]} motion="map-ring" />
+      <FestivalMapAsset file="map-ellipse-a.webp" rect={[541.63,12.2,836.74,1055.6]} native={[1268,1600]} opacity={.75} />
+      <FestivalMapAsset file="map-ellipse-b.webp" rect={[541.63,12.2,836.74,1055.6]} native={[1268,1600]} opacity={.75} />
+    </>)}
+  </div>
+
+  <div class="map-additive-art" aria-hidden="true">
+    {[.85,.3].map(opacity=>[610,960].map(x=><FestivalMapAsset file="additive-model.webp" rect={[x,795,350,165]} native={[900,426]} opacity={opacity} blend="color-dodge" motion="map-emerge" />))}
+  </div>
+  {places.map((place,i)=><a class:list={['map-place','map-'+place.key]} href={links?'#'+place.id:undefined} tabindex={links?undefined:-1} style={'--delay:'+(.32+i*.15)+'s'}>
+    <FestivalMapAsset file={place.key+'.webp'} rect={place.image} native={place.size} motion="map-emerge" />
+    <span class="map-label map-emerge" style={slot(...place.title as [number,number,number,number])}>{place.label}</span>
+  </a>)}
+  <a class="map-central" href={links?'#lucky-carnival':undefined} tabindex={links?undefined:-1}>
+    <FestivalMapAsset file="center.webp" rect={[515,240,890,600]} native={[1024,691]} motion="map-center" />
+    <span class="map-label map-center" style={slot(735,135,450,50)}>Lucky Carnival</span>
+  </a>
+  <div class="map-mask" aria-hidden="true">
+    <FestivalMapAsset file="1-2462-imgVector1.svg" rect={[759.5,339.5,401,401]} native={[401,401]} motion="map-center" />
+    <FestivalMapAsset file="1-2462-imgVector2.svg" rect={[784.5,364.5,351,351]} native={[351,351]} motion="map-center" />
+    <FestivalMapAsset file="glow.webp" rect={[772.5,352.5,375,375]} native={[640,640]} motion="map-center" />
+    <FestivalMapAsset file="mask.webp" rect={[800.5,380.5,319,319]} native={[640,640]} motion="map-center" />
+  </div>
+  <div class="map-symbols" aria-hidden="true">
+    {connectors.map(line=><FestivalMapAsset file={'1-2462-'+line.key+'.svg'} rect={[line.x,539.25,line.w,1.5]} native={[line.w,1.5]} blend="screen" motion="map-emerge" />)}
+    {symbols.map(symbol=><>
+      <span class="map-symbol-label map-emerge" style={slot(symbol.x,465,90,25)}>{symbol.label}</span>
+      <FestivalMapAsset file={'1-2462-'+symbol.circle+'.svg'} rect={[symbol.x-8,487,106,106]} native={[106,106]} blend="lighten" motion="map-emerge" />
+      {symbol.glyphs.map(glyph=><FestivalMapAsset file={'1-2462-'+glyph.key+'.svg'} rect={glyph.rect} native={[glyph.rect[2],glyph.rect[3]]} motion="map-emerge" />)}
+    </>)}
+  </div>
+  <a class="map-additive" href={links?'#additive-roulette':undefined} tabindex={links?undefined:-1}>
+    <span class="map-label map-emerge" style={slot(735,905,450,50)}>Additive Roulette</span>
+  </a>
+  <div class="map-dividers" aria-hidden="true">
+    {[[60,55,780,10],[1080,55,780,10],[60,1015,900,10],[960,1015,900,10]].map((rect,i)=><div class:list={['map-divider',{'map-divider-reverse':i%2===0}]} style={slot(...rect as [number,number,number,number])}><img src={base+'map-divider.webp'} width="2048" height="1152" alt="" decoding="async" /></div>)}
+  </div>
+  <p class="map-title" style={slot(835,41,250,37)}>相亲营销嘉年华</p>
+</div>

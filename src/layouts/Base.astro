@@ -1,0 +1,80 @@
+---
+import '../styles/global.css';
+import '../styles/experience.css';
+import '../styles/work-gallery.css';
+import '../styles/portfolio-space.css';
+import '../styles/design-system.css';
+import '../styles/page-transitions.css';
+import ProjectPortal from '../components/ProjectPortal.astro';
+import entryAtlas from '../data/entry-atlas.json';
+import { name, ui, email, type Lang } from '../data/site';
+interface Props { lang: Lang; title: string; description?: string; active?: 'home'|'explore'|'works'|'about'; alternate?: string; immersive?: boolean; gallery?: boolean; spatial?: boolean; festival?: boolean; restored?: boolean; lightCase?: boolean; cosmicAbout?: boolean }
+const { lang, title, active='home', alternate, immersive=false, gallery=false, spatial=false, festival=false, restored=false, lightCase=false, cosmicAbout=false }=Astro.props;
+const description=Astro.props.description ?? (lang==='zh' ? '熊志愿的个人作品集：用户体验、产品思维与视觉设计。' : 'Xiong Zhiyuan’s portfolio of user experience, product thinking, and visual design.');
+const canonicalPath = Astro.url.pathname === '/' ? '/zh/' : Astro.url.pathname;
+const canonicalURL = new URL(canonicalPath, Astro.site);
+const shareImageURL = new URL('/social/euan-planet-20261004.png', Astro.site);
+const pageTitle = `${title} · ${name[lang]}`;
+const other=lang==='zh' ? 'en' : 'zh';
+const alternatePath=alternate ?? canonicalPath.replace(`/${lang}/`,`/${other}/`);
+---
+<!doctype html>
+<html lang={lang==='zh' ? 'zh-CN' : 'en'}>
+  <head>
+    <script is:inline>
+      try {
+        const journey = JSON.parse(sessionStorage.getItem('euan:page-journey-v1') || 'null');
+        if (journey && Date.now() - journey.started < 15000 && new URL(journey.to, location.origin).pathname === location.pathname) {
+          document.documentElement.dataset.navPhase = 'arriving';
+          document.documentElement.style.setProperty('--nav-origin', journey.x * 100 + '% ' + journey.y * 100 + '%');
+        }
+      } catch {}
+    </script>
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} /><meta name="theme-color" content={lightCase?'#ffffff':'#080808'} />
+    <title>{pageTitle}</title><link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="zh-CN" href={new URL(lang==='zh' ? canonicalPath : alternatePath, Astro.site)} />
+    <link rel="alternate" hreflang="en" href={new URL(lang==='en' ? canonicalPath : alternatePath, Astro.site)} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Xiong Zhiyuan · Portfolio" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content={lang==='zh' ? 'zh_CN' : 'en_GB'} />
+    <meta property="og:locale:alternate" content={lang==='zh' ? 'en_GB' : 'zh_CN'} />
+    <meta property="og:image" content={shareImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="EUAN PLANET · 熊志愿的作品星球" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={shareImageURL} />
+    {spatial && active==='home' && <link rel="preload" href={entryAtlas.src} as="image" fetchpriority="high" />}
+    <link rel="preload" href="/fonts/swiss-light.woff2" as="font" type="font/woff2" crossorigin /><link rel="preload" href="/fonts/portfolio-sans.woff2" as="font" type="font/woff2" crossorigin />
+  </head>
+  <body data-lang={lang} class:list={{ "is-immersive": immersive, "has-work-gallery": gallery, "has-portfolio-space": spatial, "has-festival":festival, "has-restored-case":restored, "has-light-case":lightCase, "has-about-universe":cosmicAbout }}>
+    <canvas class="page-nebula" data-page-nebula aria-hidden="true"></canvas>
+    <a class="skip-link" href="#main">{ui.skip[lang]}</a>
+    <header class="site-header"><div class="header-inner">
+      <a class="wordmark" href={`/${lang}/`} aria-label={`${name[lang]} · ${ui.home[lang]}`}><span>PORTFOLIO</span></a>
+      <button class="menu-button" type="button" aria-controls="primary-nav" aria-expanded="false">{ui.menu[lang]}<span class="menu-lines" aria-hidden="true"></span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label={lang==='zh' ? '主导航' : 'Main navigation'}>
+        
+        <a href={`/${lang}/explore/`} aria-current={active==='explore' ? 'page' : undefined}>{lang==='zh' ? '探索' : 'EXPLORE'}</a>
+        <a href={`/${lang}/works/`} aria-current={active==='works' ? 'page' : undefined}>{lang==='zh' ? '作品索引' : 'INDEX'}</a>
+        <a href={`/${lang}/about/`} aria-current={active==='about' ? 'page' : undefined}>{lang==='zh' ? '关于' : 'ABOUT'}</a>
+        <a href={`/${lang}/about/#contact`}>{lang==='zh' ? '联系' : 'CONTACT'}</a>
+        <a class="language-switch" href={alternatePath} data-language-link lang={other} aria-label={lang==='zh' ? 'Switch to English' : '切换到中文'}>{lang==='zh' ? 'EN' : '中文'}</a>
+      </nav>
+    </div></header>
+    <main id="main" tabindex="-1"><slot /></main>
+    <footer class="site-footer"><div><a href={`/${lang}/`}>{name[lang]}</a><span>{lang==='zh' ? '用户体验 · 产品思维 · 视觉设计' : 'User experience · Product thinking · Visual design'}</span></div><div><a href={`mailto:${email}`}>{lang==='zh' ? '联系' : 'CONTACT'}</a><a href="https://xiongzhiyuan.cargo.site/" target="_blank" rel="noopener noreferrer">{ui.old[lang]}<span class="sr-only">{lang==='zh' ? '（新窗口）' : ' (new tab)'}</span></a><span>© {new Date().getFullYear()}</span></div></footer>
+    <dialog class="lightbox" aria-label={lang==='zh' ? '图片查看器' : 'Image viewer'}><button type="button" class="lightbox-close">{ui.close[lang]}</button><figure><img alt="" /><figcaption></figcaption></figure></dialog>
+    {(active==='home'||active==='explore'||active==='works')&&<ProjectPortal lang={lang}/>}
+    <script src="../scripts/site.ts"></script>
+  </body>
+</html>
+
+

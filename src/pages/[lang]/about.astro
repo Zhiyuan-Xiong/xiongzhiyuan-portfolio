@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+import AboutPlanet from '../../components/AboutPlanet.astro';
+import '../../styles/about-universe.css';
+import { ui, email, type Lang } from '../../data/site';
+import { aboutProfile as profile } from '../../data/about-profile';
+export function getStaticPaths() { return ['zh', 'en'].map(lang => ({ params: { lang } })); }
+const lang = Astro.params.lang as Lang;
+const zh = lang === 'zh';
+---
+<Base lang={lang} title={ui.about[lang]} active="about" cosmicAbout>
+  <canvas class="about-galaxy" data-about-galaxy aria-hidden="true"></canvas>
+  <div class="container about-universe">
+    <section class="about-hero">
+      <div class="about-lead">
+        <header class="page-heading"><p class="eyebrow">ABOUT ME · {profile.name[lang]}</p><h1>{zh ? '连接体验、视觉与空间。' : 'Connecting experience, visuals, and space.'}</h1></header>
+        <div class="about-intro">
+          {profile.intro.map(text => <p>{text[lang]}</p>)}
+          <p class="about-personal">{profile.personal[lang]}</p>
+          <a class="button primary" href="/resume/zhiyuan-experience-2026.pdf" download>{zh ? '下载中文简历' : 'Download CV (Chinese)'}</a>
+        </div>
+      </div>
+      <div class="about-side"><AboutPlanet lang={lang} /><aside class="about-note"><h2>{zh ? '研究与实践' : 'Research & practice'}</h2><ul>{profile.focus.map(item => <li><strong>{item.title[lang]}</strong><br />{item.text[lang]}</li>)}</ul></aside></div>
+    </section>
+    <section class="about-section" aria-labelledby="education-title"><h2 id="education-title">{zh ? '教育背景' : 'Education'}</h2><div class="timeline">{profile.education.map(item => <div><h3>{item.title[lang]}</h3><p class="timeline-meta">{item.meta[lang]}</p>{item.paragraphs.map(text => <p>{text[lang]}</p>)}</div>)}</div></section>
+    <section class="about-section" aria-labelledby="experience-title"><h2 id="experience-title">{zh ? '项目经历' : 'Project experience'}</h2><div class="timeline">{profile.projects.map(item => <div><h3>{item.title[lang]}</h3><p class="timeline-meta">{item.meta[lang]}</p>{item.paragraphs.map(text => <p>{text[lang]}</p>)}</div>)}</div></section>
+    <section class="about-section" aria-labelledby="internship-title"><h2 id="internship-title">{zh ? '实习经历' : 'Internship'}</h2><div class="timeline"><div><h3>{profile.internship.title[lang]}</h3><p class="timeline-meta">{profile.internship.meta[lang]}</p>{profile.internship.paragraphs.map(text => <p>{text[lang]}</p>)}</div></div></section>
+    <section class="about-section" aria-labelledby="awards-title"><h2 id="awards-title">{zh ? '荣誉奖励' : 'Awards & honours'}</h2><ul class="about-awards">{profile.awards.map(text => <li>{text[lang]}</li>)}</ul></section>
+    <section class="about-section" aria-labelledby="skills-title"><h2 id="skills-title">{zh ? '专业技能' : 'Technical skills'}</h2><div class="skill-grid resume-skills">{profile.skills.map(item => <div><h3>{item.title[lang]}</h3><p class="tools">{item.tools}</p></div>)}</div></section>
+    <section class="contact-section about-contact" id="contact" aria-labelledby="contact-title">
+      <div><p class="eyebrow">{zh ? '保持联系' : 'LET’S CONNECT'}</p><h2 id="contact-title">{zh ? '聊聊设计，也聊聊新的机会。' : 'Let’s talk about design and new opportunities.'}</h2></div>
+      <div class="about-contact-links"><a class="email-link" href={`mailto:${email}`}>{email}</a><a href="tel:+8615576816327">+86 15576816327</a><a href="https://xiongzhiyuan.cargo.site/" target="_blank" rel="noopener noreferrer">{zh ? 'Cargo 作品集 ↗' : 'Cargo portfolio ↗'}</a></div>
+    </section>
+  </div>
+</Base>
+<script src="../../scripts/about-universe.ts"></script>

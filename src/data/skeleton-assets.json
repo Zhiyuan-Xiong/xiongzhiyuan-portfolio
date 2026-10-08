@@ -1,0 +1,122 @@
+{
+  "hero": {
+    "src": "/media/skeleton/hero-white.webp",
+    "width": 2560,
+    "height": 1440
+  },
+  "body-render": {
+    "src": "/media/skeleton/body-render-white.webp",
+    "width": 2560,
+    "height": 1440
+  },
+  "spines": {
+    "src": "/media/skeleton/spines.webp",
+    "width": 1600,
+    "height": 900
+  },
+  "portrait": {
+    "src": "/media/skeleton/portrait.webp",
+    "width": 1067,
+    "height": 1600
+  },
+  "logo": {
+    "src": "/media/skeleton/logo.webp",
+    "width": 1600,
+    "height": 656
+  },
+  "piece-01": {
+    "src": "/media/skeleton/piece-01.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-02": {
+    "src": "/media/skeleton/piece-02.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-03": {
+    "src": "/media/skeleton/piece-03.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-04": {
+    "src": "/media/skeleton/piece-04.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-05": {
+    "src": "/media/skeleton/piece-05.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-06": {
+    "src": "/media/skeleton/piece-06.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-07": {
+    "src": "/media/skeleton/piece-07.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-08": {
+    "src": "/media/skeleton/piece-08.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-09": {
+    "src": "/media/skeleton/piece-09.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-10": {
+    "src": "/media/skeleton/piece-10.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-11": {
+    "src": "/media/skeleton/piece-11.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-12": {
+    "src": "/media/skeleton/piece-12.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-13": {
+    "src": "/media/skeleton/piece-13.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-14": {
+    "src": "/media/skeleton/piece-14.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-15": {
+    "src": "/media/skeleton/piece-15.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-16": {
+    "src": "/media/skeleton/piece-16.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-17": {
+    "src": "/media/skeleton/piece-17.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-18": {
+    "src": "/media/skeleton/piece-18.webp",
+    "width": 1080,
+    "height": 1080
+  },
+  "piece-19": {
+    "src": "/media/skeleton/piece-19.webp",
+    "width": 1080,
+    "height": 1080
+  }
+}

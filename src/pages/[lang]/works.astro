@@ -1,0 +1,54 @@
+---
+import Base from '../../layouts/Base.astro';
+import { projects } from '../../data/projects';
+import { workIntros } from '../../data/work-intros';
+import { galleryConstellations } from '../../data/gallery-constellations';
+import { categories, galleryCategoryLabels, ui, type Lang } from '../../data/site';
+export function getStaticPaths() { return ['zh','en'].map(lang => ({ params: { lang } })); }
+const lang = Astro.params.lang as Lang;
+const otherLang: Lang = lang === 'zh' ? 'en' : 'zh';
+const galleryCategories = [{id:'all',label:galleryCategoryLabels.all},...categories.map(category => ({id:category.id,label:galleryCategoryLabels[category.id]}))];
+---
+<Base lang={lang} title={ui.works[lang]} active="works" gallery>
+  <section class="work-gallery" data-work-gallery data-selection="none" data-layout="carousel" style={`--project-count:${projects.length}`} aria-label={lang === 'zh' ? '作品索引' : 'Work index'}>
+    <h1 class="sr-only">{lang === 'zh' ? '作品索引' : 'Work index'}</h1>
+    <canvas class="gallery-nebula" data-gallery-nebula aria-hidden="true"></canvas>
+    <div class="gallery-backgrounds" aria-hidden="true">{projects.map(project => <div class="gallery-background" data-gallery-background={project.slug} data-active="false">{project.cover && <img data-gallery-background-src={`/images/${project.background ?? project.cover}-1280.webp`} width="1280" height="720" alt="" decoding="async" />}</div>)}</div>
+    <canvas class="gallery-cloud" data-gallery-cloud aria-hidden="true"></canvas>
+    <div class="gallery-constellations" aria-hidden="true">{projects.map(project => {
+      const motif = galleryConstellations[project.slug];
+      return <svg class="gallery-constellation" data-gallery-constellation={project.slug} data-active="false" style={`--constellation-color:${motif.color}`} viewBox="0 0 600 600" fill="none">
+        <g class="constellation-illustration">{motif.paths.map((path, i) => <path d={path} pathLength="1" style={`--draw-delay:${.25 + i*.065}s`} />)}</g>
+        <g class="constellation-links">{motif.links.map(([from, to], i) => <path d={`M${motif.stars[from].join(' ')} L${motif.stars[to].join(' ')}`} pathLength="1" style={`--draw-delay:${i*.075}s`} />)}</g>
+        <g class="constellation-stars">{motif.stars.map(([x, y], i) => <g class="constellation-star" style={`--star-delay:${.15 + i*.075}s;--twinkle-delay:${i*.37}s`}>
+          <circle cx={x} cy={y} r="12" class="constellation-star-halo" />
+          <path d={`M${x-7} ${y} L${x+7} ${y} M${x} ${y-7} L${x} ${y+7}`} class="constellation-star-rays" />
+          <circle cx={x} cy={y} r={i%4 === 0 ? 3 : 2} class="constellation-star-core" />
+        </g>)}</g>
+      </svg>;
+    })}</div>
+    <nav class="gallery-category" aria-label={lang === 'zh' ? '作品分类' : 'Work category'}>
+      {galleryCategories.map(category => <button type="button" data-gallery-category={category.id} aria-label={category.label[lang]} aria-pressed={category.id === 'all' ? 'true' : 'false'} disabled>
+        <span class="gallery-category-primary" lang={lang}>{category.label[lang]}</span>
+        <span class="gallery-category-secondary" lang={otherLang}>{category.label[otherLang]}</span>
+      </button>)}
+    </nav>
+    <div class="work-gallery-layout">
+      <div class="gallery-copy">
+        <div class="gallery-idle-copy" data-gallery-idle><h2>{lang === 'zh' ? '作品索引' : 'Work index'}</h2><p>{lang === 'zh' ? '选择一个项目' : 'Choose a project'}</p></div>
+        {projects.map(project => <article id={`gallery-panel-${project.slug}`} role="tabpanel" aria-labelledby={`gallery-tab-${project.slug}`} tabindex="0" data-gallery-panel={project.slug} hidden>
+          <h2>{project.title[lang]}</h2><p>{(workIntros[project.slug] ?? project.description)[lang]}</p>
+          {project.status === 'published' ? <a class="gallery-case-link" data-case-link href={`/${lang}/work/${project.slug}/`}>{lang === 'zh' ? '查看作品' : 'View project'}<span aria-hidden="true">↗</span></a> : <span class="gallery-pending">{project.status === 'progress' ? ui.progress[lang] : ui.pending[lang]}</span>}
+        </article>)}
+      </div>
+      <div class="gallery-filmstrip" role="tablist" aria-orientation="horizontal" aria-label={lang === 'zh' ? '选择作品' : 'Choose a project'} data-gallery-tabs>{projects.map((project, i) => <button type="button" role="tab" id={`gallery-tab-${project.slug}`} aria-label={project.title[lang]} title={project.title[lang]} aria-controls={`gallery-panel-${project.slug}`} aria-selected="false" tabindex={i === 0 ? 0 : -1} data-gallery-project={project.slug} data-gallery-color={galleryConstellations[project.slug].color} data-gallery-categories={project.categories.join(' ')}>
+        <span class="gallery-thumb">{project.cover ? <img src={`/images/${project.cover}-640.webp`} width="640" height="360" alt="" decoding="async" /> : <span class="gallery-thumb-placeholder"><span>{project.title[lang]}</span></span>}</span><span class="gallery-card-caption" aria-hidden="true"><small>{String(i + 1).padStart(2,'0')}</small><span>{project.title[lang]}</span></span>
+      </button>)}</div>
+    </div>
+    <p class="gallery-browse-hint" data-gallery-browse-hint>{lang === 'zh' ? '拖动浏览 · 点击选择' : 'Drag to browse · Click to select'}</p>
+    <div class="gallery-bottom"><div class="gallery-progress" aria-hidden="true"><div><span data-gallery-position>—</span><span data-gallery-total>{String(projects.length).padStart(2,'0')}</span></div><span class="gallery-progress-track"><span data-gallery-progress style="--progress:0%"></span></span></div><div class="gallery-arrows"><button class="gallery-motion-toggle" type="button" data-gallery-motion aria-pressed="false" aria-label={lang === 'zh' ? '暂停自动浏览作品' : 'Pause automatic browsing'}><span data-gallery-motion-icon aria-hidden="true">Ⅱ</span><span data-gallery-motion-label>{lang === 'zh' ? '暂停流动' : 'Pause flow'}</span></button><button type="button" data-gallery-step="-1" aria-label={lang === 'zh' ? '上一件作品' : 'Previous project'}>←</button><button type="button" data-gallery-step="1" aria-label={lang === 'zh' ? '下一件作品' : 'Next project'}>→</button></div></div>
+    <p class="sr-only" role="status" aria-live="polite" data-gallery-announcement></p>
+    <noscript><nav class="gallery-fallback" aria-label={lang === 'zh' ? '全部案例' : 'All case studies'}>{projects.filter(project => project.status === 'published').map(project => <a href={`/${lang}/work/${project.slug}/`}>{project.title[lang]} ↗</a>)}</nav></noscript>
+  </section>
+</Base>
+<script src="../../scripts/work-gallery.ts"></script>

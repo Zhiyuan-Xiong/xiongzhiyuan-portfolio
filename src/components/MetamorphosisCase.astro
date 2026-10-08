@@ -1,0 +1,49 @@
+---
+import RestoredCaseShell from './RestoredCaseShell.astro';
+import MetamorphosisFigure from './MetamorphosisFigure.astro';
+import MetamorphosisInteraction from './MetamorphosisInteraction.astro';
+import {metamorphosis} from '../data/metamorphosis';
+import assets from '../data/metamorphosis-assets.json';
+import type {Lang} from '../data/site';
+import type {Project} from '../data/projects';
+import '../styles/metamorphosis-case.css';
+const {lang,project}=Astro.props as {lang:Lang;project:Project},t=(zh:string,en:string)=>lang==='zh'?zh:en;
+const pipeline=[['SOP → POP',t('几何转为粒子','Geometry into particles'),t('导入蝴蝶模型，采样、发射并建立粒子反馈循环。','Import and sample the butterfly model, emit particles, and build a feedback loop.')],['CHOP',t('声音成为控制信号','Sound becomes control'),t('实时输入经 RMS 分析、增益与滤波后驱动形态。','RMS analysis, gain, and filtering turn live sound into a control signal.')],['TOP / COMP',t('建立视听层次','Compose audiovisual depth'),t('位移、反馈、辉光与合成叠加模型和液态背景。','Displacement, feedback, bloom, and compositing combine the model and liquid backdrop.')]];
+const mappings=[['Analyze',t('提取音量能量','Extract audio energy'),'RMS'],['Math',t('放大控制范围','Amplify the control range'),'gain = 5'],['Filter',t('让变化连续平滑','Smooth the response'),'width = 0.22'],['Noise POP',t('扰动粒子位置','Disturb particle positions'),"amp = audio"],['Transform',t('让模型随声音呼吸','Let the model breathe with sound'),'scale = 1 + abs(audio)']];
+---
+<RestoredCaseShell lang={lang} project={project} theme="metamorphosis" englishTitle="Metamorphosis" chapters={metamorphosis.chapters} hero={{...assets['hero-poster'],alt:{zh:'发光蝴蝶模型在液态背景中随声音扩散为粒子。',en:'A luminous butterfly transforms into particles against a liquid background.'}}} video="/media/metamorphosis/hero.mp4">
+ <div slot="hero-caption" class="met-hero-caption"><span>TOUCHDESIGNER / REAL-TIME AUDIO VISUALISATION</span><p>{t('蜕变','Metamorphosis')}</p></div>
+ <p slot="intro">{metamorphosis.introduction[lang]}</p>
+ {metamorphosis.chapters.map((chapter,i)=><section class="restored-chapter" id={chapter.id} aria-labelledby={'heading-'+chapter.id}><header class="restored-section-heading"><p class="restored-number">{String(i+1).padStart(2,'0')}</p><h2 id={'heading-'+chapter.id}>{chapter.label[lang]}</h2></header>
+  {chapter.id==='concept'&&<>
+   <blockquote>{t('让声音成为形态生长、扰动与回流的力量。','Let sound shape growth, disturbance, and return.')}</blockquote>
+   <p>{t('项目以蝴蝶形骨骸模型为起点，通过 SOP-to-POP 工作流将实体几何转为粒子场。粒子不只沿着模型表面存在，还会受到噪声、反馈与声音强度的共同影响，在辨识度清晰的形态与扩散的碎片之间变化。','A SOP-to-POP workflow turns the butterfly-shaped skeletal geometry into a particle field. Noise, feedback, and audio intensity move the particles between a recognisable figure and dispersed fragments.')}</p>
+   <ul class="met-pipeline">{pipeline.map(([tag,title,text])=><li><span>{tag}</span><h3>{title}</h3><p>{text}</p></li>)}</ul>
+   <MetamorphosisFigure lang={lang} image="original-visual" alt={t('原项目中液态背景、蝴蝶模型与粒子扩散的完整视觉','Complete original visual combining the liquid background, butterfly, and particle dispersion')} caption={t('原始 TouchDesigner 输出视觉','Original TouchDesigner output')}/>
+  </>}
+  {chapter.id==='operator-network'&&<>
+   <p>{t('节点网络分为模型导入、粒子生成、声音控制、基础模型渲染、粒子叠加、背景几何和图像扰动七个部分。声音分支与视觉分支共享控制信号，让扰动、缩放与辉光在同一节奏下变化。','The operator network separates model import, particle generation, audio control, base-model rendering, particle overlays, background geometry, and image distortion. Shared control signals connect the audio and visual branches.')}</p>
+   <MetamorphosisFigure lang={lang} image="operator-network" alt={t('完整 TouchDesigner 节点网络及七组功能区，包含声音分析链','Complete TouchDesigner operator network with seven functional groups and the audio-analysis chain')} caption={t('完整保留原排版中的网络分析图；点击可放大查看节点关系。','The complete original network analysis; enlarge it to inspect the connections.')}/>
+   <div class="met-audio-chain"><span>Audio Device In</span><b>→</b><span>Analyze / RMS</span><b>→</b><span>Math</span><b>→</b><span>Filter</span><b>→</b><span>Noise / Scale</span></div>
+   <p>{t('源工程通过 Audio Device In 读取实时声音，Analyze 提取 RMS 能量，Math 设置 5 倍增益，Filter 以 0.22 的宽度平滑信号。处理后的音量控制 Noise POP 的振幅，并通过 1 + abs(audio) 改变模型尺度。背景的 Noise CHOP 则单独驱动 Displace TOP，形成持续的液态波动。','Audio Device In supplies live sound. Analyze extracts RMS energy, Math applies a gain of 5, and Filter smooths it with a width of 0.22. The processed level controls Noise POP amplitude and the model scale through 1 + abs(audio). A separate Noise CHOP drives Displace TOP for continuous liquid distortion.')}</p>
+  </>}
+  {chapter.id==='audio-interaction'&&<>
+   <p>{t('选择一种声音输入，观察蝴蝶模型的缩放、粒子扰动和背景波动如何共同响应。可直接体验节奏，也可启用麦克风或上传本地音频；声音越强，形态的扩散与辉光越明显。','Choose an audio input to explore model scale, particle disturbance, and background response. Try a rhythm, enable the microphone, or upload local audio. Higher intensity produces stronger dispersion and glow.')}</p>
+   <MetamorphosisInteraction lang={lang}/>
+   <div class="met-mapping">{mappings.map(([name,effect,rule])=><div><span>{name}</span><p>{effect}</p><code>{rule}</code></div>)}</div>
+   <p class="met-caption">{t('网页体验使用原始蝴蝶模型和液态背景，重建工程中的声音映射、粒子扰动与辉光关系。下方影像展示 TouchDesigner 原工程的实际输出。','This browser experience uses the original butterfly model and liquid background to recreate the sound mappings, particle disturbance, and glow. The film below shows the actual output of the TouchDesigner project.')}</p>
+  </>}
+  {chapter.id==='development'&&<>
+   <p>{t('从基础模型导入开始，先建立粒子生成与反馈，再合成基础模型和粒子层，加入液态背景，最后完成整体视听合成。模型轮廓保持稳定，粒子层提供声音驱动的变化，背景则扩展空间深度。','The development moves from model import through particle generation and feedback to model–particle synthesis, liquid-background integration, and final compositing. A stable outline supports audio-driven variation while the background adds depth.')}</p>
+   <MetamorphosisFigure lang={lang} image="development-sequence" alt={t('原排版中的完整五阶段演进拼贴：模型导入、粒子效果、模型合成、液态背景与整体合成','Complete original five-stage development collage: model import, particles, model synthesis, liquid background, and final composition')} caption={t('五阶段：模型导入 → 粒子效果 → 模型合成 → 液态背景 → 整体合成','Five stages: import → particles → synthesis → liquid background → final composition')}/>
+   <div class="met-figure-pair"><MetamorphosisFigure lang={lang} image="source-model" alt={t('原始蝴蝶骨骸模型与粒子场的工作视图','Original butterfly geometry and particle-field working view')}/><MetamorphosisFigure lang={lang} image="liquid-background" alt={t('源工程使用的液态有机背景','The original organic liquid background')}/></div>
+  </>}
+  {chapter.id==='live-performance'&&<>
+   <p>{t('实时画面在稳定、轻微扰动与大范围扩散之间变化。反馈累积运动痕迹，Bloom 强化局部辉光，Composite 将粒子层、模型层和背景连接成整体。','The live image shifts between stability, slight disturbance, and broad dispersion. Feedback retains motion traces, Bloom strengthens local glow, and Composite joins the particles, model, and background.')}</p>
+   <video class="met-film" controls playsinline preload="none" poster={assets['hero-poster'].src} aria-label={t('TouchDesigner 原始动态输出演示','Original TouchDesigner moving-image output')}><source src="/media/metamorphosis/hero.mp4" type="video/mp4"/></video>
+   <MetamorphosisFigure lang={lang} image="reactive-sequence" alt={t('完整八幅声音驱动视觉变化拼贴，呈现不同粒子扩散和发光阶段','Complete eight-frame collage of audio-driven dispersion and glow')} caption={t('保留原作中八幅动态状态的完整组合。','The complete original arrangement of eight visual states.')}/>
+   <div class="met-figure-pair"><MetamorphosisFigure lang={lang} image="live-network" alt={t('最终实时输出与完整节点连接的合成工作图','Final live output and its operator connections')}/><MetamorphosisFigure lang={lang} image="live-installation" alt={t('屏幕上的实时交互视觉展示','Live interactive visuals on a display')}/></div>
+   <div class="met-outcome"><h3>{t('将声音、几何与影像连接成实时系统','Connecting sound, geometry, and image in real time')}</h3><p>{t('通过 SOP、POP、CHOP、TOP 与 COMP 的协同，把声音信号转为连续的视觉行为。这个项目呈现三维模型处理、节点式创意编程、实时声音分析和视听合成的能力。','SOP, POP, CHOP, TOP, and COMP collaborate to turn audio signals into continuous visual behaviour. The project demonstrates geometry processing, node-based creative coding, live audio analysis, and audiovisual compositing.')}</p><span>TouchDesigner / SOP / POP / CHOP / TOP / COMP</span></div>
+  </>}
+ </section>)}
+</RestoredCaseShell>

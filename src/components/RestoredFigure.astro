@@ -1,0 +1,14 @@
+---
+import sources from '../data/restored-assets.json';
+import type {Lang} from '../data/site';
+export interface Props { node:string; image:string; alt:string; caption?:string; lang:Lang; contained?:boolean; eager?:boolean; }
+const {node,image,alt,caption,lang,contained=false,eager=false}=Astro.props;
+const asset=(sources as Record<string,Record<string,{src:string;width:number;height:number}>>)[node]?.[image];
+if(!asset)throw new Error('Missing Figma asset: '+node+'/'+image);
+---
+<figure class:list={['restored-figure',{'is-contained':contained}]}>
+  <button type="button" class="image-button" data-lightbox={asset.src} data-alt={alt} data-caption={caption??''} aria-label={(lang==='zh'?'放大查看：':'Enlarge: ')+alt}>
+    <img src={asset.src} width={asset.width} height={asset.height} alt={alt} loading={eager?'eager':'lazy'} decoding="async" />
+    <span class="zoom-label">{lang==='zh'?'放大查看 ↗':'ENLARGE ↗'}</span>
+  </button>{caption&&<figcaption>{caption}</figcaption>}
+</figure>

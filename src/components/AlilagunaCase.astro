@@ -1,0 +1,63 @@
+---
+import RestoredCaseShell from './RestoredCaseShell.astro';
+import AlilagunaFigure from './AlilagunaFigure.astro';
+import {alilaguna as a} from '../data/alilaguna';
+import assets from '../data/alilaguna-assets.json';
+import type {Lang} from '../data/site';
+import type {Project} from '../data/projects';
+import '../styles/alilaguna-case.css';
+const {lang,project}=Astro.props as {lang:Lang;project:Project};
+// The author requested Chinese-only body copy on this project.
+const p={...project,subtitle:{zh:a.subtitle.zh,en:a.subtitle.zh},role:{zh:project.role!.zh,en:project.role!.zh},stage:{zh:project.stage!.zh,en:project.stage!.zh}};
+const ids=['concept','references','narrative','storyboard','production','spaces','showcase','film'];
+const names=['概念与隐喻','视觉参考','叙事与声音','场地与分镜','制作与协作','虚拟空间','影像展开','完整影片'];
+const chapters=ids.map((id,i)=>({id,label:{zh:names[i],en:names[i]}}));
+---
+<RestoredCaseShell lang={lang} project={p} theme="alilaguna" englishTitle="Conceptual Music Video" chapters={chapters} hero={{...assets['cover-collage'],alt:project.coverAlt!}} video="/media/alilaguna/hero-loop.mp4">
+ <div slot="hero-caption" class="alilaguna-hero-caption"><h2>ALILAGUNA</h2><p>地铁、冥河与重叠世界</p></div>
+ <div slot="intro"><p>{a.introduction.zh}</p></div>
+ <section class="restored-chapter" id="concept" aria-labelledby="alilaguna-concept-title">
+  <header class="restored-section-heading"><span class="restored-number">01</span><h2 id="alilaguna-concept-title">日常通勤，成为世界之间的渡行</h2></header>
+  <AlilagunaFigure image="cover-collage" alt="ALILAGUNA 原作完整封面视觉拼贴：地铁、扶梯、时钟和鱼囊形对称交叠。" caption="原作封面视觉拼贴。"/>
+  <div class="alilaguna-concept-layout"><AlilagunaFigure image="inspiration-collage" alt="音乐概念拼贴：威尼斯渡船、地铁、双圆与冥河相连。" caption="渡船、地下通行与两圆交叠：原作中的概念拼贴。"/><div>{a.concept.map(text=><p>{text.zh}</p>)}<AlilagunaFigure image="journey-collage" alt="从地铁入口、走廊、故障指示到站台、隧道与渡船的完整叙事拼贴。" caption="六个空间节点组成从现实走向过渡的路径。"/></div></div>
+  <h3>将隐喻放进熟悉的空间</h3><AlilagunaFigure image="metaphor-board" alt="停滞的时钟、故障指示牌、倒转的扶梯、地铁门与渡船提灯的分析图。"/>
+  <dl class="alilaguna-metaphors">{a.metaphors.map(x=><div><dt>{x.title.zh}</dt><dd>{x.text.zh}</dd></div>)}</dl>
+ </section>
+ <section class="restored-chapter" id="references" aria-labelledby="alilaguna-reference-title">
+  <header class="restored-section-heading"><span class="restored-number">02</span><h2 id="alilaguna-reference-title">现实裂缝与失序的视觉语言</h2></header>
+  <div class="alilaguna-reference-layout"><AlilagunaFigure image="reference-board" alt="原作完整参考图板，包含电影叙事、音乐视频特效与对称、走廊和故障构图。"/><div><p>{a.reference.zh}</p><div class="alilaguna-reference-notes"><h3>电影叙事</h3><p>《千与千寻》以列车连接世界；《美梦成真》将死亡化为可通行的边界；《异世浮生》借现实裂缝呈现被否认的死亡。</p><h3>重复与形变</h3><p>倒放与重复制造时间故障，形变使熟悉的身体与环境失去稳定性，意识流式的图像连接改变观看的路径。</p><h3>空间秩序</h3><p>从对称的建筑框架出发，再让走廊无限延伸、人群出现重影。秩序与异常共存，让过渡逐渐发生。</p></div></div></div>
+ </section>
+ <section class="restored-chapter" id="narrative" aria-labelledby="alilaguna-narrative-title">
+  <header class="restored-section-heading"><span class="restored-number">03</span><h2 id="alilaguna-narrative-title">六个阶段，连接画面与音乐</h2></header><p>{a.narrativeIntro.zh}</p>
+  <AlilagunaFigure image="narrative-map" alt="现实、失序、过渡、重叠、接纳与返回现实的六阶段叙事分析图。" caption="六阶段叙事：从理性秩序走向世界交汇，再返回重新理解的现实。"/>
+  <ol class="alilaguna-phases">{a.phases.map((x,i)=><li><span>{String(i+1).padStart(2,'0')}</span><h3>{x.title.zh}</h3><p class="alilaguna-phase-keyword">{x.keyword.zh}</p><p>{x.text.zh}</p></li>)}</ol>
+  <h3>声音推动空间变化</h3><AlilagunaFigure image="audio-analysis" alt="约两分钟音轨的音乐波形与六阶段节奏划分分析。" caption="原作音轨波形及六个阶段的节拍近似划分。"/>
+  <h3>叙事与镜头的时间关系</h3><AlilagunaFigure image="timeline-analysis" alt="完整音乐视频分析图：镜头、六个阶段与音轨波形通过节点和连线对应。" caption="保留原作的波形、镜头、节点与连接关系；对应阐述见上方六阶段。"/>
+ </section>
+ <section class="restored-chapter" id="storyboard" aria-labelledby="alilaguna-storyboard-title">
+  <header class="restored-section-heading"><span class="restored-number">04</span><h2 id="alilaguna-storyboard-title">从伦敦地铁，走向想象中的冥河</h2></header><p>{a.location.zh}</p>
+  <div class="alilaguna-storyboard-layout"><AlilagunaFigure image="location-collage" alt="Westminster、Bank、冥河与失序列车的完整场地拼贴。" caption="实拍建筑与虚拟场景的空间关系。"/><AlilagunaFigure image="storyboard" alt="完整十二格分镜：时钟异常、下降、时间倒转、列车、导航失效、镜像、车厢、秩序崩塌、摆渡者、结构破裂、船与彼岸。" caption="原作 12 格分镜，按镜头顺序保留构图与标记。"/></div>
+  <details class="alilaguna-shot-legend"><summary>十二个关键镜头</summary><ol>{a.shots.map(x=><li>{x.zh}</li>)}</ol></details>
+ </section>
+ <section class="restored-chapter" id="production" aria-labelledby="alilaguna-production-title">
+  <header class="restored-section-heading"><span class="restored-number">05</span><h2 id="alilaguna-production-title">实拍、数字特效与三维空间协作</h2></header>
+  <div class="alilaguna-credits">{a.credits.map(x=><div><h3>{x.name}</h3><p>{x.role.zh}</p><p>{x.text.zh}</p></div>)}</div>
+  <AlilagunaFigure image="technical-map" alt="摄影、故障处理、三维空间、镜像分屏和时间变换的技术策略图。" caption="拍摄 → 系统干扰 → 混合空间 → 空间叠加 → 时间变换。"/>
+  <div class="alilaguna-process">{a.process.map((x,i)=><section><div><span class="restored-number">{String(i+1).padStart(2,'0')}</span><h3>{x.title.zh}</h3><p>{x.text.zh}</p></div><AlilagunaFigure image={x.image as keyof typeof assets} alt={x.title.zh+'的原作过程图组合。'} caption={x.title.zh+'：保留软件工作画面与过程组合。'}/></section>)}</div>
+ </section>
+ <section class="restored-chapter" id="spaces" aria-labelledby="alilaguna-spaces-title">
+  <header class="restored-section-heading"><span class="restored-number">06</span><h2 id="alilaguna-spaces-title">三种渡行空间</h2></header>
+  <AlilagunaFigure image="virtual-space-collage" alt="完整虚拟空间拼贴：左侧的淹水车厢与冥河渡船，叠加在贯穿全幅的列车、管道、扶梯与水面结构上。"/>
+  <div class="alilaguna-space-notes">{a.spaces.map(x=><div><h3>{x.title.zh}</h3><p>{x.text.zh}</p></div>)}</div>
+ </section>
+ <section class="restored-chapter" id="showcase" aria-labelledby="alilaguna-showcase-title">
+  <header class="restored-section-heading"><span class="restored-number">07</span><h2 id="alilaguna-showcase-title">影像中的旅程</h2></header>
+  {a.showcase.map(x=><div class="alilaguna-showcase"><h3>{x.title.zh}</h3><p>{x.text.zh}</p><AlilagunaFigure image={x.image as keyof typeof assets} alt={x.title.zh+'：保留原作四幅画面的完整拼贴组合，包含上下延伸的背景图层。'}/></div>)}
+ </section>
+ <section class="restored-chapter" id="film" aria-labelledby="alilaguna-film-title">
+  <header class="restored-section-heading"><span class="restored-number">08</span><h2 id="alilaguna-film-title">完整 Music Video</h2></header>
+  <div class="alilaguna-full-film"><video controls playsinline preload="none" poster={assets['cover-collage'].src} aria-label="ALILAGUNA 完整音乐视频，带声音"><source src="/media/alilaguna/music-video.mp4" type="video/mp4"/>你的浏览器暂不支持视频播放。</video></div>
+  <p class="alilaguna-film-credit">影像导演：熊志愿 · 数字导演：Yanyi Zhao</p>
+  <a class="alilaguna-film-link" href="https://youtu.be/iQDMCwT_wTY" target="_blank" rel="noopener noreferrer">在 YouTube 观看 ↗</a>
+ </section>
+</RestoredCaseShell>

@@ -1,0 +1,10 @@
+<div class="planet-sculpture" data-planet>
+  <svg class="planet-fallback" viewBox="0 0 640 640" aria-hidden="true">
+    <defs><clipPath id="planet-clip"><circle cx="320" cy="320" r="237" /></clipPath><radialGradient id="planet-shade" cx="35%" cy="30%"><stop offset="0" stop-color="#fff" stop-opacity=".1" /><stop offset=".72" stop-color="#151715" stop-opacity=".15" /><stop offset="1" stop-color="#151715" stop-opacity=".88" /></radialGradient></defs>
+    <circle cx="320" cy="320" r="237" fill="#222723" stroke="#4c534c" stroke-width=".7" />
+    <g clip-path="url(#planet-clip)" opacity=".72" style="filter:grayscale(.8)"><image href="/images/stigma-cover-640.webp" x="93" y="165" width="245" height="205" preserveAspectRatio="xMidYMid slice" transform="rotate(-16 200 250)" /><image href="/images/dating-cover-640.webp" x="327" y="112" width="195" height="238" preserveAspectRatio="xMidYMid slice" transform="rotate(12 420 230)" /><image href="/images/mushrooms-cover-640.webp" x="190" y="358" width="255" height="156" preserveAspectRatio="xMidYMid slice" transform="rotate(-8 320 425)" /><circle cx="320" cy="320" r="237" fill="url(#planet-shade)" /></g>
+    <g fill="none" stroke="#94a395" stroke-width=".5" opacity=".24"><ellipse cx="320" cy="320" rx="115" ry="237" transform="rotate(14 320 320)" /><ellipse cx="320" cy="320" rx="195" ry="237" transform="rotate(14 320 320)" /><ellipse cx="320" cy="320" rx="237" ry="65" transform="rotate(14 320 320)" /><ellipse cx="320" cy="320" rx="237" ry="145" transform="rotate(14 320 320)" /></g>
+  </svg>
+  <canvas aria-hidden="true"></canvas>
+</div>
+<script src="../scripts/planet.ts"></script>

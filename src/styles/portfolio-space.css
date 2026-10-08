@@ -1,0 +1,106 @@
+.has-portfolio-space{background:#080808;color:var(--ink)}
+.has-portfolio-space>.site-header,.has-portfolio-space>.site-footer{display:none}
+.has-portfolio-space #main{outline:0}
+.portfolio-space{height:100svh;min-height:460px;width:100%;position:relative;overflow:hidden;isolation:isolate;background:#080808;touch-action:none;cursor:grab;user-select:none}
+.portfolio-space[data-dragging=true]{cursor:grabbing}
+.space-canvas{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity .8s;pointer-events:none}
+.portfolio-space[data-ready=true] .space-canvas{opacity:1}
+.space-fallback{position:absolute;width:min(86svh,88vw);aspect-ratio:1;left:50%;top:49%;transform:translate(-50%,-50%);transition:opacity .6s;pointer-events:none}
+.space-fallback svg{width:100%;height:100%}.portfolio-space[data-ready=true] .space-fallback{opacity:0}
+.space-entry{position:absolute;inset:0;pointer-events:none;transition:opacity .45s}
+.space-portfolio-label{position:absolute;left:50%;top:40px;transform:translateX(-50%);font:400 11px/1.4 var(--font-ui);letter-spacing:.42em;color:#aaa;padding-left:.42em}
+.space-name{position:absolute;left:50%;bottom:94px;transform:translateX(-50%);font:400 clamp(17px,1.15vw,23px)/1.3 var(--font-ui);letter-spacing:.31em;white-space:nowrap;padding-left:.31em;color:#ddd}
+.space-enter{position:absolute;bottom:41px;left:50%;transform:translateX(-50%);font:400 11px/2 var(--font-ui);letter-spacing:.2em;color:#aaa;padding:10px 18px;pointer-events:auto;transition:color .2s}
+.space-enter:hover{color:#fff}
+.space-orb-hit{position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);width:min(73svh,86vw);height:min(73svh,86vw);border-radius:50%;pointer-events:auto;cursor:grab}
+.space-orb-hit:active{cursor:grabbing}.space-orb-hit:focus-visible{outline:1px dotted #aaa;outline-offset:8px;border-radius:50%}
+.portfolio-space[data-mode=entering] .space-entry,.portfolio-space[data-mode=entering] .space-entry a{pointer-events:none}
+.space-navigation{position:absolute;top:26px;left:var(--gutter);right:var(--gutter);z-index:5;display:flex;justify-content:space-between;align-items:center;gap:24px;font:400 var(--text-ui)/1.6 var(--font-ui);letter-spacing:.09em;color:#aaa}
+.space-navigation>div{display:flex;gap:30px;align-items:center}.space-navigation a{padding:10px 0;position:relative}.space-navigation a:hover{color:#fff}.space-navigation a[aria-current=page]{color:#eee}.space-navigation a[aria-current=page]:after{content:'';position:absolute;bottom:2px;left:0;width:12px;height:1px;background:#aaa}
+.space-projects{position:absolute;inset:0;pointer-events:none;transition:opacity .5s}
+.space-project{position:absolute;top:0;left:0;width:44px;height:44px;display:block;background:none;padding:0;opacity:0;transform:translate(-50%,-50%);pointer-events:auto;will-change:transform,opacity;border:0;color:#ccc;outline-offset:2px!important}
+.space-project-dot{position:absolute;width:5px;height:5px;background:#ddd;left:19.5px;top:19.5px;border-radius:50%;box-shadow:0 0 10px #fffa,0 0 22px #fff4;transition:transform .5s,background .5s}
+.space-project-dot:before{content:'';position:absolute;inset:-10px;border:1px solid #fff3;border-radius:50%;transition:transform .5s,border-color .5s}
+.space-project-dot:after{content:'';position:absolute;inset:-19px;background:radial-gradient(circle,#ffffff18,transparent 68%);border-radius:50%}
+.space-project-label{position:absolute;top:38px;left:22px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;white-space:nowrap;text-align:center;transition:color .3s,opacity .3s;opacity:var(--label-alpha,.55);text-shadow:0 1px 14px #000;font-family:var(--font-ui)}
+.space-project-number{font-size:9px;color:#858585;font-variant-numeric:tabular-nums}.space-project-title{font-size:14px;font-weight:400;letter-spacing:.07em}
+.space-project:hover .space-project-dot,.space-project:focus-visible .space-project-dot{transform:scale(1.5);background:#fff}.space-project:hover .space-project-dot:before,.space-project:focus-visible .space-project-dot:before{transform:scale(1.15);border-color:#fff8}.space-project:hover .space-project-label,.space-project:focus-visible .space-project-label{opacity:1;color:#fff}
+.portfolio-space[data-selected=true] .space-projects{opacity:0;pointer-events:none}.portfolio-space[data-selected=true] .space-project{pointer-events:none}
+.space-reveal{position:absolute;z-index:6;left:50%;top:50%;transform:translate(-50%,-50%);width:min(860px,64vw);max-height:calc(100svh - 180px);outline:0;--reveal-opacity:0;--image-opacity:0;cursor:default;touch-action:pan-y;user-select:text}
+.space-reveal-close{background:none;padding:8px 0;color:#aaa;font:400 var(--text-ui)/1.6 var(--font-ui);letter-spacing:.09em;display:flex;gap:12px;align-items:center;margin:0 0 20px auto;opacity:var(--reveal-opacity)}.space-reveal-close>span{font-size:20px;font-weight:300;line-height:1}
+.space-reveal-image{width:100%;aspect-ratio:16/9;position:relative;pointer-events:none}.space-reveal-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:var(--image-opacity);filter:none}
+.space-reveal-copy{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;margin-top:24px;opacity:var(--reveal-opacity);pointer-events:var(--reveal-events,none)}
+.space-reveal-keywords{font-size:10px;letter-spacing:.1em;color:#888;margin-bottom:8px}.space-reveal-copy h2{font-size:var(--text-title);font-weight:400;line-height:1.4;letter-spacing:.01em}.space-reveal-intro{font-size:var(--text-body);line-height:1.9;max-width:600px;margin-top:12px;color:#aaa}
+.space-reveal-link{flex-shrink:0;display:flex;gap:24px;align-items:center;white-space:nowrap;font-size:var(--text-ui);letter-spacing:.07em;padding:8px 0;border-bottom:1px solid #ffffff50;margin-top:24px;color:#ccc}.space-reveal-link>span{font-size:18px}
+.space-reveal-pending{height:100%;display:grid;place-content:center;border:1px solid #fff1;color:#888;font-size:13px;opacity:var(--reveal-opacity);letter-spacing:.08em}
+.space-explore-footer{position:absolute;bottom:30px;left:var(--gutter);right:var(--gutter);display:flex;align-items:center;justify-content:space-between;font:400 10px/1.6 var(--font-ui);letter-spacing:.08em;color:#777;pointer-events:none}
+.space-pause{pointer-events:auto;width:32px;height:32px;background:none;color:#aaa;font:400 13px/1 var(--font-ui)}.space-no-script{position:absolute;left:20px;bottom:20px;color:#ddd;font-size:12px}
+.portfolio-space[data-mode=explore]:not([data-ready=true]) .space-fallback{opacity:.15}.portfolio-space[data-mode=explore]:not([data-ready=true]) .space-projects{inset:120px 8vw 80px;display:flex;flex-wrap:wrap;align-content:center;gap:60px;overflow:auto}.portfolio-space[data-mode=explore]:not([data-ready=true]) .space-project{position:relative;opacity:1;transform:none!important;width:180px}
+@media(max-width:760px){.space-portfolio-label{top:29px;font-size:10px}.space-name{bottom:94px;font-size:17px;letter-spacing:.22em}.space-enter{bottom:42px}.space-navigation{top:20px;gap:12px;font-size:10px;letter-spacing:.04em}.space-navigation>div{gap:16px}.space-navigation>div>a[href*="about/#"]{display:none}.space-project-title{font-size:11px}.space-project-number{font-size:8px}.space-reveal{width:calc(100vw - 40px);max-height:calc(100svh - 160px);overflow:auto}.space-reveal-copy{gap:20px;flex-direction:column;margin-top:20px}.space-reveal-copy h2{font-size:25px}.space-reveal-keywords{font-size:9px}.space-reveal-link{margin-top:0}.space-reveal-intro{font-size:13px}.space-explore-footer{font-size:9px;bottom:20px}.space-reveal-close{margin-bottom:15px}}
+@media(prefers-reduced-motion:reduce){.portfolio-space *{animation:none!important;transition:none!important}}
+@media print{.space-canvas,.space-fallback,.space-orb-hit,.space-explore-footer{display:none}.portfolio-space{height:auto;background:white;color:#222}.space-entry,.space-name,.space-portfolio-label,.space-enter,.space-projects,.space-project{position:static!important;transform:none!important;opacity:1!important}.space-projects{display:block!important}.space-project{display:block;margin:25px}}
+/* EUAN PLANET: the canvas renders the asteroid; HTML supplies its accessible hit area. */
+.space-name{font-size:clamp(21px,1.65vw,32px);letter-spacing:.32em;color:#e4dfe9}
+.space-orb-hit{width:min(110svh,88vw);height:min(65svh,60vw);border-radius:50%}
+.space-fallback{width:min(100svh,85vw);aspect-ratio:1000/640;top:48%}
+.fallback-orbits{transform-origin:500px 320px;animation:fallback-orbit 80s linear infinite}
+@keyframes fallback-orbit{to{transform:rotate(360deg)}}
+.space-project{width:72px;height:72px}
+.space-project-dot{width:var(--planet-size,40px);height:var(--planet-size,40px);left:50%;top:50%;transform:translate(-50%,-50%);background:none!important;box-shadow:none;border:1px solid rgb(var(--planet-color)/0);transition:border-color .35s,box-shadow .35s}
+.space-project-dot:before{inset:-6px;border-color:rgb(var(--planet-color)/0);transform:none!important}
+.space-project-dot:after{display:none}
+.space-project:hover .space-project-dot,.space-project:focus-visible .space-project-dot{transform:translate(-50%,-50%);border-color:rgb(var(--planet-color)/.16);box-shadow:0 0 26px rgb(var(--planet-color)/.10)}
+.space-project:hover .space-project-dot:before,.space-project:focus-visible .space-project-dot:before{border-color:rgb(var(--planet-color)/.3)}
+.space-project-label{top:var(--label-top,60px);left:36px;gap:7px;text-shadow:0 2px 7px #000,0 0 20px #000}
+.space-project-title{font-size:13px;letter-spacing:.045em;color:#d0c8d8}
+.space-project-number{color:#9c91ab;font-size:8px}
+.space-reveal-copy{font-family:var(--font-ui)}
+.portfolio-space[data-mode=explore]:not([data-ready=true]) .space-project-dot{background:radial-gradient(circle at 30% 25%,rgb(var(--planet-color)/.7),#16111d 70%)!important}
+@media(max-width:760px){.space-name{font-size:23px}.space-project-title{font-size:10px;letter-spacing:0}.space-project-label{gap:4px}.space-project-number{font-size:7px}}
+
+.space-orb-hit{width:min(76svh,86vw);height:min(76svh,86vw)}
+
+.has-portfolio-space{height:100svh;overflow:hidden}
+.space-project-title{font-size:14px}
+@media(max-width:760px){.space-project-title{font-size:11px}}
+
+/* Hover/focus lights the planet; click independently forms the project cover. */
+.space-project[data-active=true] .space-project-label{opacity:1;color:#edf2fb}
+.space-project[data-active=true] .space-project-title{color:#edf2fb;text-shadow:0 0 18px #cddfff66}
+
+/* The luminous circular halo also supplies the keyboard focus indication. */
+.space-project:focus-visible{outline:0!important}
+
+/* A silver-white stellar core opens the index, independently of project planets. */
+.space-index-star{position:absolute;left:0;top:0;width:76px;height:76px;z-index:3;display:block;transform:translate3d(calc(50vw - 38px),calc(50svh - 38px),0);cursor:pointer;color:#e1e6f2;opacity:0;transition:opacity .55s;outline:0!important}
+.index-star-core{position:absolute;left:50%;top:50%;width:22px;height:22px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,#fff 0 25%,#e5edff 50%,#a7b4d9 75%,transparent);box-shadow:0 0 12px #fff,0 0 28px #d8e5ffc9,0 0 58px #b7c6ed88,0 0 96px #bcc9f24d;animation:index-star-breathe 3.2s ease-in-out infinite alternate}
+.index-star-core:before,.index-star-core:after{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-15deg);background:linear-gradient(90deg,transparent,#e7eeffc9,transparent);height:1px;width:112px;opacity:.8}
+.index-star-core:after{transform:translate(-50%,-50%) rotate(75deg);width:74px;opacity:.48}
+.index-star-halo{position:absolute;inset:-23px;border-radius:50%;background:radial-gradient(circle,#b7c9f32b,transparent 64%);animation:index-star-breathe 5s ease-in-out infinite alternate}
+.index-star-orbit{position:absolute;inset:14px;border-radius:50%;border:1px solid #d9e5ff44;box-shadow:0 0 12px #a5bbe52b;transform:rotate(-25deg) scaleY(.4);transition:inset .5s,border-color .5s}
+.index-star-orbit:after{content:'';position:absolute;inset:-12px;border:1px solid #c4d4ee25;border-radius:50%;transform:rotate(60deg) scaleY(1.7)}
+.index-star-label{position:absolute;left:50%;top:72px;transform:translateX(-50%);white-space:nowrap;letter-spacing:.12em;font:400 11px/1.6 var(--font-ui);color:#cbd4e7;text-shadow:0 0 10px #adc4ed88,0 2px 8px #080808;opacity:.72;transition:opacity .35s,color .35s}
+.space-index-star:hover .index-star-orbit,.space-index-star:focus-visible .index-star-orbit{inset:8px;border-color:#e6eeffb3}
+.space-index-star:hover .index-star-label,.space-index-star:focus-visible .index-star-label{opacity:1;color:#fff}
+.portfolio-space[data-selected=true] .space-index-star{opacity:0!important;pointer-events:none!important}
+.portfolio-space:not([data-ready=true])[data-mode=explore] .space-index-star{opacity:1;transform:translate3d(calc(50vw - 38px),calc(50svh - 38px),0)}
+@keyframes index-star-breathe{from{opacity:.72;filter:brightness(.9)}to{opacity:1;filter:brightness(1.2)}}
+@media(max-width:760px){.index-star-label{font-size:10px}}
+
+/* Hovering the index star draws one shared constellation, without planet scaling. */
+.space-index-constellation{position:absolute;inset:0;width:100%;height:100%;z-index:1;opacity:0;pointer-events:none;overflow:hidden}
+.space-index-constellation path{stroke-dasharray:1;stroke-dashoffset:1;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
+.index-constellation-rays{stroke:#e3e9f5;stroke-width:1.15;opacity:.78;filter:drop-shadow(0 0 4px #cfdbf28c)}
+.index-constellation-links{stroke:#bfcbe3;stroke-width:.85;opacity:.5;filter:drop-shadow(0 0 3px #c6d6f355)}
+.index-star-outer{position:absolute;inset:-5px;border-radius:50%;border:1.2px solid #e3ebffb3;box-shadow:0 0 13px #bed4f64d,inset 0 0 9px #bbd0f529;opacity:var(--index-progress,0);transform:scale(calc(1 + var(--index-progress,0) * .48));pointer-events:none}
+.index-star-outer:after{content:'';position:absolute;inset:-9px;border:1px solid #cbd8ee66;border-radius:50%;box-shadow:0 0 8px #ccddff33}
+.portfolio-space[data-index-activation-phase=formed] .index-star-core{box-shadow:0 0 13px #fff,0 0 30px #e0eaffd9,0 0 65px #b7c6ed99,0 0 105px #bcc9f259}
+@media print{.space-index-constellation{display:none}}
+
+/* Dense orbital catalogues show colliding titles when that planet is touched. */
+.space-project[data-label-crowded=true]:not([data-active=true]) .space-project-label{opacity:0}
+
+/* The entry presents a fully textured live frame; no screenshot swaps or duplicate titles. */
+.portfolio-space[data-mode=intro] .space-fallback{opacity:0}
+.portfolio-space[data-mode=intro][data-rendering=fallback] .space-fallback{opacity:.35}
+.portfolio-space[data-mode=intro] .space-canvas{transition:opacity .35s ease-out}

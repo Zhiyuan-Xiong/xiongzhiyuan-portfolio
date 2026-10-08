@@ -1,0 +1,6 @@
+storeDir: ../.pnpm-store
+cacheDir: ../.tool-cache/pnpm
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true

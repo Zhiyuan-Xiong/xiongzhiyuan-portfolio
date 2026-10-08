@@ -1,0 +1,15 @@
+---
+import { ui, type Lang } from '../data/site';
+import imageDimensions from '../data/image-dimensions.json';
+interface Props { image: string; alt: string; lang: Lang; caption?: string; eager?: boolean; zoom?: boolean; portrait?: boolean }
+const { image, alt, lang, caption, eager=false, zoom=false, portrait=false } = Astro.props;
+const src = `/images/${image}-1280.webp`;
+const dimensions=imageDimensions[image as keyof typeof imageDimensions] ?? {width:1280,height:720};
+---
+<figure class:list={['artwork', { portrait }]}>
+  {zoom ? <button type="button" class="image-button" data-lightbox={`/images/${image}-1920.webp`} data-alt={alt} data-caption={caption ?? ''} aria-label={`${ui.zoom[lang]}: ${alt}`}>
+    <img src={src} srcset={`/images/${image}-640.webp 640w, ${src} 1280w, /images/${image}-1920.webp 1920w`} sizes="(max-width: 700px) 94vw, 900px" alt={alt} width={dimensions.width} height={dimensions.height} loading={eager ? 'eager' : 'lazy'} decoding="async" />
+    <span class="zoom-label">{ui.zoom[lang]}</span>
+  </button> : <img src={src} srcset={`/images/${image}-640.webp 640w, ${src} 1280w, /images/${image}-1920.webp 1920w`} sizes="(max-width: 700px) 94vw, 50vw" alt={alt} width={dimensions.width} height={dimensions.height} loading={eager ? 'eager' : 'lazy'} decoding="async" />}
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

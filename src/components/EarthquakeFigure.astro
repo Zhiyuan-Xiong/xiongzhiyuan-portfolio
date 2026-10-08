@@ -1,0 +1,12 @@
+---
+import manifest from '../data/earthquake-assets.json';
+import type {Lang} from '../data/site';
+interface Props {image:keyof typeof manifest;alt:string;caption?:string;lang:Lang}
+const {image,alt,caption,lang}=Astro.props,asset=manifest[image];
+const zoom=lang==='zh'?'放大查看':'Enlarge image';
+---
+<figure class:list={['restored-figure','quake-figure',{'is-paper':asset.paper}]}>
+ <button type="button" class="image-button" data-lightbox={asset.large} data-alt={alt} data-caption={caption??''} aria-label={zoom+'：'+alt}>
+  <img src={asset.src} width={asset.width} height={asset.height} alt={alt} loading="lazy" decoding="async"/><span class="zoom-label">{zoom} ↗</span>
+ </button>{caption&&<figcaption>{caption}</figcaption>}
+</figure>

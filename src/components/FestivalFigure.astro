@@ -1,0 +1,11 @@
+---
+import sizes from '../../public/media/dating/image-sizes.json';
+interface Props { image:string; alt:string; caption?:string; lang:'zh'|'en'; contained?:boolean }
+const {image,alt,caption,lang,contained=false}=Astro.props;
+const [width,height]=(sizes as Record<string,number[]>)[image]??[1920,1080];
+---
+<figure class:list={['festival-figure',{'is-contained':contained}]}>
+  <button type="button" class="image-button" data-lightbox={'/media/dating/'+image+'.webp'} data-alt={alt} data-caption={caption??''} aria-label={(lang==='zh'?'放大查看：':'Enlarge: ')+alt}>
+    <img src={'/media/dating/'+image+'.webp'} width={width} height={height} alt={alt} loading="lazy" decoding="async" /><span class="zoom-label">{lang==='zh'?'放大查看 ↗':'ENLARGE ↗'}</span>
+  </button>{caption&&<figcaption>{caption}</figcaption>}
+</figure>

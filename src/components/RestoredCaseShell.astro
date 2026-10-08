@@ -1,0 +1,34 @@
+---
+import '../styles/restored-cases.css';
+import ProjectCard from './ProjectCard.astro';
+import {published,type Project} from '../data/projects';
+import {type Lang,ui} from '../data/site';
+import sources from '../data/restored-assets.json';
+type CaseImage={alt:{zh:string;en:string}} & ({node:string;image:string}|{src:string;width:number;height:number});
+interface Props { lang:Lang; project:Project; theme:'stigma'|'mushrooms'|'nexus'|'skeleton'|'species'|'alilaguna'|'sonic'|'cosmos'|'earthquake'|'metamorphosis'; englishTitle:string; chapters:{id:string;label:{zh:string;en:string}}[]; hero:CaseImage; side?:{node:string;image:string;alt:{zh:string;en:string}}; video?:string; }
+const {lang,project:p,theme,englishTitle,chapters,hero,side,video}=Astro.props;
+const assets=sources as Record<string,Record<string,{src:string;width:number;height:number}>>;
+const main='src' in hero?hero:assets[hero.node][hero.image], secondary=side?assets[side.node][side.image]:null;
+---
+<article class:list={['restored-case',theme]}>
+  <div class:list={['restored-hero',{'has-side':side}]}>
+    {video?<video class="restored-hero-main" autoplay loop muted playsinline preload="metadata" poster={main.src} aria-label={hero.alt[lang]}><source src={video} type="video/mp4"/></video>:<img class="restored-hero-main" src={main.src} width={main.width} height={main.height} alt={hero.alt[lang]} loading="eager" fetchpriority="high" />}
+    {secondary&&side&&<img class="restored-hero-side" src={secondary.src} width={secondary.width} height={secondary.height} alt={side.alt[lang]} loading="eager" />}
+    <slot name="hero-caption" />
+  </div>
+  <div class="restored-body">
+    <nav class="restored-breadcrumbs" aria-label={lang==='zh'?'面包屑导航':'Breadcrumbs'}><a href={'/'+lang+'/explore/'}>{lang==='zh'?'探索':'Explore'}</a><span>/</span><a href={'/'+lang+'/works/'} data-back-link>{lang==='zh'?'作品索引':'Work index'}</a><span>/</span><span aria-current="page">{p.title[lang]}</span></nav>
+    <header class="restored-heading" id="overview">
+      <div><p class="restored-kicker">{p.year&&`${p.year} / `}{p.kind[lang]}</p><h1>{p.title[lang]}</h1>{lang==='zh'&&<p class="restored-english">{englishTitle}</p>}<p class="restored-subtitle">{p.subtitle[lang]}</p></div>
+      <div class="restored-introduction"><slot name="intro" /><dl class="restored-facts"><div><dt>{ui.role[lang]}</dt><dd>{p.role![lang]}</dd></div><div><dt>{ui.stage[lang]}</dt><dd>{p.stage![lang]}</dd></div></dl></div>
+    </header>
+    <div class="restored-reading"><aside class="case-toc restored-toc"><details open><summary>{lang==='zh'&&(theme==='alilaguna'||theme==='sonic'||theme==='cosmos'||theme==='earthquake'||theme==='metamorphosis')?'目录':'CONTENTS'}</summary><nav aria-label={ui.contents[lang]}><a href="#overview">{ui.overview[lang]}</a>{chapters.map((s,i)=><a href={'#'+s.id}><span>{String(i+1).padStart(2,'0')}</span>{s.label[lang]}</a>)}</nav></details></aside><div class="restored-chapters"><slot /></div></div>
+    <section class="restored-related" aria-labelledby="related-title"><div class="section-heading"><h2 id="related-title">{ui.related[lang]}</h2><a class="text-link" href={'/'+lang+'/works/'} data-back-link>{ui.back[lang]}</a></div><div class="project-grid">{published.filter(x=>x.slug!==p.slug).slice(0,2).map(project=><ProjectCard project={project} lang={lang}/>)}</div></section>
+  </div>
+</article>
+<script>
+import {initializeCaseMedia} from '../scripts/dating-festival';
+initializeCaseMedia();
+</script>
+
+

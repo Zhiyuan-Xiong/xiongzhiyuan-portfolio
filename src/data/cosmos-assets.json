@@ -1,0 +1,142 @@
+{
+  "wasp-board": {
+    "src": "/media/cosmos/wasp-board.webp",
+    "large": "/media/cosmos/wasp-board-large.webp",
+    "width": 2093,
+    "height": 840,
+    "paper": true
+  },
+  "cocoon-board": {
+    "src": "/media/cosmos/cocoon-board.webp",
+    "large": "/media/cosmos/cocoon-board-large.webp",
+    "width": 2093,
+    "height": 822,
+    "paper": true
+  },
+  "weaverbird-board": {
+    "src": "/media/cosmos/weaverbird-board.webp",
+    "large": "/media/cosmos/weaverbird-board-large.webp",
+    "width": 2093,
+    "height": 822,
+    "paper": true
+  },
+  "model-assembly": {
+    "src": "/media/cosmos/model-assembly.webp",
+    "large": "/media/cosmos/model-assembly-large.webp",
+    "width": 2200,
+    "height": 631,
+    "paper": true
+  },
+  "processing-code": {
+    "src": "/media/cosmos/processing-code.webp",
+    "large": "/media/cosmos/processing-code-large.webp",
+    "width": 973,
+    "height": 2200,
+    "paper": true
+  },
+  "processing-states": {
+    "src": "/media/cosmos/processing-states.webp",
+    "large": "/media/cosmos/processing-states-large.webp",
+    "width": 920,
+    "height": 2200,
+    "paper": true
+  },
+  "processing-energy": {
+    "src": "/media/cosmos/processing-energy.webp",
+    "large": "/media/cosmos/processing-energy-large.webp",
+    "width": 1810,
+    "height": 2200,
+    "paper": true
+  },
+  "multiverse-grid": {
+    "src": "/media/cosmos/multiverse-grid.webp",
+    "large": "/media/cosmos/multiverse-grid-large.webp",
+    "width": 2200,
+    "height": 1533,
+    "paper": true
+  },
+  "model-full": {
+    "src": "/media/cosmos/model-full.webp",
+    "large": "/media/cosmos/model-full-large.webp",
+    "width": 2200,
+    "height": 1466,
+    "paper": true
+  },
+  "model-front": {
+    "src": "/media/cosmos/model-front.webp",
+    "large": "/media/cosmos/model-front-large.webp",
+    "width": 2200,
+    "height": 631,
+    "paper": true
+  },
+  "model-lines": {
+    "src": "/media/cosmos/model-lines.webp",
+    "large": "/media/cosmos/model-lines-large.webp",
+    "width": 2200,
+    "height": 618,
+    "paper": true
+  },
+  "model-detail-one": {
+    "src": "/media/cosmos/model-detail-one.webp",
+    "large": "/media/cosmos/model-detail-one-large.webp",
+    "width": 2200,
+    "height": 1145,
+    "paper": true
+  },
+  "model-detail-two": {
+    "src": "/media/cosmos/model-detail-two.webp",
+    "large": "/media/cosmos/model-detail-two-large.webp",
+    "width": 2200,
+    "height": 1145,
+    "paper": true
+  },
+  "comfy-image-workflow": {
+    "src": "/media/cosmos/comfy-image-workflow.webp",
+    "large": "/media/cosmos/comfy-image-workflow-large.webp",
+    "width": 2151,
+    "height": 1058,
+    "paper": true
+  },
+  "comfy-video-workflow": {
+    "src": "/media/cosmos/comfy-video-workflow.webp",
+    "large": "/media/cosmos/comfy-video-workflow-large.webp",
+    "width": 2141,
+    "height": 1080,
+    "paper": true
+  },
+  "ai-outcome-one": {
+    "src": "/media/cosmos/ai-outcome-one.webp",
+    "large": "/media/cosmos/ai-outcome-one-large.webp",
+    "width": 2200,
+    "height": 1238,
+    "paper": false
+  },
+  "ai-outcome-two": {
+    "src": "/media/cosmos/ai-outcome-two.webp",
+    "large": "/media/cosmos/ai-outcome-two-large.webp",
+    "width": 2200,
+    "height": 1238,
+    "paper": false
+  },
+  "cover": {
+    "src": "/media/cosmos/cover.webp",
+    "large": "/media/cosmos/cover-large.webp",
+    "width": 2200,
+    "height": 1238,
+    "paper": false
+  },
+  "hero-poster": {
+    "src": "/media/cosmos/hero-poster.webp",
+    "large": "/media/cosmos/hero-poster-large.webp",
+    "width": 1920,
+    "height": 1080,
+    "paper": false
+  },
+  "transition-poster": {
+    "src": "/media/cosmos/transition-poster.webp",
+    "large": "/media/cosmos/transition-poster-large.webp",
+    "width": 1920,
+    "height": 1472,
+    "paper": false
+  }
+}

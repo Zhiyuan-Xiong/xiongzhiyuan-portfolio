@@ -1,0 +1,239 @@
+{
+  "cover": {
+    "src": "/media/earthquake/cover.webp",
+    "large": "/media/earthquake/cover-large.webp",
+    "width": 1920,
+    "height": 1080,
+    "paper": false
+  },
+  "hero-poster": {
+    "src": "/media/earthquake/hero-poster.webp",
+    "large": "/media/earthquake/hero-poster-large.webp",
+    "width": 1920,
+    "height": 1080,
+    "paper": false
+  },
+  "transition-poster": {
+    "src": "/media/earthquake/transition-poster.webp",
+    "large": "/media/earthquake/transition-poster-large.webp",
+    "width": 1920,
+    "height": 1080,
+    "paper": false
+  },
+  "multi-instance": {
+    "src": "/media/earthquake/multi-instance.webp",
+    "large": "/media/earthquake/multi-instance-large.webp",
+    "width": 2200,
+    "height": 1238,
+    "paper": false
+  },
+  "image-collection": {
+    "src": "/media/earthquake/image-collection.webp",
+    "large": "/media/earthquake/image-collection-large.webp",
+    "width": 2200,
+    "height": 1467,
+    "paper": true
+  },
+  "image-brightness": {
+    "src": "/media/earthquake/image-brightness.webp",
+    "large": "/media/earthquake/image-brightness-large.webp",
+    "width": 1920,
+    "height": 1440,
+    "paper": true
+  },
+  "image-edge": {
+    "src": "/media/earthquake/image-edge.webp",
+    "large": "/media/earthquake/image-edge-large.webp",
+    "width": 1920,
+    "height": 1440,
+    "paper": true
+  },
+  "image-damage": {
+    "src": "/media/earthquake/image-damage.webp",
+    "large": "/media/earthquake/image-damage-large.webp",
+    "width": 1920,
+    "height": 1440,
+    "paper": true
+  },
+  "image-clusters": {
+    "src": "/media/earthquake/image-clusters.webp",
+    "large": "/media/earthquake/image-clusters-large.webp",
+    "width": 1920,
+    "height": 1440,
+    "paper": true
+  },
+  "image-pca": {
+    "src": "/media/earthquake/image-pca.webp",
+    "large": "/media/earthquake/image-pca-large.webp",
+    "width": 1920,
+    "height": 1440,
+    "paper": true
+  },
+  "detected-people": {
+    "src": "/media/earthquake/detected-people.webp",
+    "large": "/media/earthquake/detected-people-large.webp",
+    "width": 1920,
+    "height": 1440,
+    "paper": true
+  },
+  "detected-objects": {
+    "src": "/media/earthquake/detected-objects.webp",
+    "large": "/media/earthquake/detected-objects-large.webp",
+    "width": 1920,
+    "height": 1440,
+    "paper": true
+  },
+  "news-keywords": {
+    "src": "/media/earthquake/news-keywords.webp",
+    "large": "/media/earthquake/news-keywords-large.webp",
+    "width": 1630,
+    "height": 1459,
+    "paper": true
+  },
+  "news-sentiment": {
+    "src": "/media/earthquake/news-sentiment.webp",
+    "large": "/media/earthquake/news-sentiment-large.webp",
+    "width": 1715,
+    "height": 1362,
+    "paper": true
+  },
+  "news-clusters": {
+    "src": "/media/earthquake/news-clusters.webp",
+    "large": "/media/earthquake/news-clusters-large.webp",
+    "width": 1715,
+    "height": 1361,
+    "paper": true
+  },
+  "news-pca": {
+    "src": "/media/earthquake/news-pca.webp",
+    "large": "/media/earthquake/news-pca-large.webp",
+    "width": 1678,
+    "height": 1302,
+    "paper": true
+  },
+  "magnitude": {
+    "src": "/media/earthquake/magnitude.webp",
+    "large": "/media/earthquake/magnitude-large.webp",
+    "width": 2200,
+    "height": 1307,
+    "paper": true
+  },
+  "depth-magnitude": {
+    "src": "/media/earthquake/depth-magnitude.webp",
+    "large": "/media/earthquake/depth-magnitude-large.webp",
+    "width": 2200,
+    "height": 1307,
+    "paper": true
+  },
+  "fusion-clusters": {
+    "src": "/media/earthquake/fusion-clusters.webp",
+    "large": "/media/earthquake/fusion-clusters-large.webp",
+    "width": 640,
+    "height": 480,
+    "paper": true
+  },
+  "fusion-space": {
+    "src": "/media/earthquake/fusion-space.webp",
+    "large": "/media/earthquake/fusion-space-large.webp",
+    "width": 640,
+    "height": 480,
+    "paper": true
+  },
+  "fusion-emotion": {
+    "src": "/media/earthquake/fusion-emotion.webp",
+    "large": "/media/earthquake/fusion-emotion-large.webp",
+    "width": 2200,
+    "height": 1307,
+    "paper": true
+  },
+  "fusion-keywords": {
+    "src": "/media/earthquake/fusion-keywords.webp",
+    "large": "/media/earthquake/fusion-keywords-large.webp",
+    "width": 2200,
+    "height": 1307,
+    "paper": true
+  },
+  "extrusion": {
+    "src": "/media/earthquake/extrusion-transparent.webp",
+    "large": "/media/earthquake/extrusion-transparent-large.webp",
+    "width": 1450,
+    "height": 858,
+    "paper": false,
+    "transparent": true
+  },
+  "distribution": {
+    "src": "/media/earthquake/distribution-transparent.webp",
+    "large": "/media/earthquake/distribution-transparent-large.webp",
+    "width": 1884,
+    "height": 915,
+    "paper": false,
+    "transparent": true
+  },
+  "density": {
+    "src": "/media/earthquake/density-transparent.webp",
+    "large": "/media/earthquake/density-transparent-large.webp",
+    "width": 1306,
+    "height": 744,
+    "paper": false,
+    "transparent": true
+  },
+  "fragmentation": {
+    "src": "/media/earthquake/fragmentation-transparent.webp",
+    "large": "/media/earthquake/fragmentation-transparent-large.webp",
+    "width": 1617,
+    "height": 777,
+    "paper": false,
+    "transparent": true
+  },
+  "composition": {
+    "src": "/media/earthquake/composition-transparent.webp",
+    "large": "/media/earthquake/composition-transparent-large.webp",
+    "width": 1348,
+    "height": 740,
+    "paper": false,
+    "transparent": true
+  },
+  "blender-programming": {
+    "src": "/media/earthquake/blender-programming.webp",
+    "large": "/media/earthquake/blender-programming-large.webp",
+    "width": 2200,
+    "height": 1186,
+    "paper": false
+  },
+  "spatial-detail": {
+    "src": "/media/earthquake/spatial-detail-transparent.webp",
+    "large": "/media/earthquake/spatial-detail-transparent-large.webp",
+    "width": 1871,
+    "height": 738,
+    "paper": false,
+    "transparent": true
+  },
+  "grid-light": {
+    "src": "/media/earthquake/grid-light.webp",
+    "large": "/media/earthquake/grid-light-large.webp",
+    "width": 1920,
+    "height": 1080,
+    "paper": false
+  },
+  "grid-development": {
+    "src": "/media/earthquake/grid-development.webp",
+    "large": "/media/earthquake/grid-development-large.webp",
+    "width": 1920,
+    "height": 1080,
+    "paper": false
+  },
+  "processing-poster": {
+    "src": "/media/earthquake/processing-poster.webp",
+    "large": "/media/earthquake/processing-poster-large.webp",
+    "width": 1200,
+    "height": 800,
+    "paper": false
+  },
+  "processing-sequence": {
+    "src": "/media/earthquake/processing-sequence.webp",
+    "large": "/media/earthquake/processing-sequence-large.webp",
+    "width": 1650,
+    "height": 2200,
+    "paper": false
+  }
+}

@@ -1,0 +1,227 @@
+{
+  "cover-model": {
+    "src": "/media/species/cover-model.webp",
+    "width": 2600,
+    "height": 2600
+  },
+  "cover-background": {
+    "src": "/media/species/cover-background.webp",
+    "width": 2600,
+    "height": 1468
+  },
+  "world-grid": {
+    "src": "/media/species/world-grid.webp",
+    "width": 2200,
+    "height": 1578
+  },
+  "city": {
+    "src": "/media/species/city.webp",
+    "width": 2150,
+    "height": 858
+  },
+  "death-model": {
+    "src": "/media/species/death-model.webp",
+    "width": 2200,
+    "height": 1826
+  },
+  "convert-model": {
+    "src": "/media/species/convert-model.webp",
+    "width": 2200,
+    "height": 2178
+  },
+  "reborn-model": {
+    "src": "/media/species/reborn-model.webp",
+    "width": 2200,
+    "height": 2200
+  },
+  "logo-number": {
+    "src": "/media/species/logo-number.webp",
+    "width": 851,
+    "height": 505
+  },
+  "logo-words": {
+    "src": "/media/species/logo-words.webp",
+    "width": 1982,
+    "height": 550
+  },
+  "archive-1": {
+    "src": "/media/species/archive-1.webp",
+    "width": 1821,
+    "height": 2732
+  },
+  "archive-2": {
+    "src": "/media/species/archive-2.webp",
+    "width": 2158,
+    "height": 2158
+  },
+  "archive-3": {
+    "src": "/media/species/archive-3.webp",
+    "width": 2200,
+    "height": 3052
+  },
+  "archive-4": {
+    "src": "/media/species/archive-4.webp",
+    "width": 2200,
+    "height": 3063
+  },
+  "archive-5": {
+    "src": "/media/species/archive-5.webp",
+    "width": 2200,
+    "height": 3052
+  },
+  "archive-6": {
+    "src": "/media/species/archive-6.webp",
+    "width": 2200,
+    "height": 3063
+  },
+  "archive-7": {
+    "src": "/media/species/archive-7.webp",
+    "width": 2160,
+    "height": 2160
+  },
+  "cover-ornaments": {
+    "src": "/media/species/cover-ornaments.webp",
+    "width": 2123,
+    "height": 900
+  },
+  "convert-diagram-1": {
+    "src": "/media/species/convert-diagram-1.webp",
+    "width": 400,
+    "height": 120
+  },
+  "convert-diagram-2": {
+    "src": "/media/species/convert-diagram-2.webp",
+    "width": 400,
+    "height": 120
+  },
+  "convert-diagram-3": {
+    "src": "/media/species/convert-diagram-3.webp",
+    "width": 400,
+    "height": 120
+  },
+  "research": {
+    "src": "/media/species/research.webp",
+    "width": 2800,
+    "height": 1732
+  },
+  "world-identities": {
+    "src": "/media/species/world-identities.webp",
+    "width": 2200,
+    "height": 679
+  },
+  "life-triangle": {
+    "src": "/media/species/life-triangle.webp",
+    "width": 1400,
+    "height": 1231
+  },
+  "life-tree": {
+    "src": "/media/species/life-tree.webp",
+    "width": 2800,
+    "height": 1569
+  },
+  "death-icon": {
+    "src": "/media/species/death-icon.webp",
+    "width": 800,
+    "height": 913
+  },
+  "convert-icon": {
+    "src": "/media/species/convert-icon.webp",
+    "width": 800,
+    "height": 579
+  },
+  "reborn-icon": {
+    "src": "/media/species/reborn-icon.webp",
+    "width": 800,
+    "height": 795
+  },
+  "wreath": {
+    "src": "/media/species/wreath.webp",
+    "width": 1400,
+    "height": 1399
+  },
+  "specimen-1": {
+    "src": "/media/species/specimen-1.webp",
+    "width": 1023,
+    "height": 750
+  },
+  "specimen-2": {
+    "src": "/media/species/specimen-2.webp",
+    "width": 1023,
+    "height": 750
+  },
+  "old-process": {
+    "src": "/media/species/old-process.webp",
+    "width": 2800,
+    "height": 1644
+  },
+  "laboratory-study": {
+    "src": "/media/species/laboratory-study.webp",
+    "width": 2252,
+    "height": 2186
+  },
+  "old-death-study": {
+    "src": "/media/species/old-death-study.webp",
+    "width": 2600,
+    "height": 1292
+  },
+  "city-photo": {
+    "src": "/media/species/city-photo.webp",
+    "width": 1384,
+    "height": 778
+  },
+  "death-step-1": {
+    "src": "/media/species/death-step-1.webp",
+    "width": 215,
+    "height": 101
+  },
+  "death-step-2": {
+    "src": "/media/species/death-step-2.webp",
+    "width": 215,
+    "height": 101
+  },
+  "death-step-3": {
+    "src": "/media/species/death-step-3.webp",
+    "width": 215,
+    "height": 101
+  },
+  "death-step-4": {
+    "src": "/media/species/death-step-4.webp",
+    "width": 215,
+    "height": 268
+  },
+  "death-step-5": {
+    "src": "/media/species/death-step-5.webp",
+    "width": 220,
+    "height": 286
+  },
+  "death-step-6": {
+    "src": "/media/species/death-step-6.webp",
+    "width": 215,
+    "height": 286
+  },
+  "death-step-7": {
+    "src": "/media/species/death-step-7.webp",
+    "width": 215,
+    "height": 158
+  },
+  "death-step-8": {
+    "src": "/media/species/death-step-8.webp",
+    "width": 215,
+    "height": 158
+  },
+  "death-step-9": {
+    "src": "/media/species/death-step-9.webp",
+    "width": 215,
+    "height": 158
+  },
+  "cover": {
+    "src": "/media/species/cover.webp",
+    "width": 1920,
+    "height": 1080
+  },
+  "world-people": {
+    "src": "/media/species/world-people.webp",
+    "width": 1920,
+    "height": 1080
+  }
+}

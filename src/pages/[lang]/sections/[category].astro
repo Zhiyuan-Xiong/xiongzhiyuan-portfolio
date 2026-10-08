@@ -1,0 +1,35 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Contents from '../../../components/Contents.astro';
+import { projects } from '../../../data/projects';
+import { sections } from '../../../data/sections';
+import { ui, type Lang } from '../../../data/site';
+export function getStaticPaths() { return ['zh','en'].flatMap(lang => sections.map(section => ({ params: { lang, category: section.id }, props: { section } }))); }
+const lang = Astro.params.lang as Lang;
+const { section } = Astro.props;
+const collection = projects.filter(project => project.categories.includes(section.id));
+---
+<Base lang={lang} title={section.label[lang]} description={section.description[lang]} active="explore" immersive>
+  <section class="section-world" data-project-browser aria-labelledby="section-title">
+    <div class="project-atmospheres" aria-hidden="true">{collection.map((project, i) => <div class="project-atmosphere" data-project-atmosphere={project.slug} data-active={i === 0 ? 'true' : 'false'}>{project.cover && <img src={`/images/${project.background ?? project.cover}-1280.webp`} alt="" width="1280" height="720" />}</div>)}</div>
+    <div class="section-inner experience-shell">
+      <div class="section-main">
+        <nav class="experience-breadcrumbs" aria-label={lang === 'zh' ? '面包屑导航' : 'Breadcrumb'}><a href={`/${lang}/explore/`}>{lang === 'zh' ? '分区目录' : 'Explore'}</a><span aria-hidden="true">/</span><span aria-current="page">{section.label[lang]}</span></nav>
+        <header class="section-heading-experience"><p class="experience-kicker">{String(sections.findIndex(item => item.id === section.id) + 1).padStart(2,'0')} / {lang === 'zh' ? '作品分区' : 'WORK SECTION'}</p><h1 id="section-title">{section.label[lang]}</h1><p>{section.description[lang]}</p></header>
+        <div class="project-preview-panels">{collection.map((project, i) => <article id={`preview-${project.slug}`} class="project-preview-panel" data-project-panel={project.slug} role="tabpanel" aria-labelledby={`tab-${project.slug}`} tabindex="0" hidden={i !== 0}>
+          <div class="project-preview-meta"><span>{project.kind[lang]}</span><span>{project.year ?? (project.status === 'progress' ? ui.progress[lang] : project.status === 'pending' ? ui.pending[lang] : '')}</span></div>
+          <h2>{project.title[lang]}</h2><p>{project.description[lang]}</p>
+          <div class="project-preview-actions">{project.status === 'published' ? <a class="experience-button" data-case-link href={`/${lang}/work/${project.slug}/?category=${section.id}`}>{ui.view[lang]}<span aria-hidden="true">↗</span></a> : <span class="experience-status">{project.status === 'progress' ? ui.progress[lang] : ui.pending[lang]}</span>}<a class="experience-text-link" href={`/${lang}/works/?category=${section.id}`}>{lang === 'zh' ? '在作品库中查看' : 'View in the work library'}</a></div>
+        </article>)}</div>
+        <div class="project-strip-heading"><span>PROJECT INDEX</span><span><span data-project-position>01</span> / {String(collection.length).padStart(2,'0')}</span></div>
+        <div class="project-filmstrip" role="tablist" aria-label={lang === 'zh' ? '选择项目' : 'Select a project'} data-project-tabs>{collection.map((project, i) => <button type="button" id={`tab-${project.slug}`} role="tab" aria-label={project.status === "published" ? project.title[lang] : `${project.title[lang]} · ${project.status === "progress" ? ui.progress[lang] : ui.pending[lang]}`} aria-controls={`preview-${project.slug}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1} data-project-select={project.slug}>
+          <span class="filmstrip-image">{project.cover ? <img src={`/images/${project.cover}-640.webp`} width="640" height="360" alt="" /> : <span class="filmstrip-placeholder" aria-hidden="true"><span>{String(i + 1).padStart(2,'0')}</span><small>{project.status === 'progress' ? ui.progress[lang] : ui.pending[lang]}</small></span>}<span class="filmstrip-number" aria-hidden="true">{String(i + 1).padStart(2,'0')}</span></span><span class="filmstrip-title">{project.title[lang]}</span>
+        </button>)}</div>
+        <p class="filmstrip-hint">{lang === 'zh' ? '点击项目切换预览 · 使用方向键浏览' : 'Select a project to preview · Browse with the arrow keys'}</p>
+        <p class="sr-only" role="status" aria-live="polite" data-project-announcement></p>
+      </div>
+      <Contents lang={lang} active={section.id} />
+    </div>
+  </section>
+</Base>
+<script src="../../../scripts/experience.ts"></script>

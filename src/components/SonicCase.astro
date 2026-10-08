@@ -1,0 +1,25 @@
+---
+import RestoredCaseShell from './RestoredCaseShell.astro';
+import SonicFigure from './SonicFigure.astro';
+import {sonic} from '../data/sonic';
+import assets from '../data/sonic-assets.json';
+import type {Lang} from '../data/site';
+import type {Project} from '../data/projects';
+import '../styles/sonic-case.css';
+const {lang,project}=Astro.props as {lang:Lang;project:Project};
+const t=(zh:string,en:string)=>lang==='zh'?zh:en;
+---
+<RestoredCaseShell lang={lang} project={project} theme="sonic" englishTitle="Sonic Elasticity" chapters={sonic.chapters} hero={{...assets.hero,alt:project.coverAlt!}}>
+ <div slot="hero-caption" class="sonic-hero-caption"><h2>Sonic Elasticity</h2><p>{t('声学弹性 · 声音与空间的知觉实验','An experiment in sound and spatial perception')}</p></div>
+ <div slot="intro"><p>{sonic.introduction[lang]}</p></div>
+ {sonic.chapters.map((chapter,index)=><section id={chapter.id} class="restored-chapter case-section" aria-labelledby={'sonic-'+chapter.id}>
+  <header class="restored-section-heading"><span class="restored-number">{String(index+1).padStart(2,'0')}</span><h2 id={'sonic-'+chapter.id}>{chapter.label[lang]}</h2></header>
+  {chapter.lead&&<p class="restored-question">{chapter.lead[lang]}</p>}
+  {chapter.blocks.map(block=><div class:list={['sonic-block',block.layout&&'sonic-block-'+block.layout]}>
+   {(block.title||block.paragraphs)&&<div class="sonic-block-copy">{block.title&&<h3>{block.title[lang]}</h3>}{block.paragraphs?.map(p=><p>{p[lang]}</p>)}</div>}
+   {block.images&&<div class="sonic-block-images">{block.images.map(f=><SonicFigure image={f.image} alt={f.alt[lang]} caption={f.caption?.[lang]} lang={lang}/>)}</div>}
+   {block.points&&<div class="sonic-points">{block.points.map(point=><div><h4>{point.title[lang]}</h4><p>{point.text[lang]}</p></div>)}</div>}
+  </div>)}
+  {chapter.id==='experience'&&<div class="sonic-film-block"><h3>{t('装置演示影片','Installation film')}</h3><p>{t('观看声音、弹性框架与参与者在同一空间中的互动。播放后可开启声音。','Watch sound, the elastic framework, and participants interact within one space. Enable audio after playback.')}</p><video class="sonic-film" controls playsinline preload="none" poster={assets.hero.src} aria-label={t('声学弹性完整装置演示影片','Sonic Elasticity installation demonstration film')}><source src="/media/sonic/installation-film.mp4" type="video/mp4"/></video><p class="sonic-film-caption">{t('Bartlett School 设计项目 · 协作装置与演示影像','Bartlett School design project · Collaborative installation and film')}</p></div>}
+ </section>)}
+</RestoredCaseShell>

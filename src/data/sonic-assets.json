@@ -1,0 +1,282 @@
+{
+  "hero": {
+    "src": "/media/sonic/hero.webp",
+    "large": "/media/sonic/hero-large.webp",
+    "width": 2200,
+    "height": 1237,
+    "diagram": false
+  },
+  "physical-model": {
+    "src": "/media/sonic/physical-model.webp",
+    "large": "/media/sonic/physical-model-large.webp",
+    "width": 2200,
+    "height": 1467,
+    "diagram": false
+  },
+  "installation": {
+    "src": "/media/sonic/installation.webp",
+    "large": "/media/sonic/installation-large.webp",
+    "width": 2200,
+    "height": 1467,
+    "diagram": false
+  },
+  "design-approach": {
+    "src": "/media/sonic/design-approach.webp",
+    "large": "/media/sonic/design-approach-large.webp",
+    "width": 2200,
+    "height": 667,
+    "diagram": false
+  },
+  "cognitive-framework": {
+    "src": "/media/sonic/cognitive-framework.webp",
+    "large": "/media/sonic/cognitive-framework-large.webp",
+    "width": 3840,
+    "height": 2160,
+    "source": "Figma / m6kZJJSAunYJhF5BWrur16"
+  },
+  "prediction-board": {
+    "src": "/media/sonic/prediction-board.webp",
+    "large": "/media/sonic/prediction-board-large.webp",
+    "width": 1222,
+    "height": 1618,
+    "diagram": true
+  },
+  "prediction-flow": {
+    "src": "/media/sonic/prediction-flow.webp",
+    "large": "/media/sonic/prediction-flow-large.webp",
+    "width": 2200,
+    "height": 103,
+    "diagram": true
+  },
+  "theory-board": {
+    "src": "/media/sonic/theory-board.webp",
+    "large": "/media/sonic/theory-board-large.webp",
+    "width": 1509,
+    "height": 1359,
+    "diagram": true
+  },
+  "sound-references": {
+    "src": "/media/sonic/sound-references.webp",
+    "large": "/media/sonic/sound-references-large.webp",
+    "width": 2200,
+    "height": 589,
+    "diagram": false
+  },
+  "space-references": {
+    "src": "/media/sonic/space-references.webp",
+    "large": "/media/sonic/space-references-large.webp",
+    "width": 2200,
+    "height": 589,
+    "diagram": false
+  },
+  "time-experiment": {
+    "src": "/media/sonic/time-experiment.webp",
+    "large": "/media/sonic/time-experiment-large.webp",
+    "width": 1870,
+    "height": 1338,
+    "diagram": false
+  },
+  "space-experiment": {
+    "src": "/media/sonic/space-experiment.webp",
+    "large": "/media/sonic/space-experiment-large.webp",
+    "width": 1874,
+    "height": 1597,
+    "diagram": false
+  },
+  "iteration-overview": {
+    "src": "/media/sonic/iteration-overview.webp",
+    "large": "/media/sonic/iteration-overview-large.webp",
+    "width": 2200,
+    "height": 639,
+    "diagram": true
+  },
+  "iteration-one": {
+    "src": "/media/sonic/iteration-one.webp",
+    "large": "/media/sonic/iteration-one-large.webp",
+    "width": 2200,
+    "height": 1264,
+    "diagram": true
+  },
+  "iteration-two": {
+    "src": "/media/sonic/iteration-two.webp",
+    "large": "/media/sonic/iteration-two-large.webp",
+    "width": 2200,
+    "height": 1264,
+    "diagram": true
+  },
+  "iteration-three": {
+    "src": "/media/sonic/iteration-three.webp",
+    "large": "/media/sonic/iteration-three-large.webp",
+    "width": 2200,
+    "height": 1245,
+    "diagram": true
+  },
+  "iteration-three-states": {
+    "src": "/media/sonic/iteration-three-states.webp",
+    "large": "/media/sonic/iteration-three-states-large.webp",
+    "width": 454,
+    "height": 1113,
+    "diagram": true
+  },
+  "early-frame": {
+    "src": "/media/sonic/early-frame.webp",
+    "large": "/media/sonic/early-frame-large.webp",
+    "width": 2200,
+    "height": 1592,
+    "diagram": false
+  },
+  "sound-zones": {
+    "src": "/media/sonic/sound-zones.webp",
+    "large": "/media/sonic/sound-zones-large.webp",
+    "width": 2200,
+    "height": 1049,
+    "diagram": true
+  },
+  "max-one": {
+    "src": "/media/sonic/max-one.webp",
+    "large": "/media/sonic/max-one-large.webp",
+    "width": 2200,
+    "height": 1038,
+    "diagram": false
+  },
+  "interaction-comparison": {
+    "src": "/media/sonic/interaction-comparison.webp",
+    "large": "/media/sonic/interaction-comparison-large.webp",
+    "width": 2200,
+    "height": 975,
+    "diagram": false
+  },
+  "iteration-four": {
+    "src": "/media/sonic/iteration-four.webp",
+    "large": "/media/sonic/iteration-four-large.webp",
+    "width": 2200,
+    "height": 1220,
+    "diagram": true
+  },
+  "first-full-scale": {
+    "src": "/media/sonic/first-full-scale.webp",
+    "large": "/media/sonic/first-full-scale-large.webp",
+    "width": 2200,
+    "height": 1592,
+    "diagram": false
+  },
+  "iteration-refinement": {
+    "src": "/media/sonic/iteration-refinement.webp",
+    "large": "/media/sonic/iteration-refinement-large.webp",
+    "width": 2200,
+    "height": 723,
+    "diagram": true
+  },
+  "interaction-timeline": {
+    "src": "/media/sonic/interaction-timeline.webp",
+    "large": "/media/sonic/interaction-timeline-large.webp",
+    "width": 2200,
+    "height": 994,
+    "diagram": true
+  },
+  "components": {
+    "src": "/media/sonic/components.webp",
+    "large": "/media/sonic/components-large.webp",
+    "width": 2200,
+    "height": 1027,
+    "diagram": true
+  },
+  "construction-board": {
+    "src": "/media/sonic/construction-board.webp",
+    "large": "/media/sonic/construction-board-large.webp",
+    "width": 2200,
+    "height": 1123,
+    "diagram": false
+  },
+  "framework-built": {
+    "src": "/media/sonic/framework-built.webp",
+    "large": "/media/sonic/framework-built-large.webp",
+    "width": 2200,
+    "height": 1592,
+    "diagram": false
+  },
+  "framework-joint": {
+    "src": "/media/sonic/framework-joint.webp",
+    "large": "/media/sonic/framework-joint-large.webp",
+    "width": 2200,
+    "height": 1467,
+    "diagram": false
+  },
+  "framework-detail": {
+    "src": "/media/sonic/framework-detail.webp",
+    "large": "/media/sonic/framework-detail-large.webp",
+    "width": 2200,
+    "height": 1467,
+    "diagram": false
+  },
+  "motor-system": {
+    "src": "/media/sonic/motor-system.webp",
+    "large": "/media/sonic/motor-system-large.webp",
+    "width": 2200,
+    "height": 319,
+    "diagram": true
+  },
+  "motor-production": {
+    "src": "/media/sonic/motor-production.webp",
+    "large": "/media/sonic/motor-production-large.webp",
+    "width": 2200,
+    "height": 681,
+    "diagram": false
+  },
+  "audio-analysis": {
+    "src": "/media/sonic/audio-analysis.webp",
+    "large": "/media/sonic/audio-analysis-large.webp",
+    "width": 2200,
+    "height": 892,
+    "diagram": true
+  },
+  "max-upgrade": {
+    "src": "/media/sonic/max-upgrade.webp",
+    "large": "/media/sonic/max-upgrade-large.webp",
+    "width": 2200,
+    "height": 1132,
+    "diagram": true
+  },
+  "max-two": {
+    "src": "/media/sonic/max-two.webp",
+    "large": "/media/sonic/max-two-large.webp",
+    "width": 2200,
+    "height": 1036,
+    "diagram": false
+  },
+  "linked-states": {
+    "src": "/media/sonic/linked-states.webp",
+    "large": "/media/sonic/linked-states-large.webp",
+    "width": 2200,
+    "height": 945,
+    "diagram": false
+  },
+  "showcase-standby": {
+    "src": "/media/sonic/showcase-standby.webp",
+    "large": "/media/sonic/showcase-standby-large.webp",
+    "width": 2200,
+    "height": 953,
+    "diagram": false
+  },
+  "showcase-elastic": {
+    "src": "/media/sonic/showcase-elastic.webp",
+    "large": "/media/sonic/showcase-elastic-large.webp",
+    "width": 2200,
+    "height": 953,
+    "diagram": false
+  },
+  "showcase-motion": {
+    "src": "/media/sonic/showcase-motion.webp",
+    "large": "/media/sonic/showcase-motion-large.webp",
+    "width": 2200,
+    "height": 953,
+    "diagram": false
+  },
+  "showcase-reference": {
+    "src": "/media/sonic/showcase-reference.webp",
+    "large": "/media/sonic/showcase-reference-large.webp",
+    "width": 2200,
+    "height": 953,
+    "diagram": false
+  }
+}

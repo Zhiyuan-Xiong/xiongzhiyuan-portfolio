@@ -1,0 +1,25 @@
+---
+import interactive from '../data/cosmos-interactive.json';
+import assets from '../data/cosmos-assets.json';
+import type {Lang} from '../data/site';
+interface Props {mode:'mesh'|'particles';lang:Lang}
+const {mode,lang}=Astro.props;
+const t=(zh:string,en:string)=>lang==='zh'?zh:en;
+const mesh=mode==='mesh',source=mesh?interactive.mesh.src:interactive.particles.src,poster=mesh?assets['model-full']:assets['transition-poster'];
+const common=[['zoom-in','＋',t('放大','Zoom in')],['zoom-out','−',t('缩小','Zoom out')],['reset','↺',t('复位','Reset')],['fullscreen','⤢',t('全屏','Fullscreen')]];
+const specific=mesh?[['auto','',t('自动旋转','Auto rotate')],['points','',t('点云视图','Point cloud')]]:[['explode','',t('触发烟花','Trigger burst')],['pause','',t('暂停','Pause')],['jitter','',t('微颤动','Jitter')]];
+---
+<div class:list={['cosmos-viewer','cosmos-viewer-'+mode]} data-cosmos-viewer={mode} data-source={source} data-state="idle">
+ <div class="cosmos-viewer-stage">
+  <img class="cosmos-viewer-poster" src={poster.src} alt="" width={poster.width} height={poster.height} loading="lazy"/>
+  <canvas tabindex="0" aria-busy="true" aria-label={mesh?t('无垠的宇宙三维模型：拖动旋转，滚轮缩放，方向键旋转，R 复位。','Infinite Cosmos model: drag to orbit, scroll to zoom, arrow keys to rotate, R to reset.'):t('无垠的宇宙粒子交互：拖动旋转，右键触发烟花，空格暂停，J 切换微颤动。','Infinite Cosmos particles: drag to orbit, right click for a burst, Space to pause, J to toggle jitter.')}></canvas>
+  <span class="cosmos-viewer-tag">{mesh?'Rhino / Grasshopper':'Processing'}</span>
+ </div>
+ <div class="cosmos-viewer-toolbar" role="group" aria-label={t('交互控制','Interaction controls')}>
+  {specific.map(([action,icon,label])=><button type="button" data-viewer-action={action} disabled aria-pressed={action==='auto'?'false':action==='jitter'?'true':action==='pause'||action==='points'?'false':undefined}>{icon}{label}</button>)}
+  <span class="cosmos-toolbar-spacer"></span>
+  {common.map(([action,icon,label])=><button type="button" data-viewer-action={action} disabled aria-label={label} title={label}>{icon}</button>)}
+ </div>
+ <div class="cosmos-viewer-foot"><p>{mesh?t('拖动旋转 · 滚轮缩放 · 双指缩放','Drag to orbit · Scroll or pinch to zoom'):t('拖动旋转 · 右键触发烟花 · 触屏使用「触发烟花」按钮','Drag to orbit · Right click to burst · Use the button on touchscreens')}</p><span data-viewer-status role="status" aria-live="polite">{t('进入画面后载入','Loads when in view')}</span></div>
+</div>
+

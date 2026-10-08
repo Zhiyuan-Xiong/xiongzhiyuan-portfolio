@@ -1,0 +1,67 @@
+---
+import RestoredCaseShell from './RestoredCaseShell.astro';
+import CosmosFigure from './CosmosFigure.astro';
+import CosmosViewer from './CosmosViewer.astro';
+import {cosmos} from '../data/cosmos';
+import assets from '../data/cosmos-assets.json';
+import type {Lang} from '../data/site';
+import type {Project} from '../data/projects';
+import '../styles/cosmos-case.css';
+const {lang,project}=Astro.props as {lang:Lang;project:Project};
+const t=(zh:string,en:string)=>lang==='zh'?zh:en;
+const steps=[
+ ['Grasshopper',t('生成模块','Generate modules'),t('以 WASP、Cocoon 与 WeaverBird 构建可聚合的几何模块、有机触手和异化结构。','WASP, Cocoon, and WeaverBird generate aggregating modules, organic tentacles, and alien structures.')],
+ ['Rhino',t('组装空间','Assemble the space'),t('让不同尺度与类型的结构交织，形成层叠的混合生态模型。','Interweave structures of different scales and types into a layered hybrid ecology.')],
+ ['Processing',t('赋予动态','Introduce motion'),t('将 OBJ 模型转换为点云，在生长轨迹与局部烟花之间形成可交互的粒子系统。','Convert the OBJ model into a point cloud with growing trails and interactive local bursts.')],
+ ['ComfyUI',t('演化影像','Evolve the images'),t('以交互画面的帧为输入，通过图生图与图生视频生成未来世界的视觉变体。','Use frames from the interaction in image-to-image and image-to-video workflows to develop alternative future worlds.')]
+];
+---
+<RestoredCaseShell lang={lang} project={project} theme="cosmos" englishTitle="Infinite Cosmos" chapters={cosmos.chapters} hero={{...assets['hero-poster'],alt:project.coverAlt!}} video="/media/cosmos/hero.mp4">
+ <div slot="intro"><p>{cosmos.introduction[lang]}</p></div>
+ {cosmos.chapters.map((chapter,index)=><section id={chapter.id} class="restored-chapter case-section" aria-labelledby={'cosmos-'+chapter.id}>
+  <header class="restored-section-heading"><span class="restored-number">{String(index+1).padStart(2,'0')}</span><h2 id={'cosmos-'+chapter.id}>{chapter.label[lang]}</h2></header>
+  {chapter.id==='concept'&&<>
+   <p class="restored-question">{t('如果不同的时间线可以同时生长，未来世界会呈现怎样的空间形态？','What spatial forms emerge when different timelines grow at once?')}</p>
+   <p>{t('项目从多元宇宙与未来世界观中获得灵感。层叠场景、有机形态和多维 Voronoi 结构共同构成一个混合空间：几何模块提供秩序，触手与根系向外延伸，红色的异化构造打破稳定的边界。藤蔓状的分支象征不同的可能时间线，彼此缠绕并支撑整个世界。','The project draws on multiverses and future worldviews. Layered scenes, organic forms, and multidimensional Voronoi structures combine into a hybrid space. Geometric modules introduce order, tentacles and roots extend outward, and red alien constructions disrupt stable boundaries. Vine-like branches represent possible timelines that intertwine and support the world.')}</p>
+   <ol class="cosmos-pipeline">{steps.map(([tool,title,text],i)=><li><span>{String(i+1).padStart(2,'0')} / {tool}</span><h3>{title}</h3><p>{text}</p></li>)}</ol>
+  </>}
+  {chapter.id==='parametric'&&<>
+   <p>{t('将空间拆分为三类相互补充的结构。每一组分析保留参数化定义、模型视图与生成形态之间的关系，再将它们带入整体场景。','Three complementary families of structure form the space. Each study connects its parametric definition, model view, and generated form before integration into the overall scene.')}</p>
+   <div class="cosmos-module"><h3>{t('01 / WASP · 无限几何模块','01 / WASP · Infinite geometric modules')}</h3><p>{t('以可重复聚合的单元建立空间骨架，通过组合与层叠产生连续的结构。','Repeatable units aggregate into a spatial framework, creating continuity through combination and layering.')}</p><CosmosFigure lang={lang} image="wasp-board" alt={t('WASP 参数化定义、红色模块模型与白色聚合形态的完整分析组','Complete WASP study: parametric definition, red module model, and white aggregated form')}/></div>
+   <div class="cosmos-module"><h3>{t('02 / Cocoon · 有机触手','02 / Cocoon · Organic tentacles')}</h3><p>{t('把分支与曲线转化为连续的有机表面，形成具有生物感的触手状结构。','Branches and curves become continuous organic surfaces with a biological, tentacle-like character.')}</p><CosmosFigure lang={lang} image="cocoon-board" alt={t('Cocoon 参数化定义、红色分支模型与白色触手形态的完整分析组','Complete Cocoon study: definition, branching model, and organic tentacle form')}/></div>
+   <div class="cosmos-module"><h3>{t('03 / WeaverBird · 异化构造','03 / WeaverBird · Alien constructions')}</h3><p>{t('通过网格处理生成带有孔洞与多面边界的结构，让机械秩序与异化形态并存。','Mesh operations create openings and faceted boundaries, bringing mechanical order together with altered organic forms.')}</p><CosmosFigure lang={lang} image="weaverbird-board" alt={t('WeaverBird 参数化定义、红色网格视图与多面构造的完整分析组','Complete WeaverBird study: definition, red mesh view, and faceted construction')}/></div>
+  </>}
+  {chapter.id==='hybrid-space'&&<>
+   <p>{t('在 Rhino 中组合三类模块，建立生物与机械交织的空间。白色结构形成连贯的基底，红色节点突出异化构造；根系与藤蔓跨越模块之间的空隙，将独立的形态连接为同一个生态系统。','Rhino combines the three module families into an interwoven biological and mechanical space. White structures create continuity, while red nodes emphasise alien constructions. Roots and vines bridge gaps between modules, connecting separate forms into one ecology.')}</p>
+   <CosmosViewer mode="mesh" lang={lang}/>
+   <CosmosFigure lang={lang} image="model-full" alt={t('白色几何模块、有机触手与红色节点组成的完整概念模型','Complete conceptual model combining white modules, organic tentacles, and red nodes')} caption={t('概念模型全景：从模块聚合到混合生态空间。','Overall conceptual model: from module aggregation to a hybrid ecological space.')}/>
+   <CosmosFigure lang={lang} image="model-assembly" alt={t('标示三类结构所在位置的完整模型立面分析','Complete model elevation identifying the three structure families')} caption={t('模型组装分析：无限几何模块、异化构造与触手状结构。','Assembly analysis: geometric modules, alien constructions, and tentacle-like structures.')}/>
+   <div class="cosmos-pair"><CosmosFigure lang={lang} image="model-detail-one" alt={t('混合空间内部的白色触手、框架与红色异化构造','White tentacles, frameworks, and red constructions inside the hybrid space')}/><CosmosFigure lang={lang} image="model-detail-two" alt={t('被白色有机结构包围的红色网格节点','A red mesh node surrounded by white organic structures')}/></div>
+   <div class="cosmos-elevations"><CosmosFigure lang={lang} image="model-front" alt={t('完整概念模型的正面视图','Front view of the complete conceptual model')} caption={t('正面视图','Front view')}/><CosmosFigure lang={lang} image="model-lines" alt={t('完整概念模型的结构线框','Wireframe of the complete conceptual model')} caption={t('结构线框','Structural wireframe')}/></div>
+  </>}
+  {chapter.id==='particle-interaction'&&<>
+   <p>{t('将模型导出为 OBJ，并在 Processing 中采样为点云。持续生长的轨迹从空间边界向模型靠拢，形成缠绕的藤蔓；右键触发时，局部粒子被推向外侧并转为红蓝色烟花，随后逐渐回到原始位置。几何从静态物体转变为可被扰动、能够恢复的动态系统。','The model is exported as OBJ and sampled into a point cloud in Processing. Growing trails move from the spatial boundary toward the model, forming intertwined vines. A right click pushes nearby particles outward in red and blue bursts; they then return toward their original positions. Static geometry becomes a responsive system that can be disturbed and recover.')}</p>
+   <CosmosViewer mode="particles" lang={lang}/>
+   <div class="cosmos-process-pair"><CosmosFigure lang={lang} image="processing-states" alt={t('点云建立、轨迹生长和烟花扩散的四阶段完整拼贴','Complete four-stage collage of point-cloud formation, trail growth, and bursts')} caption={t('交互演化：点云建立 → 轨迹生长 → 藤蔓缠绕 → 局部扩散。','Interaction sequence: point cloud → growing trails → intertwined vines → local bursts.')}/><CosmosFigure lang={lang} image="processing-energy" alt={t('粒子空间两个视角的完整动态形态分析','Complete two-view study of the dynamic particle space')} caption={t('不同视角下的动态轨迹与空间结构。','Dynamic trails and spatial structure from different viewpoints.')}/></div>
+   <details class="cosmos-code"><summary>{t('查看 Processing 编程分析','View the Processing code study')}</summary><CosmosFigure lang={lang} image="processing-code" alt={t('Processing 模型采样、粒子与轨迹逻辑的六张完整代码分析拼贴','Complete six-panel code study of Processing model sampling, particles, and trails')} caption={t('原始编程过程记录，可放大查看完整代码分析。','Original programming studies; enlarge to inspect the complete code panels.')}/></details>
+   <h3>{t('原始交互演示','Original interaction demonstration')}</h3><video class="cosmos-demo" controls playsinline preload="none" poster={assets['transition-poster'].src} aria-label={t('Processing 原始粒子交互演示视频','Original Processing particle interaction demonstration')}><source src="/media/cosmos/processing-demo.mp4" type="video/mp4"/></video>
+  </>}
+  {chapter.id==='generative-workflow'&&<>
+   <h3>{t('从交互帧到生成图像','From interaction frames to generated images')}</h3><p>{t('将 Processing 视频中的帧送入 ComfyUI，作为图生图的输入。通过 Stable Diffusion 在原有点云与轨迹构图上增加更丰富的材质、色彩与空间细节，使抽象的交互画面进一步演化为未来世界的视觉场景。','Frames from the Processing video enter an image-to-image workflow in ComfyUI. Stable Diffusion develops richer materials, colours, and spatial details from the existing point-cloud and trail composition, evolving abstract interactive frames into visions of future worlds.')}</p>
+   <CosmosFigure lang={lang} image="comfy-image-workflow" alt={t('从 Processing 画面输入到图像生成输出的完整 ComfyUI 节点工作流','Complete ComfyUI image-generation workflow from Processing frame input to generated output')} caption={t('图生图工作流：保留输入、参数和结果之间的完整关系。','Image-to-image workflow: input, parameters, and outcome shown together.')}/>
+   <h3>{t('从生成图像到动态宇宙','From generated images to a moving cosmos')}</h3><p>{t('进一步使用图生视频，将生成图像转化为流动、扩张的动态影像。节点工作流连接模型加载、图像输入、视频生成与输出，让参数化空间的结构在另一种媒介中持续变化。','An image-to-video workflow turns the generated images into flowing, expanding moving images. Model loading, image input, video generation, and output form a connected sequence, carrying the parametric space into another medium.')}</p>
+   <CosmosFigure lang={lang} image="comfy-video-workflow" alt={t('模型加载、图像上传、视频生成和输出组成的完整 ComfyUI 视频节点工作流','Complete ComfyUI video workflow: model loading, image input, video generation, and output')} caption={t('图生视频工作流与动态结果。','Image-to-video workflow and moving-image result.')}/>
+  </>}
+  {chapter.id==='multiverse'&&<>
+   <p>{t('同一组空间结构在不同生成结果中呈现出各异的能量、密度与色彩。粒子轨迹既是形态的骨架，也是图像演化的线索：从理性的几何模型，到可以触发的动态系统，再到不断变化的宇宙景观。','The same spatial structure develops different energies, densities, and colours across generated outcomes. Particle trails serve both as a formal framework and as cues for image evolution: from geometric model to responsive system to a changing cosmic landscape.')}</p>
+   <CosmosFigure lang={lang} image="multiverse-grid" alt={t('九张未来宇宙生成结果的完整视觉拼贴','Complete nine-image collage of generated future cosmos outcomes')} caption={t('九组视觉演化结果，保留原有完整拼贴。','Nine visual variations presented as the original complete collage.')}/>
+   <CosmosFigure lang={lang} image="ai-outcome-two" alt={t('红蓝色轨迹围绕白色空间模型发散的生成影像','Generated frame with red and blue trails spreading around the white spatial model')}/>
+   <CosmosFigure lang={lang} image="ai-outcome-one" alt={t('彩色能量团与空间边界组成的生成宇宙画面','Generated cosmic frame combining coloured energy and a spatial boundary')}/>
+   <p class="cosmos-closing">{t('Rhino × Grasshopper × Processing × ComfyUI · 参数化建模、创意编程与生成式影像实践','Rhino × Grasshopper × Processing × ComfyUI · Parametric modelling, creative coding, and generative moving-image practice')}</p>
+  </>}
+ </section>)}
+</RestoredCaseShell>
+<script>
+import {initializeCosmosInteractions} from '../scripts/cosmos-interactions';
+initializeCosmosInteractions();
+</script>

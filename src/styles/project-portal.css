@@ -1,0 +1,144 @@
+@font-face{font-family:FestivalTitle;src:url('/fonts/dark-abyss.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:FestivalEnglish;src:url('/fonts/dating-english.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:FestivalBody;src:url('/fonts/pingfang-portfolio-v2.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:FestivalBody;src:url('/fonts/pingfang-medium-v2.woff2') format('woff2');font-weight:500 700;font-display:swap}
+/* All layers share the original 1920 × 1080 canvas and scale together. */
+/* All layers share the original 1920 × 1080 canvas and scale together. */
+.festival-map{width:100%;aspect-ratio:16/9;position:relative;isolation:isolate;overflow:hidden;background:#000;container-type:inline-size;color:#fff100;font-family:FestivalEnglish,serif}
+.festival-map .map-slot{position:absolute;pointer-events:none}
+.festival-map .map-asset{display:block;width:100%;height:100%;max-width:none;object-fit:fill;pointer-events:none}
+.festival-map .map-vector{height:auto;object-fit:contain}
+.festival-map .map-background,.festival-map .map-mask,.festival-map .map-symbols,.festival-map .map-dividers,.festival-map .map-additive-art{position:absolute;inset:0;pointer-events:none}
+.festival-map .map-place,.festival-map .map-central,.festival-map .map-additive{position:static;color:#fff100;text-decoration:none}
+.festival-map .map-label,.festival-map .map-symbol-label,.festival-map .map-title{position:absolute;display:block;margin:0;padding:0;text-align:center;font-weight:400;color:#fff100!important}
+.festival-map .map-label{font:400 1.875cqw/1.4 FestivalEnglish,serif;text-shadow:0 0 .4167cqw #0006;white-space:nowrap}
+.festival-map .map-symbol-label{font:400 .9375cqw/1.4 FestivalTitle,serif;white-space:nowrap}
+.festival-map .map-title{font:400 1.6667cqw/1.16 FestivalTitle,serif;white-space:nowrap}
+.festival-map .map-divider{position:absolute;overflow:hidden;box-shadow:0 0 .5208cqw #fff000}
+.festival-map .map-divider>img{position:absolute;display:block;width:106.35%;height:4080%;max-width:none;left:-3.13%;top:-1986.67%;object-fit:fill;pointer-events:none}
+.festival-map .map-divider-reverse{transform:scaleX(-1)}
+.festival-map a:focus-visible .map-label{outline:1px solid #eee;outline-offset:4px}
+.festival-map a[href] .map-label{cursor:pointer}
+.festival-map a[href] .map-slot{pointer-events:auto;cursor:pointer}
+.map-animated .map-ring>.map-asset{animation:festival-ring 12s linear infinite;transform-origin:center}
+.map-animated .map-emerge{animation:festival-emerge 1s cubic-bezier(.18,.7,.3,1) var(--delay,.7s) both}
+.map-animated .map-center{animation:festival-center 1.1s ease both;transform-origin:center}
+@keyframes festival-ring{to{transform:rotate(360deg)}}
+@keyframes festival-emerge{from{opacity:0;transform:translateY(.8cqw) scale(.96)}to{opacity:var(--map-opacity,1);transform:none}}
+@keyframes festival-center{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
+
+.project-portal{position:fixed;inset:0;z-index:200;background:#070200;display:grid;place-items:center;overflow:hidden;pointer-events:none;opacity:0}
+.project-portal[hidden]{display:none}.project-portal.is-open{opacity:1;pointer-events:auto}
+.portal-stage{width:min(100vw,177.78svh);position:relative;aspect-ratio:16/9;transform:scale(.28);opacity:0;overflow:hidden;background:#000}
+.project-portal.is-opening .portal-stage{animation:portal-expand 1.5s cubic-bezier(.16,.66,.27,1) both}
+
+.portal-status{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);color:#a87b49;font:400 9px/1.5 var(--font-ui);letter-spacing:.18em}
+@keyframes portal-expand{0%{opacity:0;transform:scale(.28);filter:blur(10px)}18%{opacity:1}100%{opacity:1;transform:scale(1);filter:none}}
+.is-project-departing #main,.is-project-departing>.site-header,.is-project-departing>.site-footer{animation:project-melt .55s ease both;pointer-events:none}
+@keyframes project-melt{0%{filter:url('#project-melt-filter') blur(0);opacity:1;transform:translateY(0) scale(1)}100%{filter:url('#project-melt-filter') blur(18px);opacity:0;transform:translateY(80px) scale(1.035)}}
+.project-preview{border:0;margin:auto;padding:0;width:100vw;height:100svh;max-width:none;max-height:none;background:#080808;color:#ddd;overflow:auto;outline:0;z-index:100}
+.project-preview::backdrop{background:#080808}.project-preview>canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.project-preview-inner{position:relative;width:min(860px,64vw);margin:100px auto 60px}
+.project-preview-close{display:flex;gap:12px;margin:0 0 20px auto;background:none;color:#aaa;padding:8px 0;font:400 11px/1.6 var(--font-ui)}.project-preview-close span{font-size:20px}
+.project-preview-image{display:block;width:100%;aspect-ratio:16/9;overflow:hidden;background:#090909}.project-preview-image img{width:100%;height:100%;object-fit:cover;display:block}
+.project-preview-copy{display:flex;gap:40px;justify-content:space-between;margin-top:24px}.project-preview-keywords{font-size:10px;letter-spacing:.1em;color:#888;margin:0 0 8px}.project-preview-copy h2{font-size:var(--text-title);font-weight:400;line-height:1.4;margin:0}.project-preview-intro{font-size:14px;line-height:1.9;max-width:600px;margin-top:12px;color:#aaa}.project-preview-link{font-size:11px;display:flex;white-space:nowrap;gap:24px;align-self:flex-start;padding:8px 0;margin-top:24px;border-bottom:1px solid #ffffff50;letter-spacing:.07em}
+.space-reveal-image[data-project-href]{pointer-events:var(--reveal-events,none);cursor:pointer}.space-reveal-image[data-project-href]:focus-visible{outline:1px solid #aaa;outline-offset:5px}
+@view-transition{navigation:auto}::view-transition-old(festival-film),::view-transition-new(festival-film){animation-duration:.55s;animation-timing-function:ease}
+@media(max-width:760px){.project-preview-inner{width:calc(100% - 40px);margin:100px auto 50px}.project-preview-copy{display:block}.project-preview-link{display:inline-flex;margin-top:18px}.portal-stage{width:100vw}.portal-status{bottom:30px}.map-symbols p{font-size:1.1cqw!important}}
+@media(prefers-reduced-motion:reduce){.map-animated *,.project-portal.is-opening .portal-stage,.is-project-departing #main{animation:none!important}.portal-stage{opacity:1;transform:none}.portal-film{transition:none}}
+
+.project-preview.is-melting{animation:project-melt .55s ease both;pointer-events:none}
+
+/* The crimson stage grows out of darkness, then dissolves into the film. */
+body.is-project-departing{overflow:hidden}
+.project-portal .portal-stage{isolation:isolate}
+.portal-artwork{position:relative;z-index:2;width:100%;height:100%;transform-origin:50% 48%}
+.project-portal .festival-map{background:#000}
+.portal-atmosphere{position:absolute;inset:-12%;z-index:0;pointer-events:none;opacity:0;transform-origin:50% 100%;background:radial-gradient(ellipse at 25% 98%,#73170c6b,transparent 52%),radial-gradient(ellipse at 82% 105%,#52100880,transparent 57%),linear-gradient(0deg,#490800 0%,#130300 22%,transparent 49%);filter:url('#festival-atmosphere-flow') blur(10px)}
+.project-portal.is-opening .portal-atmosphere{animation:portal-red-emerge 1.8s cubic-bezier(.18,.6,.24,1) .25s both,portal-red-current 12s ease-in-out 2.1s infinite alternate}
+.portal-film{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.13);filter:blur(20px);view-transition-name:festival-film}
+.project-portal.is-film .portal-artwork{animation:portal-artwork-dissolve var(--handoff-duration,1.3s) cubic-bezier(.3,.05,.35,1) both;will-change:transform,opacity,filter}
+.project-portal.is-film .portal-atmosphere{animation:portal-red-release var(--handoff-duration,1.3s) ease both}
+.project-portal.is-film .portal-film{animation:portal-film-arrive var(--handoff-duration,1.3s) cubic-bezier(.18,.65,.2,1) both;will-change:transform,opacity,filter}
+.project-portal.is-film .portal-status{opacity:0;transition:opacity .5s}
+@keyframes portal-red-emerge{0%{opacity:0;transform:translateY(24%) scale(1.08,.3)}35%{opacity:.12}70%{opacity:.65;transform:translateY(5%) scale(1.03,.92)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes portal-red-current{from{transform:translate(-1%,0) scale(1.02,1)}to{transform:translate(2%,-3%) scale(1.05,1.06)}}
+@keyframes portal-red-release{0%{opacity:1;transform:scale(1.02)}100%{opacity:0;transform:translateY(12%) scale(1.28,1.2)}}
+@keyframes portal-artwork-dissolve{0%{opacity:1;transform:scale(1);filter:url('#festival-portal-melt') blur(0)}30%{opacity:.96;transform:translateY(8px) scale(1.05);filter:url('#festival-portal-melt') blur(1px)}68%{opacity:.4;transform:translateY(25px) scale(1.22);filter:url('#festival-portal-melt') blur(11px)}100%{opacity:0;transform:translateY(50px) scale(1.44);filter:url('#festival-portal-melt') blur(14px)}}
+@keyframes portal-film-arrive{0%{opacity:0;transform:scale(1.13);filter:blur(20px)}25%{opacity:.13;filter:blur(14px)}68%{opacity:.95;transform:scale(1.025);filter:blur(3px)}100%{opacity:1;transform:scale(1);filter:none}}
+@media(prefers-reduced-motion:reduce){.project-portal.is-opening .portal-atmosphere,.project-portal.is-film .portal-artwork,.project-portal.is-film .portal-atmosphere,.project-portal.is-film .portal-film{animation:none!important}.project-portal.is-film .portal-film{opacity:1;transform:none;filter:none}.project-portal.is-film .portal-artwork{opacity:0}}
+
+/* NEXUS enters through the supplied character scan, then opens into the scene film. */
+.nexus-portal{background:#050707}.nexus-portal .portal-stage{background:#050707}
+.nexus-transition-film,.nexus-handoff-film{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover}
+.nexus-transition-film{z-index:1}.nexus-handoff-film{z-index:2;opacity:0;filter:blur(15px);transform:scale(1.1);view-transition-name:nexus-film}
+.nexus-handoff-copy{position:absolute;inset:0;z-index:3;opacity:0;pointer-events:none;background:linear-gradient(transparent 55%,#060808d9)}
+.nexus-handoff-copy>img{position:absolute;top:14%;left:50%;transform:translateX(-50%);width:clamp(230px,24vw,440px);height:auto;mix-blend-mode:screen}
+.nexus-handoff-copy>div{position:absolute;bottom:6.5%;left:35px;right:35px;text-align:center}.nexus-handoff-copy p{font:400 clamp(30px,3.4vw,58px)/1.4 FestivalTitle,serif;color:#e0edeb;letter-spacing:.04em}.nexus-handoff-copy span{display:block;margin-top:15px;font:400 12px/1.7 NexusEnglish,FestivalBody,var(--font-ui);letter-spacing:.07em;color:#b6ccca}
+html[lang=en] .nexus-handoff-copy p{font-family:NexusEnglish,serif;letter-spacing:0}
+.nexus-portal.is-handoff .nexus-transition-film{animation:nexus-scan-dissolve var(--handoff-duration,1.3s) ease both}.nexus-portal.is-handoff .nexus-handoff-film{animation:nexus-scene-arrive var(--handoff-duration,1.3s) ease both}.nexus-portal.is-handoff .nexus-handoff-copy{animation:nexus-caption-arrive var(--handoff-duration,1.3s) ease both}
+@keyframes nexus-scan-dissolve{from{opacity:1;transform:scale(1);filter:url('#festival-portal-melt') blur(0)}to{opacity:0;transform:scale(1.25);filter:url('#festival-portal-melt') blur(12px)}}
+@keyframes nexus-scene-arrive{from{opacity:0;transform:scale(1.1);filter:blur(15px)}to{opacity:1;transform:scale(1);filter:none}}
+@keyframes nexus-caption-arrive{0%,25%{opacity:0}100%{opacity:1}}
+::view-transition-old(nexus-film),::view-transition-new(nexus-film){animation-duration:.45s;animation-timing-function:ease}
+@media(max-width:760px){.nexus-handoff-copy>img{top:15%;width:230px}.nexus-handoff-copy>div{left:20px;right:20px;bottom:7%}.nexus-handoff-copy p{font-size:30px}.nexus-handoff-copy span{font-size:10px;letter-spacing:.02em}}
+.nexus-handoff-copy{mix-blend-mode:screen}
+
+@font-face{font-family:NexusEnglish;src:url('/fonts/nexus-scotch.woff2') format('woff2');font-weight:400;font-display:swap;unicode-range:U+0020-024F,U+2000-206F}
+/* Index and exploration UI retain PingFang. Display faces stay inside the cases. */
+.work-gallery,.project-preview-copy,.space-reveal-copy{font-family:SwissPortfolio,FestivalBody,var(--font-ui)}
+.gallery-copy h2,.project-preview-copy h2,.space-reveal-copy h2{font-family:SwissPortfolio,FestivalBody,var(--font-ui)}
+
+/* The portal film and final case share viewport geometry and the same media element. */
+.project-portal .portal-stage{width:100%;height:100svh;min-height:460px;aspect-ratio:auto;display:grid;place-items:center;will-change:transform,opacity}
+.project-portal .portal-artwork{position:absolute;inset:0;display:grid;place-items:center;transform-origin:50% 50%}
+.project-portal .festival-map{width:min(100%,177.78svh);height:auto;aspect-ratio:16/9}
+.project-portal .portal-film,.nexus-transition-film,.nexus-handoff-film{object-fit:cover;object-position:center}
+.project-portal.is-film .portal-artwork,.nexus-portal.is-handoff .nexus-transition-film{pointer-events:none}
+.portal-status{display:none}
+@view-transition{navigation:none}
+@media(max-width:760px){.nexus-portal{align-items:start}.nexus-portal .portal-stage{height:85svh;min-height:440px}}
+
+/* Reserve the same gutter before and after the case starts scrolling. */
+html{overflow-y:scroll;scrollbar-gutter:stable;scrollbar-color:#454149 #080808}
+html:has(.has-light-case){scrollbar-color:#aaa #fff}
+
+.nexus-handoff-copy{background:none}
+.nexus-portal .portal-stage:after{content:'';position:absolute;inset:55% 0 0;z-index:2;pointer-events:none;opacity:0;background:linear-gradient(transparent,#060808d9)}
+.nexus-portal.is-handoff .portal-stage:after{animation:nexus-caption-arrive var(--handoff-duration,1.3s) ease both}
+
+/* The five-second map opens into the ten-second title/character/map loop. */
+.mushrooms-portal,.mushrooms-portal .portal-stage{background:#060b0e}
+.mushrooms-portal.is-opening{animation:mushrooms-portal-enter .55s ease both}
+.mushrooms-portal.is-opening .portal-stage{animation-duration:1s}
+.mushrooms-transition-film,.mushrooms-handoff-film{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:contain;object-position:center}
+.mushrooms-transition-film{z-index:1}.mushrooms-handoff-film{z-index:2;opacity:0;filter:blur(12px);transform:scale(1.06)}
+.mushrooms-portal.is-handoff .mushrooms-transition-film{animation:nexus-scan-dissolve var(--handoff-duration,.75s) ease both;pointer-events:none}
+.mushrooms-portal.is-handoff .mushrooms-handoff-film{animation:mushrooms-scene-arrive var(--handoff-duration,.75s) ease both}
+@keyframes mushrooms-portal-enter{from{opacity:0}to{opacity:1}}
+@keyframes mushrooms-scene-arrive{from{opacity:0;transform:scale(1.06);filter:blur(12px)}to{opacity:1;transform:scale(1);filter:none}}
+@media(max-width:760px){.mushrooms-portal{align-items:start}.mushrooms-portal .portal-stage{height:74svh;min-height:400px}}
+/* Source Processing clip dissolves into the existing, already-decoded hero element. */
+.cosmos-portal,.cosmos-portal .portal-stage{background:#030305}
+.cosmos-portal.is-opening{animation:mushrooms-portal-enter .55s ease both}
+/* These films enter at full size; the parent supplies the opening fade. */
+.cosmos-portal.is-opening .portal-stage{animation:none;opacity:1;transform:none;filter:none}
+.cosmos-transition-film,.cosmos-handoff-film{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:contain;object-position:center}
+.cosmos-transition-film{z-index:1}.cosmos-handoff-film{z-index:2;opacity:0;filter:blur(10px);transform:scale(1.04)}
+.cosmos-portal.is-handoff .cosmos-transition-film{animation:nexus-scan-dissolve var(--handoff-duration,.75s) ease both;pointer-events:none}
+.cosmos-portal.is-handoff .cosmos-handoff-film{animation:cosmos-scene-arrive var(--handoff-duration,.75s) ease both}
+@keyframes cosmos-scene-arrive{from{opacity:0;transform:scale(1.04);filter:blur(10px)}to{opacity:1;transform:scale(1);filter:none}}
+@media(max-width:760px){.cosmos-portal{align-items:start}.cosmos-portal .portal-stage{height:74svh;min-height:400px}}
+
+/* The generated five-second clip uses one decoder and preserves its agreed chest crop. */
+.skeleton-portal,.skeleton-portal .portal-stage{background:#080808}
+.skeleton-portal.is-opening{animation:mushrooms-portal-enter .55s ease both}
+.skeleton-portal .portal-stage,.skeleton-portal.is-opening .portal-stage{animation:none;opacity:1;transform:none;filter:none;will-change:auto}
+.skeleton-transition-film{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:contain;object-position:center}
+.skeleton-portal.is-case-arriving{animation:skeleton-case-arrive .45s ease both;pointer-events:none;will-change:opacity}
+@keyframes skeleton-case-arrive{from{opacity:1}to{opacity:0}}
+
+html:has(body.is-project-departing){overflow-x:clip}
+/* The liquid motion is encoded in this clip; departing content only needs a cheap fade. */
+body.is-project-departing:has(.skeleton-portal.is-open) #main,body.is-project-departing:has(.skeleton-portal.is-open)>.site-header,body.is-project-departing:has(.skeleton-portal.is-open)>.site-footer{animation:skeleton-index-depart .55s ease both;filter:none;will-change:opacity}
+@keyframes skeleton-index-depart{from{opacity:1}to{opacity:0}}

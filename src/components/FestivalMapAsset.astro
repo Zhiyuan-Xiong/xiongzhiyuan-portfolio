@@ -1,0 +1,16 @@
+---
+interface Props {
+  file:string;
+  rect:number[];
+  native:number[];
+  motion?:string;
+  opacity?:number;
+  blend?:string;
+}
+const {file,rect,native,motion,opacity=1,blend='normal'}=Astro.props;
+const [x,y,w,h]=rect;
+const position=`left:${x/19.2}%;top:${y/10.8}%;width:${w/19.2}%;height:${h/10.8}%;`;
+---
+<div class:list={['map-slot',motion]} style={position+`--map-opacity:${opacity};opacity:${opacity};mix-blend-mode:${blend};`} data-map-asset={file}>
+  <img class:list={['map-asset',{'map-vector':file.endsWith('.svg')}]} src={'/media/dating/'+file} width={native[0]} height={native[1]} alt="" decoding="async" style={blend==='color-dodge'?'mix-blend-mode:screen;':undefined} />
+</div>

@@ -1,0 +1,7 @@
+---
+import manifest from '../data/metamorphosis-assets.json';
+import type {Lang} from '../data/site';
+interface Props {image:keyof typeof manifest;alt:string;caption?:string;lang:Lang}
+const {image,alt,caption,lang}=Astro.props,a=manifest[image];
+---
+<figure class="restored-figure metamorphosis-figure"><button type="button" class="image-button" data-lightbox={a.large} data-alt={alt} data-caption={caption??''} aria-label={(lang==='zh'?'放大查看：':'Enlarge image: ')+alt}><img src={a.src} width={a.width} height={a.height} alt={alt} loading="lazy" decoding="async"/><span class="zoom-label">{lang==='zh'?'放大查看':'Enlarge image'} ↗</span></button>{caption&&<figcaption>{caption}</figcaption>}</figure>

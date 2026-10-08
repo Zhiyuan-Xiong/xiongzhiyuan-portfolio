@@ -1,0 +1,144 @@
+.has-festival .site-header{position:fixed;inset:0 0 auto;border:0;background:linear-gradient(#0009,transparent);backdrop-filter:none;z-index:20;transition:background .4s}
+.has-festival[data-festival-scrolled=true] .site-header{background:#080808eb;backdrop-filter:blur(12px)}
+.dating-festival{--festival-gold:#fff100;font-family:FestivalBody,var(--font-ui);background:#080808;color:#dedbd4}
+.festival-hero{position:relative;height:100svh;min-height:460px;overflow:hidden;background:#600c06;view-transition-name:festival-film}
+.festival-hero>video{width:100%;height:100%;display:block;object-fit:cover}
+.festival-body{max-width:1660px;width:calc(100% - 100px);margin:auto}
+.festival-breadcrumbs{display:flex;gap:14px;padding-top:50px;font:400 11px/1.6 var(--font-ui);color:#888}
+.festival-heading{padding:80px 0 100px;display:grid;grid-template-columns:1fr 1fr;gap:80px;border-bottom:1px solid #fff2;scroll-margin-top:130px}
+.festival-kicker{font:400 10px/1.6 var(--font-ui);letter-spacing:.12em;color:#89827b;margin:0 0 28px}
+.festival-heading h1{font:400 clamp(40px,4vw,72px)/1.35 FestivalTitle,serif;color:var(--festival-gold);letter-spacing:.04em;margin:0}
+html[lang=en] .festival-heading h1{font-family:FestivalEnglish,serif;font-size:clamp(42px,4.8vw,84px);line-height:1.15;letter-spacing:0}
+.festival-english-title{font:400 clamp(24px,2.7vw,46px)/1.3 FestivalEnglish,serif;color:var(--festival-gold);margin-top:18px}
+.festival-lens{font-size:13px;line-height:1.9;color:#948d81;margin-top:32px}
+.festival-introduction{padding-top:42px}.festival-introduction>p{font-size:16px;line-height:2.1;margin:0}
+.festival-facts{display:flex;gap:36px;margin:34px 0 0;color:#928d83;font-size:11px}.festival-facts dt{font-size:10px;color:#67645e;margin-bottom:10px;letter-spacing:.06em}.festival-facts dd{margin:0;line-height:1.9}
+.festival-reading{display:grid;grid-template-columns:160px minmax(0,1fr);gap:70px;padding-top:90px}
+.festival-toc details{position:sticky;top:125px}.festival-toc summary{font:400 10px/1.6 var(--font-ui);color:#888;letter-spacing:.1em}
+.festival-toc nav{margin-top:22px}.festival-toc a{font:400 11px/1.7 FestivalBody,var(--font-ui);color:#78756e;padding:8px 0 8px 12px}.festival-toc a[aria-current=true]{color:#f1e0b8;border-color:#bf9953}.festival-toc a>span{font-size:9px;margin-right:10px;opacity:.5}
+.festival-chapters{min-width:0}.festival-chapter{padding:0 0 85px;margin:0 0 85px;border-bottom:1px solid #ffffff17;scroll-margin-top:120px}
+.festival-chapter p{font:400 15px/2.1 FestivalBody,var(--font-ui);color:#b4b0a8;max-width:850px}
+.festival-section-title{margin-bottom:36px}.festival-section-title>span{font:400 10px/1.5 var(--font-ui);letter-spacing:.14em;color:#827967;display:block;margin-bottom:24px}
+.festival-section-title h2,.festival-scene-heading h2{font:400 clamp(28px,2.7vw,42px)/1.4 FestivalTitle,serif;color:#eadbaf}
+html[lang=en] .festival-section-title h2,html[lang=en] .festival-scene-heading h2{font-family:FestivalEnglish,serif;line-height:1.2}
+.festival-question{font:400 clamp(22px,2vw,33px)/1.6 FestivalTitle,serif;color:#eadbaf;margin:30px 0 50px;border-left:1px solid #72542d;padding-left:24px;max-width:950px}
+html[lang=en] .festival-question{font-family:FestivalEnglish,serif}
+.festival-observations{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin:0 0 54px}.festival-small-index{font:400 10px/1.6 var(--font-ui);color:#8e4932}
+.festival-observations h3,.festival-subheading{font:400 21px/1.6 FestivalTitle,serif;color:#ded1ae;margin:14px 0 16px}
+.festival-observations p{font-size:14px}.festival-packaging{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin:20px 0 35px}
+.festival-packaging>div{display:grid;grid-template-columns:95px 1fr;gap:14px;padding:18px 0;border-top:1px solid #fff1;align-items:baseline}
+.festival-packaging span{font-size:11px;color:#a69160}.festival-packaging p{font-size:14px;margin:0}
+.festival-research-archive summary{font-size:11px;color:#a19a8c;cursor:pointer;display:flex;justify-content:space-between;padding:18px 0;border-block:1px solid #fff1;list-style:none}.festival-research-archive[open] summary{margin-bottom:22px}
+.festival-path{display:grid;grid-template-columns:repeat(3,1fr);padding:0;list-style:none;gap:0 28px;margin:36px 0 50px}
+.festival-path a{display:grid;grid-template-columns:32px 1fr;padding:22px 0;border-top:1px solid #5b251b;gap:7px;font-size:14px;color:#d4c8aa}
+.festival-path span{font:400 10px/1.8 var(--font-ui);color:#aa794c;grid-row:span 2}.festival-path strong{font-weight:400}.festival-path small{font-size:11px;color:#807b70}
+.festival-mechanisms{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 36px}.festival-mechanisms>div{border-left:1px solid #663821;padding-left:18px}.festival-mechanisms span{font-size:10px;color:#775638}.festival-mechanisms h3{font:400 19px/1.5 FestivalTitle,serif;margin:10px 0;color:#d9caaa}.festival-mechanisms p{font-size:13px;margin:0}
+.festival-rules{padding:30px 36px;background:#210c08;margin:48px 0 0;display:grid;grid-template-columns:130px 1fr;gap:30px}
+.festival-rules h3{font:400 23px/1.5 FestivalTitle,serif;color:#e0caa0}.festival-rules ol{list-style:decimal-leading-zero;margin:0;padding-left:24px;font-size:13px;line-height:2;color:#ad9b86}.festival-rules li{padding-left:10px;margin-bottom:10px}
+.festival-caption{font-size:10px!important;margin-top:14px!important;color:#777!important}
+.festival-scene-heading{display:flex;gap:26px;align-items:flex-start;margin-bottom:24px}.festival-scene-heading>span{font:400 10px/1.6 var(--font-ui);color:#917858;letter-spacing:.1em;padding-top:12px}.festival-scene-heading h2{margin:0}.festival-scene-heading p{font:400 24px/1.4 FestivalEnglish,serif;color:#c5b477;margin:6px 0 0}
+.festival-scene-summary{margin-bottom:32px}.festival-scene-film{margin:0 0 38px}.festival-scene-film video{width:100%;height:auto;aspect-ratio:16/9;background:#150502;display:block}
+.festival-scene-film figcaption,.festival-figure figcaption{font-size:10px;line-height:1.8;color:#7d776a;margin-top:12px}
+.festival-parts{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}.festival-parts.four-parts{grid-template-columns:repeat(4,1fr)}
+.festival-parts h3{font:400 20px/1.5 FestivalTitle,serif;color:#d0bd91;margin:20px 0 10px}.festival-parts p{font-size:13px;line-height:1.9;margin:0}
+html[lang=en] .festival-parts h3,html[lang=en] .festival-mechanisms h3,html[lang=en] .festival-subheading,html[lang=en] .festival-rules h3,html[lang=en] .festival-observations h3{font-family:FestivalEnglish,serif}
+.festival-figure{margin:0}.festival-figure button{display:block;width:100%;border:0;background:none;border-radius:0;padding:0;position:relative}.festival-figure img{width:100%;height:auto;display:block;border-radius:0}
+.festival-figure.is-contained button{height:260px;background:transparent}.festival-figure.is-contained img{height:100%;object-fit:contain}
+.festival-figure .zoom-label{position:absolute;bottom:12px;right:12px}.festival-research-archive .festival-figure+.festival-figure{margin-top:28px}
+.festival-full-film{position:relative;aspect-ratio:16/9;background:#0c0805;margin-top:36px;overflow:hidden}
+.festival-full-film>img{width:100%;height:100%;object-fit:cover;opacity:.5}.festival-full-film>button{position:absolute;inset:0;width:100%;background:#0003;color:#ded3b6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;font-size:30px;font-weight:400}.festival-full-film>button span{font-size:13px;letter-spacing:.1em}.festival-full-film>button small{font-size:10px;color:#aaa}
+.festival-full-film iframe{width:100%;height:100%;border:0}.festival-film-link{display:inline-block;font-size:11px;color:#998c71;border-bottom:1px solid #554b3a;margin:20px 0 40px;padding-bottom:6px}
+.festival-storyboard{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.festival-storyboard .image-button{aspect-ratio:16/9}.festival-storyboard img{height:100%;object-fit:cover}
+.festival-end{display:flex;justify-content:space-between;padding-bottom:70px;font:400 11px/1.8 var(--font-ui);color:#aaa}
+@media(max-width:1100px){.festival-body{width:calc(100% - 70px)}.festival-heading{gap:40px}.festival-reading{gap:35px;grid-template-columns:125px minmax(0,1fr)}.festival-parts.four-parts{grid-template-columns:repeat(2,1fr)}.festival-observations{gap:24px}.festival-packaging{grid-template-columns:1fr}.festival-figure.is-contained button{height:220px}}
+@media(max-width:760px){.festival-body{width:calc(100% - 40px)}.festival-hero{min-height:400px}.festival-heading{display:block;padding:50px 0}.festival-heading h1{font-size:38px}.festival-introduction{padding-top:32px}.festival-introduction>p{font-size:14px}.festival-reading{display:block;padding-top:38px}.festival-toc details{position:static}.festival-toc{margin-bottom:42px}.festival-toc nav{display:flex;flex-wrap:wrap;gap:4px 14px}.festival-toc a{padding:5px 0;border:0}.festival-toc summary{min-height:28px}.festival-chapter{margin-bottom:50px;padding-bottom:50px}.festival-chapter p{font-size:14px}.festival-observations{display:block}.festival-observations>div{margin-bottom:30px}.festival-path,.festival-mechanisms{grid-template-columns:repeat(2,1fr)}.festival-rules{display:block;padding:24px}.festival-rules h3{margin-bottom:20px}.festival-scene-heading{gap:16px}.festival-scene-heading>span{font-size:9px}.festival-parts{grid-template-columns:1fr 1fr;gap:28px 20px}.festival-parts h3{font-size:18px}.festival-parts p{font-size:12px}.festival-figure.is-contained button{height:200px}.festival-storyboard{grid-template-columns:repeat(2,1fr)}.festival-end{gap:20px}.festival-facts{gap:24px}.festival-question{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.festival-hero>video{opacity:1}.has-festival .site-header{transition:none}}
+
+/* Crimson atmosphere: black above, a red stage beneath the case. */
+.has-festival{background:#460b07}
+.dating-festival{background:#080404}
+.festival-case-content{position:relative;isolation:isolate;background:radial-gradient(ellipse at 88% 100%,#85181035,transparent 57%),radial-gradient(ellipse at 5% 78%,#690d0938,transparent 48%),linear-gradient(180deg,#080505 0%,#170706 40%,#320906 75%,#460b07 100%);background-attachment:fixed}
+.festival-case-content::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,#070403c0 0,transparent 800px)}
+.festival-heading{border-color:#c1683438}
+.festival-chapter{border-color:#d4794b26}
+.festival-section-title>span,.festival-kicker{color:#b1927e}
+.festival-lens,.festival-facts{color:#b3a08e}
+.festival-facts dt{color:#a08272}
+.festival-toc summary,.festival-toc a{color:#af9284}
+.festival-toc a[aria-current=true]{color:#f1dfb6;border-color:#dbab62}
+.festival-chapter p{color:#c4b5a6}
+.festival-packaging>div,.festival-research-archive summary{border-color:#d4794b30}
+.festival-path a{border-color:#bb582d4d}
+.festival-path small,.festival-mechanisms span{color:#ae8a72}
+.festival-rules{background:linear-gradient(135deg,#65160f80,#1c0606b8);border-block:1px solid #cf653528}
+.festival-rules ol{color:#c0a98f}
+.festival-scene-film video{background:#210705}
+.festival-scene-film figcaption,.festival-figure figcaption,.festival-caption{color:#b39885!important}
+.festival-parts{position:relative;padding:32px 26px 26px;background:radial-gradient(ellipse at 50% 100%,#8e251531,transparent 70%),linear-gradient(180deg,transparent,#22050442);border-bottom:1px solid #bf643a2b}
+.festival-figure.is-contained button{background:transparent}
+.festival-figure.is-contained .zoom-label{background:#210908b0;border-color:#cd7e4630;color:#dbc5a8}
+.has-festival .site-footer{background:#460b07;border-color:#d4794b30;color:#bc9e8b}
+@media(max-width:760px){.festival-case-content{background-attachment:scroll;background-size:100% 100svh;background-repeat:repeat-y}.festival-parts{padding:24px 14px}.festival-case-content::before{background:linear-gradient(180deg,#070403a0,transparent 560px)}}
+
+/* The portfolio's circular mechanism diagram, composed from its original Figma layers. */
+.festival-development-layout{display:grid;grid-template-columns:minmax(270px,.7fr) minmax(600px,1.4fr);gap:42px;align-items:start}
+.festival-development-copy .festival-path,.festival-development-copy .festival-mechanisms{grid-template-columns:repeat(2,1fr);gap:24px}
+.festival-development-copy>p{margin-top:0}
+.festival-mechanism-figure{margin:0;scroll-margin-top:10px;min-width:0}
+.festival-diagram-stage{position:relative;aspect-ratio:1;width:100%;container-type:inline-size;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at center,#310d0980,transparent 70%);font-family:FestivalBody,var(--font-ui)}
+.diagram-layer{position:absolute;display:block;object-fit:contain;pointer-events:none}
+.diagram-blend{mix-blend-mode:screen}
+.diagram-center-decoration{opacity:.85}
+.diagram-center-symbol{opacity:.4}
+.diagram-center-copy{position:absolute;text-align:center;display:flex;flex-direction:column;justify-content:center;z-index:3}
+.diagram-center-copy strong{font:400 2.6cqw/1.45 FestivalTitle,serif;color:#fff100}
+.diagram-center-copy span{font:400 1.55cqw/1.4 FestivalBody,var(--font-ui);color:#e5d1a9;margin-top:.8cqw;white-space:nowrap}
+.diagram-mechanism{position:absolute;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1cqw;z-index:2}
+.diagram-mechanism>img{position:absolute;inset:0;width:100%;height:auto;z-index:-1;mix-blend-mode:screen;pointer-events:none}
+.diagram-mechanism h3{font:400 2.1cqw/1.3 FestivalTitle,serif;color:#fff100;margin:0 0 1.1cqw;white-space:nowrap}
+.diagram-mechanism p{font:400 1.5cqw/1.5 FestivalBody,var(--font-ui);color:#e0cdbb;margin:0;max-width:none;text-wrap:balance}
+.diagram-scene{position:absolute;display:block;border-radius:50%;z-index:4;transition:filter .25s,transform .25s}
+.diagram-scene img{display:block;width:100%;height:auto;mix-blend-mode:screen;border-radius:50%}
+.diagram-scene:hover{filter:drop-shadow(0 0 8px #e865304d);transform:scale(1.04)}
+.diagram-scene:focus-visible{outline:1px solid #fff100;outline-offset:5px}
+.diagram-number{position:absolute;z-index:4;border:1px solid #fff100;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle,#802414,#3d0804);color:#fff100;font:400 2.9cqw/1 FestivalEnglish,serif}
+.diagram-arrow-down{transform:rotate(180deg)}
+.diagram-lens{position:absolute;width:28.9%;height:25.35%;z-index:1;padding:1.3cqw 1.3cqw;pointer-events:none}
+.diagram-lens>img{position:absolute;inset:0;width:100%;height:auto;z-index:-1;pointer-events:none;opacity:.83}
+.diagram-lens-top-left>img{transform:scaleX(-1)}.diagram-lens-bottom-left>img{transform:rotate(180deg)}.diagram-lens-bottom-right>img{transform:scaleY(-1)}
+.diagram-lens-top-left{top:2%;left:6%}.diagram-lens-top-right{top:2%;right:6%;text-align:right}
+.diagram-lens-bottom-left{bottom:1.5%;left:6%;display:flex;flex-direction:column-reverse;padding-bottom:.8cqw}
+.diagram-lens-bottom-right{bottom:1.5%;right:6%;text-align:right;display:flex;flex-direction:column-reverse;padding-bottom:.8cqw}
+.diagram-lens h3{font:400 2.2cqw/1.5 FestivalTitle,serif;color:#fff100;margin:0 0 .5cqw;white-space:nowrap}
+.diagram-lens h3 span{font:400 2.15cqw/1.4 FestivalEnglish,serif;margin-left:.7cqw}
+.diagram-lens p{font:400 1.5cqw/1.6 FestivalBody,var(--font-ui);color:#bfa68f;white-space:pre-line;margin:0;max-width:none}
+.festival-mechanism-figure>figcaption{font:400 11px/1.9 FestivalBody,var(--font-ui);color:#b39885;margin:18px 0 0;max-width:650px}
+.festival-diagram-expand{display:flex;justify-content:space-between;gap:30px;background:none;color:#e4c489;padding:14px 0 10px;font:400 11px/1.6 var(--font-ui);border:0;border-bottom:1px solid #c4753b55}
+.festival-diagram-expand:hover{color:#fff100}
+.festival-diagram-dialog{width:min(1200px,94vw);max-width:94vw;height:94svh;max-height:94svh;overflow:auto;padding:60px 30px 30px;border:1px solid #8d442d55;background:radial-gradient(ellipse at 50% 100%,#3b0c06,#080505 72%);color:#ddd;overscroll-behavior:contain}
+.festival-diagram-dialog::backdrop{background:#030000df;backdrop-filter:blur(6px)}
+.festival-diagram-zoom{width:1100px;max-width:none;margin:auto}
+.festival-diagram-close{position:sticky;top:-40px;left:calc(100% - 110px);background:#170704f5;color:#dabc9f;display:flex;align-items:center;gap:30px;padding:10px 15px;border:1px solid #d3905140;z-index:10;font:400 11px/1.5 var(--font-ui)}
+.festival-diagram-close span{font-size:20px;line-height:1}
+html[lang=en] .diagram-mechanism h3{font-family:FestivalBody,var(--font-ui);font-size:1.7cqw;white-space:normal}
+html[lang=en] .diagram-mechanism p{font-size:1.3cqw}
+html[lang=en] .diagram-center-copy strong{font-family:FestivalEnglish,serif;font-size:2cqw}
+html[lang=en] .diagram-center-copy span{font-size:1.1cqw;white-space:normal}
+html[lang=en] .diagram-lens h3{font-family:FestivalEnglish,serif}
+html[lang=en] .diagram-lens p{font-size:1.35cqw}
+@media(max-width:1350px){.festival-development-layout{display:flex;flex-direction:column;gap:40px}.festival-mechanism-figure{order:-1;width:100%;max-width:950px;margin-inline:auto}.festival-development-copy{width:100%}.festival-development-copy .festival-path,.festival-development-copy .festival-mechanisms{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.festival-development-copy .festival-path,.festival-development-copy .festival-mechanisms{grid-template-columns:repeat(2,1fr)}.festival-diagram-dialog{padding:30px 15px}.festival-diagram-close{top:-20px}.festival-mechanism-figure>figcaption{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.diagram-scene{transition:none}}
+.dating-festival{--festival-atmosphere:radial-gradient(ellipse at 88% 100%,#85181035,transparent 57%),radial-gradient(ellipse at 5% 78%,#690d0938,transparent 48%),linear-gradient(180deg,#080505 0%,#170706 40%,#320906 75%,#460b07 100%)}
+.festival-case-content,.festival-diagram-stage{background:var(--festival-atmosphere);background-attachment:fixed}
+.diagram-number{font-family:FestivalBody,var(--font-ui);font-size:2.7cqw}
+@media(max-width:760px){.festival-case-content,.festival-diagram-stage{background-attachment:scroll}}
+
+
+
+/* Research boards sit alongside the case explanation, at their original aspect ratio. */
+.festival-analysis-visual{margin:30px 0 38px;min-width:0}
+.festival-analysis-visual .festival-figure img{width:100%;height:auto;object-fit:contain}
+.festival-analysis-visual .festival-figure figcaption{font:400 11px/1.9 FestivalBody,var(--font-ui);margin-top:12px}
+.festival-analysis-visual .zoom-label{opacity:1;color:#ddc4a3;background:#210908b0;border:1px solid #cd7e4630}
+@media(max-width:760px){.festival-analysis-visual{margin:22px 0 30px}.festival-analysis-visual .festival-figure figcaption{font-size:10px}}

@@ -1,0 +1,24 @@
+---
+import type {Lang} from '../data/site';
+import geometry from '../data/metamorphosis-interactive.json';
+import assets from '../data/metamorphosis-assets.json';
+const {lang}=Astro.props as {lang:Lang},t=(zh:string,en:string)=>lang==='zh'?zh:en;
+---
+<div class="met-interaction" data-met-interaction data-source={geometry.src} data-background={assets['liquid-background'].src} data-state="idle" data-audio-mode="idle">
+ <div class="met-stage"><img class="met-poster" src={assets['hero-poster'].src} width={assets['hero-poster'].width} height={assets['hero-poster'].height} alt="" loading="lazy"/><canvas tabindex="0" aria-busy="true" aria-label={t('声音驱动的蝴蝶粒子：选择声音输入，拖动改变视角，方向键旋转，R 复位。','Audio-reactive butterfly particles: select an audio source, drag or use arrow keys to orbit, and press R to reset.')} /><div class="met-stage-label"><span>METAMORPHOSIS</span><span>LIVE AUDIO / PARTICLES</span></div></div>
+ <div class="met-toolbar" role="group" aria-label={t('声音输入与画面控制','Audio input and visual controls')}>
+  <button type="button" data-met-action="demo" disabled>{t('体验节奏','Try a rhythm')}</button>
+  <button type="button" data-met-action="microphone" disabled aria-pressed="false">{t('启用麦克风','Enable microphone')}</button>
+  <label class="met-upload">{t('上传音频','Upload audio')}<input type="file" accept="audio/*" data-met-file aria-label={t('选择本地音频文件','Choose a local audio file')} disabled/></label>
+  <button type="button" data-met-action="stop" disabled>{t('停止声音','Stop audio')}</button><span class="met-toolbar-spacer" />
+  <button type="button" data-met-action="pause" disabled aria-pressed="false">{t('暂停画面','Pause visuals')}</button>
+  <button type="button" data-met-action="reset" disabled>{t('复位','Reset')}</button>
+  <button type="button" data-met-action="fullscreen" disabled aria-label={t('全屏显示','Fullscreen')}>⤢</button>
+ </div>
+ <div class="met-audio-panel"><div class="met-spectrum" aria-hidden="true">{Array.from({length:32},()=> <i />)}</div><div class="met-level"><span>{t('声音强度','Audio level')}</span><output data-met-level>0.00</output></div><label>{t('灵敏度','Sensitivity')}<input type="range" min="0.5" max="3" step="0.1" value="1.5" data-met-sensitivity aria-label={t('声音灵敏度','Audio sensitivity')}/></label><label>{t('播放音量','Playback volume')}<input type="range" min="0" max="50" step="1" value="15" data-met-volume aria-label={t('演示与上传音频的播放音量','Playback volume for the demo and uploaded audio')}/></label></div>
+ <div class="met-interaction-foot"><p>{t('拖动改变视角 · 麦克风与音频仅在本机处理','Drag to orbit · Microphone and audio are processed on your device')}</p><span role="status" aria-live="polite" data-met-status>{t('进入画面后载入','Loads when in view')}</span></div>
+</div>
+<script>
+import {initializeMetamorphosisInteraction} from '../scripts/metamorphosis-interaction';
+initializeMetamorphosisInteraction();
+</script>

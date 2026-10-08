@@ -1,0 +1,7 @@
+---
+import Base from '../layouts/Base.astro';
+import PortfolioSpace from '../components/PortfolioSpace.astro';
+import { ui, intro } from '../data/site';
+const lang = 'zh';
+---
+<Base lang={lang} title={ui.home[lang]} description={intro[lang]} active="home" spatial><PortfolioSpace lang={lang} /></Base>

@@ -1,0 +1,16 @@
+---
+import { sections } from '../data/sections';
+import { projects } from '../data/projects';
+import { type Category, type Lang } from '../data/site';
+interface Props { lang: Lang; active?: Category; preview?: boolean }
+const { lang, active, preview = false } = Astro.props;
+---
+<aside class="experience-contents" aria-label={lang === 'zh' ? '作品分区目录' : 'Portfolio table of contents'}>
+  <div class="contents-heading"><span>TABLE OF CONTENTS</span><span>05</span></div>
+  <nav aria-label={lang === 'zh' ? '作品分区' : 'Work sections'}>
+    {sections.map((section, i) => <a href={`/${lang}/sections/${section.id}/`} aria-current={active === section.id ? 'page' : undefined} data-section-preview={preview ? i : undefined}>
+      <span class="contents-number">0{i + 1}</span><span class="contents-label">{section.label[lang]}<small>{projects.filter(project => project.categories.includes(section.id)).length} {lang === 'zh' ? '个项目' : 'projects'}</small></span><span class="contents-arrow" aria-hidden="true">↗</span>
+    </a>)}
+  </nav>
+  <a class="contents-library" href={`/${lang}/works/`}>{lang === 'zh' ? '完整作品库' : 'All work'}<span aria-hidden="true">↗</span></a>
+</aside>

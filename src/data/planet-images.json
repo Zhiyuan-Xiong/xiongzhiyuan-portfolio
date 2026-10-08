@@ -1,0 +1,98 @@
+[
+  {
+    "src": "/media/planet/cosmos-energy.webp",
+    "aspect": 1.7777777777777777,
+    "exposure": 1.06,
+    "label": "无垠的宇宙 · 动态生成影像"
+  },
+  {
+    "src": "/media/planet/sonic-installation.webp",
+    "aspect": 1.7777777777777777,
+    "exposure": 1.03,
+    "label": "声学弹性 · 装置实景"
+  },
+  {
+    "src": "/media/planet/stigma-scene.webp",
+    "aspect": 1.7802503477051461,
+    "exposure": 1.06,
+    "label": "病名异化实验场 · 全景渲染"
+  },
+  {
+    "src": "/media/planet/nexus-observer.webp",
+    "aspect": 1.7777777777777777,
+    "exposure": 1.04,
+    "label": "NEXUS · 监察之眼"
+  },
+  {
+    "src": "/media/planet/dating-carnival.webp",
+    "aspect": 1.7777777777777777,
+    "exposure": 1.12,
+    "label": "相亲嘉年华 · 成品场景"
+  },
+  {
+    "src": "/media/planet/alilaguna-tunnel.webp",
+    "aspect": 1.7777777777777777,
+    "exposure": 0.98,
+    "label": "Alilaguna · 深色镜像隧道"
+  },
+  {
+    "src": "/media/planet/skeleton-portrait.webp",
+    "aspect": 1.7777777777777777,
+    "exposure": 0.9,
+    "label": "骨骸共生系统 · 金属首饰"
+  },
+  {
+    "src": "/media/planet/nexus-furnace.webp",
+    "aspect": 1.7777777777777777,
+    "exposure": 1.04,
+    "label": "NEXUS · 能量熔炉细节"
+  },
+  {
+    "src": "/media/planet/stigma-room.webp",
+    "aspect": 1.7753120665742026,
+    "exposure": 1.04,
+    "label": "病名异化实验场 · 空间细节"
+  },
+  {
+    "src": "/media/planet/nexus-world.webp",
+    "aspect": 1.7777777777777777,
+    "exposure": 1.15,
+    "label": "NEXUS · 机械文明全景"
+  },
+  {
+    "src": "/media/planet/dating-factory.webp",
+    "aspect": 1.7777777777777777,
+    "exposure": 1.08,
+    "label": "相亲嘉年华 · 爱情工厂"
+  },
+  {
+    "src": "/media/planet/dating-gaze.webp",
+    "aspect": 1.7777777777777777,
+    "exposure": 1.05,
+    "label": "相亲嘉年华 · 凝视剧场"
+  },
+  {
+    "src": "/media/planet/mushrooms-world.webp",
+    "aspect": 1.828870019595036,
+    "exposure": 1.15,
+    "label": "毒蘑菇 · 完成版世界地图"
+  },
+  {
+    "src": "/media/planet/nexus-core.webp",
+    "aspect": 1.7777777777777777,
+    "exposure": 1.03,
+    "label": "NEXUS · 情绪心脏细节"
+  },
+  {
+    "src": "/media/planet/earthquake-field.webp",
+    "aspect": 1.7777777777777777,
+    "exposure": 1.02,
+    "label": "地震：数据转译 · 空间渲染"
+  },
+  {
+    "src": "/media/planet/metamorphosis-core.webp",
+    "aspect": 1.7763157894736843,
+    "exposure": 0.92,
+    "label": "蜕变 · 原始实时视听输出"
+  }
+]

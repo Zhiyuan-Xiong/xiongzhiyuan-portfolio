@@ -1,0 +1,54 @@
+/* The scene occupies a separate column, so the planet and its stars cannot cover copy. */
+.has-about-universe{background:#080a0f;isolation:isolate}
+.has-about-universe #main{position:relative;isolation:isolate}
+.has-about-universe .site-header{background:#080a0fb8;backdrop-filter:blur(12px)}
+.has-about-universe .site-footer{position:relative;z-index:1;background:transparent}
+.about-galaxy{position:fixed;inset:0;width:100%;height:100svh;z-index:-2;pointer-events:none;opacity:.85}
+.has-about-universe #main:before{content:'';position:fixed;inset:0;z-index:-1;background:linear-gradient(90deg,#080a0fe0 0%,#080a0fa8 36%,#080a0f30 75%,#080a0f38);pointer-events:none}
+.about-universe{position:relative;z-index:1}
+.about-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);column-gap:clamp(48px,6vw,95px);align-items:start;padding:28px 0 54px;border-bottom:1px solid var(--line)}
+.about-lead{min-width:0;padding-top:24px}
+.about-hero .page-heading{padding:18px 0 38px;max-width:none}
+.about-hero .page-heading h1{max-width:620px;text-wrap:balance}
+.about-hero .about-intro{display:block;padding:0;border:0;max-width:660px}
+.about-hero .about-intro p{color:#b7beca;text-shadow:0 1px 12px #080a0f;line-height:2.1}
+.about-hero .about-intro .button{margin-top:10px}
+.about-side{display:flex;flex-direction:column;min-width:0;gap:18px}
+.about-planet{width:100%;max-width:480px;aspect-ratio:1;position:relative;overflow:hidden;contain:layout paint;pointer-events:none;margin:-24px auto -12px}
+.about-planet-canvas,.about-planet-fallback,.about-constellations{position:absolute;inset:0;width:100%;height:100%}
+.about-planet-canvas{opacity:0;transition:opacity 1s ease}
+.about-planet[data-ready=true] .about-planet-canvas{opacity:1}
+.about-planet-fallback{transition:opacity .8s}
+.about-planet[data-ready=true] .about-planet-fallback{opacity:0}
+.about-hero .about-note{padding-left:24px;margin:0 0 0 16px}
+.about-hero .about-note h2{color:#d0d7e2}
+.about-hero .about-note li{color:#a7b1c0;font-size:12px;padding:7px 0}
+.about-constellations{color:#c1cedf;overflow:hidden}
+.about-constellations>[data-about-pattern]{opacity:0;transform-origin:300px 300px}
+.about-constellations>[data-active=true]{animation:about-constellation-spread 14s linear both}
+.about-constellations>[data-about-pattern]>path{stroke:currentColor;stroke-width:.9;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;opacity:.7}
+.about-constellations>[data-active=true]>path{animation:about-constellation-draw 2s ease calc(2s + var(--path-order)*.18s) both}
+.about-constellation-star{opacity:0}
+.about-constellation-star path{stroke:currentColor;stroke-width:.65;opacity:.7}
+.about-constellation-star circle{fill:#e3e9f4;filter:drop-shadow(0 0 2px #aabdd966)}
+[data-active=true]>.about-constellation-star{animation:about-star-appear .7s ease calc(2s + var(--star-order)*.25s) both}
+@keyframes about-constellation-draw{to{stroke-dashoffset:0}}
+@keyframes about-star-appear{to{opacity:1}}
+@keyframes about-constellation-spread{0%,12%{opacity:0;transform:scale(.89)}30%,54%{opacity:.75}78%,100%{opacity:0;transform:scale(1.1)}}
+@media(min-width:1500px){.about-hero{grid-template-columns:minmax(0,1.35fr) minmax(0,.8fr)}.about-side{gap:22px}.about-planet{margin-top:-30px}}
+@media(max-width:1000px){.about-hero{column-gap:40px;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}.about-lead{padding-top:12px}.about-planet{margin-top:4px}.about-hero .about-note{margin-left:0;padding-left:18px}}
+@media(max-width:760px){.about-hero{grid-template-columns:1fr;padding:10px 0 36px;row-gap:24px}.about-hero .page-heading{padding:24px 0 20px}.about-lead{padding-top:0}.about-side{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:12px}.about-planet{margin:0;max-width:none}.about-hero .about-note{padding-left:15px}.about-hero .about-note h2{font-size:16px;margin-bottom:10px}.about-hero .about-note li{font-size:11px}.about-galaxy{opacity:.7}.has-about-universe #main:before{background:linear-gradient(90deg,#080a0fbf,#080a0f60)} }
+@media(max-width:480px){.about-side{grid-template-columns:1fr}.about-planet{width:85%;max-width:340px;margin:-18px auto 0}.about-hero .about-note{margin-top:0;padding-left:18px}.about-hero .about-note ul{display:grid;grid-template-columns:1fr;gap:0}.about-hero .about-note li{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.about-planet *{animation:none!important;transition:none!important}.about-constellations>[data-active=true]{opacity:.35}.about-constellations>[data-active=true]>path{stroke-dashoffset:0}.about-constellation-star{opacity:1}}
+@media print{.about-galaxy,.about-planet,.has-about-universe #main:before{display:none}.has-about-universe{background:white;color:#222}.about-hero{display:block}.about-hero .about-note{margin-top:24px}.about-hero .about-intro p{color:#222;text-shadow:none}}
+
+.about-hero .about-intro .about-personal{font-size:11px;letter-spacing:.08em;color:#929baa;margin:18px 0 10px}
+.about-universe .timeline>div{min-width:0}.about-universe .timeline p{max-width:920px;margin-bottom:12px;color:#b7beca}
+.about-universe .timeline .timeline-meta{color:#929baa;margin-bottom:16px}
+.about-universe .resume-skills{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
+.about-universe .resume-skills .tools{line-height:2.2;font-size:12px;color:#b7beca}
+.about-awards{list-style:none;margin:0;padding:0;display:grid;gap:16px;max-width:920px}
+.about-awards li{font-size:13px;line-height:2;color:#b7beca;padding-left:18px;position:relative}
+.about-awards li:before{content:'';position:absolute;left:0;top:12px;width:3px;height:3px;background:#a9b7ca;border-radius:50%}
+.about-contact-links{display:flex;flex-direction:column;align-items:flex-start;gap:15px;min-width:0;font-size:12px;color:#b7beca}
+@media(max-width:760px){.about-universe .resume-skills{grid-template-columns:1fr;gap:24px}.about-universe .timeline p,.about-awards li{font-size:13px}.about-contact-links{margin-top:24px}}

@@ -1,0 +1,8 @@
+---
+import { email, type Lang } from '../data/site';
+const { lang } = Astro.props as {lang: Lang};
+---
+<section class="contact-section" id="contact" aria-labelledby="contact-title">
+  <div><p class="eyebrow">{lang==='zh' ? '保持联系' : 'LET’S CONNECT'}</p><h2 id="contact-title">{lang==='zh' ? '聊聊设计，也聊聊新的机会。' : 'Let’s talk about design and new opportunities.'}</h2><p>{lang==='zh' ? '求职方向：UX／产品经理／视觉设计' : 'Seeking opportunities in UX, product management, and visual design.'}</p></div>
+  <a class="email-link" href={`mailto:${email}`}>{email}</a>
+</section>

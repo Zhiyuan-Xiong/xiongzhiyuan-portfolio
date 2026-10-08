@@ -1,0 +1,22 @@
+---
+import type {Lang} from '../data/site';
+interface Props {lang:Lang}
+const {lang}=Astro.props;
+const patterns=[
+ {stars:[[417,210],[470,175],[523,183],[546,126],[505,92],[467,123]],links:[[0,1],[1,2],[2,3],[3,4],[4,5],[5,1]]},
+ {stars:[[205,381],[156,414],[129,468],[178,509],[237,487],[267,542]],links:[[0,1],[1,2],[2,3],[3,4],[4,5],[1,4]]},
+ {stars:[[201,224],[145,205],[100,164],[153,111],[204,123],[225,73]],links:[[0,1],[1,2],[2,3],[3,4],[4,5],[1,4]]}
+];
+---
+<div class="about-planet" data-about-planet data-ready="false" role="img" aria-label={lang==='zh'?'倾斜旋转的环形星球，内部星核流动，星座从星环间歇扩散。':'A tilted rotating ringed planet with a flowing stellar core and constellations unfolding from its orbit.'}>
+  <canvas class="about-planet-canvas" aria-hidden="true"></canvas>
+  <svg class="about-planet-fallback" viewBox="0 0 600 600" aria-hidden="true" fill="none">
+    <defs><radialGradient id="about-core-fallback"><stop stop-color="#d6dce8" stop-opacity=".5"/><stop offset=".55" stop-color="#929dae" stop-opacity=".12"/><stop offset="1" stop-color="#929dae" stop-opacity="0"/></radialGradient></defs>
+    <g transform="rotate(-24 300 300)" stroke="#afb9c8"><circle cx="300" cy="300" r="128" stroke-opacity=".45"/><ellipse cx="300" cy="300" rx="64" ry="128" stroke-opacity=".4"/><ellipse cx="300" cy="300" rx="128" ry="44" stroke-opacity=".3"/><ellipse cx="300" cy="300" rx="195" ry="64" stroke-opacity=".65"/></g>
+    <circle cx="300" cy="300" r="78" fill="url(#about-core-fallback)"/><g stroke="#bfc6d3" stroke-opacity=".4"><path d="M250 286 L280 251 L330 265 L353 301 L322 342 L273 326 Z M280 251 L322 342 M250 286 L353 301 M273 326 L330 265"/></g>
+  </svg>
+  <svg class="about-constellations" viewBox="0 0 600 600" fill="none" aria-hidden="true">{patterns.map((pattern,index)=><g data-about-pattern={index} data-active="false">
+    {pattern.links.map(([a,b],i)=><path d={`M${pattern.stars[a].join(' ')} L${pattern.stars[b].join(' ')}`} pathLength="1" style={`--path-order:${i}`} />)}
+    {pattern.stars.map(([x,y],i)=><g class="about-constellation-star" style={`--star-order:${i}`}><path d={`M${x-5} ${y} L${x+5} ${y} M${x} ${y-5} L${x} ${y+5}`} /><circle cx={x} cy={y} r={i===0?2.4:1.8}/></g>)}
+  </g>)}</svg>
+</div>

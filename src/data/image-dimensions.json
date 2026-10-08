@@ -1,0 +1,86 @@
+{
+  "stigma-cover": {
+    "width": 1280,
+    "height": 719
+  },
+  "stigma-space": {
+    "width": 1280,
+    "height": 721
+  },
+  "stigma-stream": {
+    "width": 1280,
+    "height": 2276
+  },
+  "dating-cover": {
+    "width": 1280,
+    "height": 720
+  },
+  "dating-scene-a": {
+    "width": 1280,
+    "height": 863
+  },
+  "dating-scene-b": {
+    "width": 1280,
+    "height": 690
+  },
+  "mushrooms-cover": {
+    "width": 1280,
+    "height": 720
+  },
+  "mushrooms-characters": {
+    "width": 1182,
+    "height": 1330
+  },
+  "mushrooms-story-a": {
+    "width": 1280,
+    "height": 720
+  },
+  "mushrooms-story-b": {
+    "width": 1280,
+    "height": 720
+  },
+  "nexus-cover": {
+    "width": 1280,
+    "height": 720
+  },
+  "bone-cover": {
+    "width": 1280,
+    "height": 720
+  },
+  "bone-cover-white": {
+    "width": 1280,
+    "height": 720
+  },
+  "species-cover": {
+    "width": 1920,
+    "height": 1080
+  },
+  "alilaguna-cover": {
+    "width": 1280,
+    "height": 577
+  },
+  "dating-gaze-finished": {
+    "width": 1280,
+    "height": 720
+  },
+  "species-cultivation-detail": {
+    "width": 1280,
+    "height": 720
+  },
+  "sonic-cover": {
+    "width": 1280,
+    "height": 720
+  },
+  "cosmos-cover": {
+    "width": 1280,
+    "height": 720
+  },
+  "earthquake-cover": {
+    "width": 1920,
+    "height": 1080
+  },
+  "metamorphosis-cover": {
+    "width": 1280,
+    "height": 592
+  }
+}

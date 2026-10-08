@@ -1,0 +1,120 @@
+---
+import Shell from './RestoredCaseShell.astro';
+import Figure from './RestoredFigure.astro';
+import sources from '../data/restored-assets.json';
+import {c,type Lang} from '../data/site';
+import type {Project} from '../data/projects';
+interface Props {lang:Lang;project:Project}
+const {lang,project}=Astro.props;
+const t=(zh:string,en:string)=>lang==='zh'?zh:en;
+const asset=(node:string,image:string)=>(sources as Record<string,Record<string,{src:string;width:number;height:number}>>)[node][image];
+const chapters=[
+{id:'research',label:c('背景与调研','Background & research')},
+{id:'mechanism',label:c('标签与认知机制','Labels & mechanisms')},
+{id:'journey',label:c('体验架构','Experience framework')},
+{id:'identity',label:c('身份生成与求职','Identity & screening')},
+{id:'livestream',label:c('娱乐化与直播','Live entertainment')},
+{id:'portrait',label:c('身份重构与装置','Identity & installation')}
+];
+const interviews=[
+{node:'1:4538',quote:c('“当大家把‘焦虑’当成日常情绪使用时，我会觉得病情被轻描淡写，也担心说出经历后被认为过度敏感。”','“When anxiety is treated as an everyday mood, I feel my illness is being trivialised, and worry that sharing my experience will be seen as oversensitivity.”'),label:c('被轻视 / 表达顾虑','Trivialisation / hesitation')},
+{node:'1:4548',quote:c('“频繁拿疾病开玩笑会让大家忽视病情的严重性，即使没有恶意，也可能让患者更难被真正理解。”','“Frequent jokes about illness make people overlook its seriousness. Even without ill intent, they can make it harder for patients to be understood.”'),label:c('认知弱化 / 疾病误解','Reduced awareness / misunderstanding')},
+{node:'1:4558',quote:c('“看到‘抑郁’被当成玩笑或标签时会不适，因为真实病情更复杂，也让我更少主动谈论自己的经历。”','“Seeing depression used as a joke or label is uncomfortable. The reality is more complex, and it makes me less willing to talk about my experience.”'),label:c('标签化 / 病耻感','Labelling / shame')},
+{node:'1:4569',quote:c('“以前我会把‘社恐’和‘强迫症’当成网络用语，很少想到真实患者，后来才意识到这可能强化刻板印象。”','“I used to treat social anxiety and OCD as internet slang, rarely thinking about actual patients. Later I realised this could reinforce stereotypes.”'),label:c('无意识调侃 / 刻板印象','Unconscious humour / stereotypes')}
+];
+const findings=[
+{title:c('疾病误解','Misunderstanding'),image:'imgRectangle3'},
+{title:c('社会排斥','Social exclusion'),image:'imgRectangle1'},
+{title:c('病耻心理','Illness-related shame'),image:'imgRectangle7'},
+{title:c('娱乐消费','Entertainment consumption'),image:'imgRectangle6'},
+{title:c('浪漫想象','Romantic imagery'),image:'imgRectangle5'}
+];
+const mechanisms=[
+{title:c('认知','Perception'),text:c('信息缺失、特征简化，疾病标签逐渐取代真实个体。','Missing information and simplified traits allow labels to replace the person.')},
+{title:c('表达','Expression'),text:c('标签化语言将疾病名称转化为玩笑、贬义词或身份称呼。','Language turns illness names into jokes, insults, or identity labels.')},
+{title:c('行动','Action'),text:c('拒绝接触、机会排除与模仿嘲弄，把偏见落实到行为中。','Avoidance, exclusion, and mockery turn bias into behaviour.')},
+{title:c('传播','Circulation'),text:c('媒介放大与反复玩梗，使简化后的认知持续固化。','Media amplification and repeated memes entrench simplified assumptions.')}
+];
+const stages=[
+{title:c('01　身份诊断','01　Identity assessment'),node:'11:5016',image:'imgRectangle20',text:c('问卷与面部录入生成虚构的“疾病身份”与个人档案，完成从普通参与者到体验角色的切换。','Questionnaire and facial inputs create a fictional illness identity and profile, shifting the participant into an experiential role.')},
+{title:c('02　污名化：求职筛选','02　Stigmatisation: screening'),node:'11:5016',image:'imgRectangle2',text:c('进入 VR 求职测试。系统将疾病标签嵌入筛选规则，用户的选择持续影响求职结果。','A VR recruitment test embeds illness labels in screening rules, carrying each choice into the employment outcome.')},
+{title:c('03　娱乐化：娱乐直播','03　Entertainment: livestream'),node:'13:2205',image:'imgRectangle2',text:c('成为直播表演者，接受观众指令与评价。身体动作被记录，身份逐步转化为可观看的内容。','The participant performs for audience instructions and ratings. Recorded bodily actions turn identity into content.')},
+{title:c('04　浪漫化：身份重构','04　Romanticisation: reconstruction'),node:'26:758',image:'imgRectangle8',text:c('前序身份、行为与身体数据被转译为艺术化肖像，疾病标签成为审美符号。','Accumulated identity, behaviour, and bodily data become an artistic portrait and aesthetic symbols.')}
+];
+const screening=[
+{title:c('用户操作','User actions'),text:c('瞄准 → 识别 → 选择','Aim → identify → select')},
+{title:c('系统规则','System rules'),text:c('权重 → 限时 → 累计','Weight → time limit → accumulation')},
+{title:c('即时反馈','Immediate feedback'),text:c('命中 → 写入 → 提示','Hit → record → prompt')},
+{title:c('最终结果','Final outcome'),text:c('受限 → 受阻 → 拒绝','Restriction → obstruction → rejection')}
+];
+const steps=[
+{title:c('点击图标','Select an icon'),image:'imgRectangle8',text:c('观众在直播界面中点击互动图标，向表演者发出动作指令或评价反馈。','Audience members select icons to issue movement instructions or ratings.')},
+{title:c('动作示范','Movement demonstration'),image:'imgRectangle12',text:c('系统展示动作示范，表演者根据提示进行模仿和表演。','The system demonstrates an action for the performer to imitate.')},
+{title:c('完成动作','Complete the action'),image:'imgRectangle14',text:c('系统识别动作表现，给出反馈并累计本阶段的互动结果。','Movement recognition produces feedback and accumulates the result.')},
+{title:c('等级提升','Level up'),image:'imgRectangle16',text:c('完成多次互动任务后，系统提升直播等级，解锁更高阶段。','Repeated tasks raise the livestream level and unlock later stages.')},
+{title:c('身份升级','Identity upgrade'),image:'imgRectangle15',text:c('“患者主播”升级为“艺术主播”，从被观看进一步转向被包装与重构。','The “patient streamer” becomes an “art streamer”, moving from scrutiny to repackaging.')},
+{title:c('最终阶段','Final stage'),image:'imgRectangle11',text:c('系统整合前序身份与行为数据，将其转化为艺术结果，进入形象生成。','Accumulated identity and behaviour data are carried into the artistic output.')}
+];
+const portraits=[
+{title:c('01　轮廓建立','01　Contour generation'),head:'imgRectangle18',helmet:'imgRectangle17',process:'imgRectangle16',text:c('系统调用前序面部信息，建立基础数字轮廓与面部结构。','Facial inputs establish the basic digital contour and structure.')},
+{title:c('02　特征重构','02　Feature reconstruction'),head:'imgRectangle22',helmet:'imgRectangle21',process:'imgRectangle20',text:c('感知输入逐步受限，系统持续重构面部特征与身份表现。','As sensory inputs are progressively restricted, the system reconstructs features and identity.')},
+{title:c('03　艺术转译','03　Artistic translation'),head:'imgRectangle25',helmet:'imgRectangle24',process:'imgRectangle23',text:c('整合疾病标签、动态数据与视觉参数，生成最终艺术化肖像。','Illness labels, movement data, and visual parameters produce the artistic portrait.')}
+];
+---
+<Shell lang={lang} project={project} theme="stigma" englishTitle="The Big Bang Stigma" chapters={chapters} hero={{node:'1:3894',image:'imgRectangle6',alt:c('病名异化实验场：紫色虚拟直播舞台','The purple virtual performance stage of The Big Bang Stigma')}} side={{node:'1:3894',image:'imgRectangle13',alt:c('配套的观众直播互动界面','The audience livestream interface')}}>
+  <Fragment slot="intro"><p>{t('本项目聚焦疾病污名在求职、社交媒体与大众传播中的认知偏差，通过前期调研梳理“污名化—娱乐化—浪漫化”的问题链路，并将其转译为连续的 XR 叙事交互体验。','This project examines illness stigma in recruitment, social media, and mass communication. Research into stigmatisation, entertainment, and romanticisation becomes a continuous XR narrative experience.')}</p><p>{t('设计围绕身份生成、求职筛选、直播互动与数据生成构建完整体验流程，结合用户选择、身体行为与实时系统反馈，让抽象的社会偏见变得可感知、可参与。','Identity generation, recruitment screening, live interaction, and data generation connect participant choices, bodily actions, and system feedback, making abstract social bias tangible and participatory.')}</p></Fragment>
+  <section class="case-section restored-chapter" id="research">
+    <header class="restored-section-heading"><span class="restored-number">01 / BACKGROUND & RESEARCH</span><h2>{t('疾病从医学概念进入大众娱乐语境','From medical terminology to popular entertainment')}</h2></header>
+    <div class="restored-split"><div><p>{t('项目从网络热词、短视频与娱乐内容切入，发现部分疾病名称及患者特征逐渐脱离真实疾病语境，被转化为玩笑、标签与流行表达，如“强迫症”“抑郁”“社恐”等词汇被泛化使用。此类传播虽提升了疾病曝光度，却也简化了公众认知，进一步弱化疾病本身的复杂性与严重性。','The project begins with internet slang, short videos, and entertainment. Terms such as OCD, depression, and social anxiety are detached from their clinical context and used as jokes or labels. Increased visibility can coincide with a simplified understanding of illness.')}</p><Figure node="1:4168" image="imgRectangle" alt={t('前期网络传播与疾病标签的研究拼贴','Research collage of online language and illness labels')} lang={lang} contained /></div><div><p>{t('研究进一步关注疾病标签对患者现实生活的影响，包括疾病误解、社会排斥、病耻感与求职歧视等。对比患者与普通公众的认知后发现，疾病污名并非只停留在语言层面，还会持续影响患者的社会参与、身份认同与日常生活。','Research then examines misunderstanding, exclusion, shame, and employment discrimination. Comparing patient and public perspectives reveals how language can affect participation, identity, and daily life.')}</p><div class="restored-grid two"><Figure node="1:3988" image="imgRectangle1" alt={t('作品集中的疾病污名文献摘录','Illness stigma literature excerpt from the portfolio')} caption={t('调研文献摘录','Research literature excerpt')} lang={lang}/><Figure node="1:4171" image="imgRectangle1" alt={t('作品集中的污名化研究文献摘录','Stigmatisation literature excerpt from the portfolio')} lang={lang}/></div></div></div>
+    <div class="stigma-findings">{findings.map(f=><div><Figure node="1:4267" image={f.image} alt={f.title[lang]} lang={lang} contained/><h3>{f.title[lang]}</h3></div>)}</div>
+    <h3>{t('从公众表达验证认知偏差','Examining perceptions through public responses')}</h3>
+    <div class="restored-interviews">{interviews.map(q=><article><img src={asset(q.node,'imgRectangle1').src} width={asset(q.node,'imgRectangle1').width} height={asset(q.node,'imgRectangle1').height} alt="" loading="lazy"/><blockquote>{q.quote[lang]}<cite>{q.label[lang]}</cite></blockquote></article>)}</div>
+    <div class="restored-loop"><div><span>Q1</span><p>{t('如何看待网络中将疾病名称作为玩笑或流行标签的现象？','How do you view illness names used as jokes or popular labels?')}</p></div><div><span>Q2</span><p>{t('这些网络表达是否会影响对疾病及患者群体的真实理解？','Do these expressions affect understanding of illness and patients?')}</p></div><div><span>Q3</span><p>{t('如果你有相关疾病经历，这些表达会产生哪些具体影响？','What specific effects do these expressions have on people with lived experience?')}</p></div></div>
+    <p class="restored-question">{t('疾病污名常隐藏于日常语言、玩笑与标签判断中。','Illness stigma can hide in everyday language, jokes, and judgements.')}</p>
+  </section>
+  <section class="case-section restored-chapter" id="mechanism">
+    <header class="restored-section-heading"><span class="restored-number">02 / CONCEPT FRAMEWORK</span><h2>{t('疾病标签逐渐取代真实个体','When labels replace the person')}</h2></header>
+    <p>{t('疾病污名并非只表现为直接歧视，而是由认知偏差开始，经语言、行为与媒介传播不断被放大。项目将这一过程拆解为“认知—表达—行动—传播”四层机制，并转译为污名化、娱乐化与浪漫化三个体验阶段。','Stigma starts with distorted perceptions and grows through language, behaviour, and media. Four mechanisms—perception, expression, action, and circulation—are translated into three experiential stages.')}</p>
+    <div class="restored-split"><div class="stigma-framework"><div class="restored-diagram" aria-label={t('原作品集中的身体与标签机制图','The original body and label mechanism diagram')}><img src={asset('1:4850','imgGroup1597880785').src} alt="" aria-hidden="true"/><img src={asset('1:4850','imgGroup1597880784').src} alt="" aria-hidden="true"/><img class="framework-rings" src={asset('13:5390','imgGroup1597880876').src} alt="" aria-hidden="true"/><img class="framework-body" src={asset('1:4884','imgRectangle').src} alt={t('原作品集的紫色身体结构图','The purple body illustration from the original portfolio')}/></div><div class="restored-loop"><div><span>STIGMATISATION</span><p>{t('被定义 / 被排斥','Defined / excluded')}</p></div><div><span>ENTERTAINMENT</span><p>{t('被观看 / 被消费','Watched / consumed')}</p></div><div><span>ROMANTICISATION</span><p>{t('被美化 / 被重构','Beautified / reconstructed')}</p></div></div></div><div><ol class="restored-flow">{mechanisms.map((m,i)=><li><span class="restored-number">{String(i+1).padStart(2,'0')}</span><strong>{m.title[lang]}</strong><p>{m.text[lang]}</p></li>)}</ol><h3>{t('场景聚焦：求职','Scenario focus: employment')}</h3><p>{t('前期研究发现，疾病标签会影响求职中的身份判断、信息筛选与机会分配。项目因此选择求职作为核心场景，将身份录入、招聘筛选、公开观看与形象重构串联为连续体验，使用户在系统反馈中感知偏见如何逐步作用于个体。','Research identifies the effects of illness labels on identity judgements, information filtering, and opportunity. Employment connects identity entry, screening, public scrutiny, and visual reconstruction into one continuous experience.')}</p><Figure node="1:5501" image="imgRectangle" alt={t('求职场景中被观看与判断的视觉拼贴','Visual collage of judgement in employment')} lang={lang} contained/></div></div>
+    <p class="restored-question">{t('如何让用户在求职过程中，感知疾病标签如何影响身份与机会？','How can a participant experience the influence of illness labels on identity and opportunity?')}</p>
+    <div class="restored-loop"><div><span>{t('身份代入','IDENTITY SHIFT')}</span><p>{t('旁观者切换为患者体验角色','The observer becomes an experiential role.')}</p></div><div><span>{t('控制递减','DECLINING CONTROL')}</span><p>{t('逐步失去对身份与结果的控制','Control over identity and outcomes progressively decreases.')}</p></div><div><span>{t('后果可视','VISIBLE CONSEQUENCES')}</span><p>{t('行为持续影响后续反馈，隐性判断转为结果','Behaviour affects later feedback; implicit judgements become visible.')}</p></div></div>
+  </section>
+  <section class="case-section restored-chapter" id="journey">
+    <header class="restored-section-heading"><span class="restored-number">03 / EXPERIENCE FRAMEWORK</span><h2>{t('从疾病标签到身份重构','From illness labels to identity reconstruction')}</h2></header>
+    <p>{t('项目将“污名化—娱乐化—浪漫化”的疾病认知偏差转译为连续的 XR 体验流程。用户从获得患者身份开始，依次经历求职筛选、直播观看与数据重构，在不断变化的系统反馈与控制关系中，感知疾病标签如何逐渐影响个体的身份表达与社会处境。','The XR journey begins with a fictional patient identity, then moves through recruitment screening, livestream performance, and data reconstruction. Changing feedback and control reveal how labels affect identity and social circumstances.')}</p>
+    <div class="restored-grid four">{stages.map(s=><article><Figure node={s.node} image={s.image} alt={s.title[lang]} lang={lang}/><h3>{s.title[lang]}</h3><p>{s.text[lang]}</p></article>)}</div>
+    <div class="restored-panorama"><Figure node="1:5649" image="imgRectangle1" alt={t('四阶段体验的完整装置布局：身份采集、表演台、直播屏与肖像输出','The installation layout connecting identity capture, performance, livestream, and portrait output')} caption={t('完整体验装置与空间关系','The complete installation and spatial relationships')} lang={lang}/></div>
+    <div class="restored-loop"><div><span>{t('用户行为','PARTICIPANT ACTIONS')}</span><p>{t('录入信息 → 完成求职 → 参与直播 → 查看结果','Enter information → seek employment → perform → view the result')}</p></div><div><span>{t('系统反馈','SYSTEM FEEDBACK')}</span><p>{t('身份生成 → 标签筛选 → 实时反馈 → 数据重构','Generate identity → screen labels → give live feedback → reconstruct data')}</p></div><div><span>{t('数据关联','CONNECTED DATA')}</span><p>{t('前一阶段的身份与行为成为后一阶段的输入','Identity and behaviour from one stage become inputs to the next.')}</p></div></div>
+  </section>
+  <section class="case-section restored-chapter" id="identity">
+    <header class="restored-section-heading"><span class="restored-number">04 / IDENTITY & SCREENING</span><h2>{t('身份诊断与生成','Identity assessment & profiling')}</h2></header>
+    <p>{t('用户首先填写基础问卷并完成面部识别，系统整合个人信息、问卷结果与面部数据，生成对应的疾病身份与个人档案，并将其作为后续求职筛选与系统反馈的初始判断依据。通过这一身份生成过程，用户从普通参与者切换为“患者求职者”，为后续体验疾病标签如何介入机会判断与社会评价建立情境基础。','A questionnaire and facial capture combine personal information, responses, and facial data into a fictional identity and profile. This profile becomes the starting point for screening and feedback, positioning the participant as a “patient job seeker”.')}</p>
+    <ol class="restored-flow">{[c('信息录入','Information entry'),c('面部采集','Facial capture'),c('特征解析','Feature analysis'),c('档案建模','Profile modelling')].map((label,i)=><li><span class="restored-number">{String(i+1).padStart(2,'0')}</span><strong>{label[lang]}</strong></li>)}</ol>
+    <div class="restored-split"><div class="restored-phone"><Figure node="11:5016" image="imgRectangle17" alt={t('身份生成的原问卷界面','The original questionnaire interface for identity generation')} caption={t('基础问卷','Questionnaire')} lang={lang}/></div><div><Figure node="11:5016" image="imgRectangle19" alt={t('面部信息采集的原始研究图','Original facial capture reference')} lang={lang}/><div class="restored-panorama"><Figure node="11:5016" image="imgRectangle20" alt={t('身份档案生成界面','Generated identity profile interface')} caption={t('身份生成与档案展示','Identity generation and profile display')} lang={lang}/></div></div></div>
+    <h3>{t('污名化：求职筛选','Stigmatisation: employment screening')}</h3>
+    <p>{t('用户进入 VR 求职测试，通过识别与选择词汇完成面试任务。系统将疾病标签嵌入筛选规则，使中性或准确描述更难被获取，污名化词汇则持续累积至个人档案，并最终影响求职结果。用户由此感知偏见如何通过看似客观的筛选流程转化为机会限制。','In the VR interview, participants identify and select words. Neutral or accurate terms are harder to obtain, while stigmatising words accumulate in the profile and influence the employment outcome. A seemingly objective process turns bias into restricted opportunity.')}</p>
+    <div class="restored-grid two"><Figure node="11:5016" image="imgRectangle2" alt={t('VR 求职筛选测试场景','VR employment screening environment')} lang={lang}/><Figure node="11:5016" image="imgRectangle4" alt={t('求职测试中的词汇识别场景','Word selection in the employment test')} lang={lang}/></div>
+    <div class="restored-words" aria-label={t('测试中使用的标签词汇','Label words used in the test')}>{['imgRectangle9','imgRectangle10','imgRectangle11','imgRectangle12','imgRectangle13','imgRectangle14','imgRectangle15'].map((image,i)=><img src={asset('11:5016',image).src} alt={['SCHIZO','FREAK','UNSTABLE','DISORDERED','WEIRD','NORMAL','INSANE'][i]} width={asset('11:5016',image).width} height={asset('11:5016',image).height} loading="lazy"/>)}</div>
+    <ol class="restored-flow">{screening.map(s=><li><strong>{s.title[lang]}</strong><p>{s.text[lang]}</p></li>)}</ol>
+    <Figure node="11:5016" image="imgRectangle6" alt={t('求职结果选择 UI：不同结果与奖励分支','Employment outcome selection UI with result branches')} caption={t('求职结果选择 UI','Employment outcome selection UI')} lang={lang}/>
+  </section>
+  <section class="case-section restored-chapter" id="livestream">
+    <header class="restored-section-heading"><span class="restored-number">05 / LIVE ENTERTAINMENT</span><h2>{t('娱乐化：从求职者到直播表演者','Entertainment: from job seeker to performer')}</h2></header>
+    <p>{t('用户进入虚拟直播舞台后，通过动作表演完成互动任务；观众点击动态图标对表演进行评价与指令反馈，Kinect 与压力传感器同步记录身体动作和受力数据。系统根据用户表现持续生成实时反馈，并将累计数据用于后续身份升级与最终形象生成，形成“行为输入—观众反馈—数据记录—结果累积”的交互闭环。','On the virtual stage, movement tasks connect the performer to audience instructions and ratings. Kinect and pressure sensors record movement and force; feedback and accumulated data feed identity upgrades and the final visual output.')}</p>
+    <Figure node="13:2205" image="imgRectangle2" alt={t('娱乐直播的主舞台','The main livestream performance stage')} caption={t('主舞台 / 直播表演空间','Main stage / live performance space')} lang={lang}/>
+    <div class="restored-grid two"><Figure node="13:2205" image="imgRectangle4" alt={t('舞台中的交互示范空间','The demonstration area on the stage')} caption={t('交互示范空间','Interaction demonstration area')} lang={lang}/><Figure node="13:2205" image="imgRectangle6" alt={t('观众与表演者之间的观看空间','The viewing relationship between audience and performer')} caption={t('角色观看空间','Audience viewing space')} lang={lang}/></div>
+    <p>{t('空间以夸张化直播舞台为核心，将表演者置于中央、观众环绕分布，强化“被观看”与“被评价”的体验关系。角色设计通过疾病特征、身体差异与视觉符号进行夸张化处理，映射疾病被转化为公共娱乐内容的过程。','The exaggerated stage places the performer at the centre of surrounding viewers. Character traits, bodily differences, and visual symbols heighten the relationship of watching and judgement, reflecting illness turned into public entertainment.')}</p>
+    <div class="restored-feature"><Figure node="13:2205" image="imgRectangle10" alt={t('观众通过手机参与指令与评价','Audience instructions and ratings via phone')} lang={lang}/><div class="restored-phone"><Figure node="13:2205" image="imgRectangle8" alt={t('观众的直播互动手机界面','Audience livestream interface on a phone')} lang={lang} contained/></div></div>
+    <h3>{t('交互流程','Interaction flow')}</h3><div class="restored-grid three">{steps.map((s,i)=><article><Figure node="13:2205" image={s.image} alt={s.title[lang]} lang={lang} contained/><h3>{String(i+1).padStart(2,'0')} / {s.title[lang]}</h3><p>{s.text[lang]}</p></article>)}</div>
+    <div class="restored-grid two"><Figure node="1:6188" image="imgRectangle1" alt={t('Kinect 动作识别画面','Kinect motion capture reference')} caption={t('Kinect 动作识别','Kinect motion capture')} lang={lang}/><Figure node="26:758" image="imgRectangle9" alt={t('身体与压力数据的系统处理界面','System processing of bodily and pressure data')} caption={t('身体数据与实时反馈','Bodily data and real-time feedback')} lang={lang}/></div>
+  </section>
+  <section class="case-section restored-chapter" id="portrait">
+    <header class="restored-section-heading"><span class="restored-number">06 / IDENTITY RECONSTRUCTION</span><h2>{t('浪漫化：将真实个体转化为审美符号','Romanticisation: the person becomes an aesthetic symbol')}</h2></header>
+    <p>{t('用户进入交互装置后，系统接收前序体验中累积的身份信息、疾病标签、动作数据与身体反馈，并将其转译为可计算的视觉参数。装置通过逐步限制感知输入强化沉浸体验，使这些数据持续介入数字形象的生成过程。','The installation receives accumulated identity, labels, movements, and bodily feedback, translating them into visual parameters. Progressively restricted sensory input deepens immersion while data shapes the emerging digital identity.')}</p>
+    <div class="restored-feature"><Figure node="26:758" image="imgRectangle19" alt={t('身份重构阶段的交互座椅装置','The interactive chair for identity reconstruction')} lang={lang} contained/><div><h3>{t('数据如何进入最终形象','How data enters the final portrait')}</h3><div class="restored-loop"><div><span>{t('数据输入','INPUT')}</span><p>{t('身份信息 / 疾病标签 / 动作数据 / 身体反馈','Identity / illness labels / movement / bodily feedback')}</p></div><div><span>{t('系统转译','TRANSLATION')}</span><p>{t('数据映射 / 参数提取 / 权重计算 / 视觉生成','Data mapping / parameter extraction / weighting / visual generation')}</p></div><div><span>{t('输出基础','OUTPUT')}</span><p>{t('轮廓建立 / 特征生成 / 形态变化 / 身份重构','Contours / features / form changes / identity reconstruction')}</p></div></div></div></div>
+    <div class="restored-grid three">{portraits.map(s=><article><Figure node="26:758" image={s.helmet} alt={s.title[lang]+t('的感知输入装置',' sensory input device')} lang={lang} contained/><Figure node="26:758" image={s.head} alt={s.title[lang]+t('的数字形象',' digital portrait')} lang={lang} contained/><h3>{s.title[lang]}</h3><p>{s.text[lang]}</p><Figure node="26:758" image={s.process} alt={s.title[lang]+t('的节点制作过程',' node-based process')} lang={lang}/></article>)}</div>
+    <div class="restored-split"><Figure node="1:6532" image="imgGroup" alt={t('原作品集中的数据肖像生成序列','The original data portrait generation sequence')} lang={lang} contained/><Figure node="26:758" image="imgRectangle8" alt={t('最终艺术化身份肖像','The final artistic identity portrait')} lang={lang} contained/></div>
+    <p class="restored-question">{t('在美化疾病形象的同时，真实处境是否被掩盖？','When illness is beautified, is its lived reality being obscured?')}</p>
+    <h3>{t('装置与制作记录','Installation & making')}</h3><div class="restored-grid two"><Figure node="26:758" image="imgRectangle13" alt={t('VR 体验与制作现场','VR experience and making process')} lang={lang}/><Figure node="26:758" image="imgRectangle15" alt={t('电脑与座椅装置的联动记录','Computer and chair installation setup')} lang={lang}/><Figure node="26:758" image="imgRectangle2" alt={t('原作品集中的身份艺术展示现场','Identity art presentation from the original portfolio')} caption={t('身份艺术展示','Identity art presentation')} lang={lang}/><Figure node="26:758" image="imgRectangle5" alt={t('原作品集中的公众观看记录','Audience viewing from the original portfolio')} caption={t('公众审美凝视','Public aesthetic gaze')} lang={lang}/></div>
+  </section>
+</Shell>

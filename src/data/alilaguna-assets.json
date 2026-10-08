@@ -1,0 +1,140 @@
+{
+  "cover-collage": {
+    "src": "/media/alilaguna/cover-collage.webp",
+    "large": "/media/alilaguna/cover-collage-large.webp",
+    "width": 1800,
+    "height": 812
+  },
+  "inspiration-collage": {
+    "src": "/media/alilaguna/inspiration-collage.webp",
+    "large": "/media/alilaguna/inspiration-collage-large.webp",
+    "width": 1561,
+    "height": 1800
+  },
+  "journey-collage": {
+    "src": "/media/alilaguna/journey-collage.webp",
+    "large": "/media/alilaguna/journey-collage-large.webp",
+    "width": 1800,
+    "height": 825
+  },
+  "metaphor-board": {
+    "src": "/media/alilaguna/metaphor-board.webp",
+    "large": "/media/alilaguna/metaphor-board-large.webp",
+    "width": 1800,
+    "height": 393
+  },
+  "reference-board": {
+    "src": "/media/alilaguna/reference-board.webp",
+    "large": "/media/alilaguna/reference-board-large.webp",
+    "width": 1076,
+    "height": 1800
+  },
+  "narrative-map": {
+    "src": "/media/alilaguna/narrative-map.webp",
+    "large": "/media/alilaguna/narrative-map-large.webp",
+    "width": 1800,
+    "height": 261
+  },
+  "technical-map": {
+    "src": "/media/alilaguna/technical-map.webp",
+    "large": "/media/alilaguna/technical-map-large.webp",
+    "width": 1800,
+    "height": 297
+  },
+  "audio-analysis": {
+    "src": "/media/alilaguna/audio-analysis.webp",
+    "large": "/media/alilaguna/audio-analysis-large.webp",
+    "width": 1800,
+    "height": 324
+  },
+  "location-collage": {
+    "src": "/media/alilaguna/location-collage.webp",
+    "large": "/media/alilaguna/location-collage-large.webp",
+    "width": 982,
+    "height": 1800
+  },
+  "storyboard": {
+    "src": "/media/alilaguna/storyboard.webp",
+    "large": "/media/alilaguna/storyboard-large.webp",
+    "width": 1800,
+    "height": 1142
+  },
+  "capture-process": {
+    "src": "/media/alilaguna/capture-process.webp",
+    "large": "/media/alilaguna/capture-process-large.webp",
+    "width": 1160,
+    "height": 1800
+  },
+  "modelling-process": {
+    "src": "/media/alilaguna/modelling-process.webp",
+    "large": "/media/alilaguna/modelling-process-large.webp",
+    "width": 1171,
+    "height": 1800
+  },
+  "editing-process": {
+    "src": "/media/alilaguna/editing-process.webp",
+    "large": "/media/alilaguna/editing-process-large.webp",
+    "width": 1171,
+    "height": 1800
+  },
+  "timeline-analysis": {
+    "src": "/media/alilaguna/timeline-analysis.webp",
+    "large": "/media/alilaguna/timeline-analysis-large.webp",
+    "width": 1800,
+    "height": 686
+  },
+  "showcase-one": {
+    "src": "/media/alilaguna/showcase-one.webp",
+    "large": "/media/alilaguna/showcase-one-large.webp",
+    "width": 1800,
+    "height": 1013
+  },
+  "showcase-two": {
+    "src": "/media/alilaguna/showcase-two.webp",
+    "large": "/media/alilaguna/showcase-two-large.webp",
+    "width": 1800,
+    "height": 1013
+  },
+  "showcase-three": {
+    "src": "/media/alilaguna/showcase-three.webp",
+    "large": "/media/alilaguna/showcase-three-large.webp",
+    "width": 1800,
+    "height": 1013
+  },
+  "vertical-space": {
+    "src": "/media/alilaguna/vertical-space.webp",
+    "large": "/media/alilaguna/vertical-space-large.webp",
+    "width": 1800,
+    "height": 1016
+  },
+  "river-vessel": {
+    "src": "/media/alilaguna/river-vessel.webp",
+    "large": "/media/alilaguna/river-vessel-large.webp",
+    "width": 1800,
+    "height": 1016
+  },
+  "flooded-carriage": {
+    "src": "/media/alilaguna/flooded-carriage.webp",
+    "large": "/media/alilaguna/flooded-carriage-large.webp",
+    "width": 1800,
+    "height": 1016
+  },
+  "wordmark": {
+    "src": "/media/alilaguna/wordmark.webp",
+    "large": "/media/alilaguna/wordmark-large.webp",
+    "width": 1800,
+    "height": 421
+  },
+  "virtual-diptych": {
+    "src": "/media/alilaguna/virtual-diptych.webp",
+    "large": "/media/alilaguna/virtual-diptych-large.webp",
+    "width": 1582,
+    "height": 1800
+  },
+  "virtual-space-collage": {
+    "src": "/media/alilaguna/virtual-space-collage.webp",
+    "large": "/media/alilaguna/virtual-space-collage-large.webp",
+    "width": 1800,
+    "height": 1013
+  }
+}

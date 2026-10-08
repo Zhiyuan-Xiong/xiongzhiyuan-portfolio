@@ -1,0 +1,15 @@
+---
+import manifest from '../data/sonic-assets.json';
+import type {Lang} from '../data/site';
+interface Props {image:string;alt:string;caption?:string;class?:string;lang:Lang}
+const {image,alt,caption,class:className,lang}=Astro.props;
+const assets=manifest as Record<string,{src:string;large:string;width:number;height:number;diagram?:boolean}>;
+const asset=assets[image];
+const zoom=lang==='zh'?'放大查看':'Enlarge image';
+---
+<figure class:list={['restored-figure','sonic-figure',{'is-diagram':asset.diagram,'is-strip':asset.height/asset.width<.12},className]}>
+ <button type="button" class="image-button" data-lightbox={asset.large} data-alt={alt} data-caption={caption??''} aria-label={zoom+'：'+alt}>
+  <img src={asset.src} width={asset.width} height={asset.height} alt={alt} loading="lazy" decoding="async"/>
+  <span class="zoom-label">{zoom} ↗</span>
+ </button>{caption&&<figcaption>{caption}</figcaption>}
+</figure>

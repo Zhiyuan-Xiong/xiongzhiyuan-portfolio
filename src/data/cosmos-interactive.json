@@ -1,0 +1,15 @@
+{
+  "mesh": {
+    "src": "/media/cosmos/rhino-mesh.bin.gz",
+    "vertices": 876646,
+    "triangles": 1412168,
+    "objects": 323,
+    "bytes": 10651271
+  },
+  "particles": {
+    "src": "/media/cosmos/processing-points.bin.gz",
+    "count": 28026,
+    "step": 14,
+    "vines": 160
+  }
+}

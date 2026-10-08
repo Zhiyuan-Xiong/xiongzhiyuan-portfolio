@@ -1,0 +1,13 @@
+---
+import assets from '../data/skeleton-assets.json';
+import type {Lang} from '../data/site';
+interface Props {image:keyof typeof assets;alt:string;caption?:string;lang:Lang;class?:string;eager?:boolean}
+const {image,alt,caption,lang,class:className,eager=false}=Astro.props;
+const asset=assets[image];
+---
+<figure class:list={['restored-figure','skeleton-figure',className]}>
+ <button type="button" class="image-button" data-lightbox={asset.src} data-alt={alt} data-caption={caption??''} aria-label={(lang==='zh'?'放大查看：':'Enlarge: ')+alt}>
+  <img src={asset.src} width={asset.width} height={asset.height} alt={alt} loading={eager?'eager':'lazy'} decoding="async"/>
+  <span class="zoom-label">{lang==='zh'?'放大查看 ↗':'ENLARGE ↗'}</span>
+ </button>{caption&&<figcaption>{caption}</figcaption>}
+</figure>

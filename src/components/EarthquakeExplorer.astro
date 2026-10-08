@@ -1,0 +1,40 @@
+---
+import samples from '../data/earthquake-samples.json';
+import type {Lang} from '../data/site';
+const {lang}=Astro.props as {lang:Lang};const t=(zh:string,en:string)=>lang==='zh'?zh:en;
+const initial=samples[0],maxDepth=Math.ceil(Math.max(...samples.map(d=>d.Depth))/100)*100;
+const colors=['#758aaa','#7aa09b','#bbac89','#9d86ac','#b98484'];
+---
+<div class="quake-explorer" data-quake-explorer data-lang={lang}>
+ <div class="quake-explorer-head"><div><span>DATA → PARAMETERS</span><h3>{t('选择一条记录，查看它如何转化为设计参数','Select a record to inspect its design parameters')}</h3></div><span>{samples.length} {t('条设计样本','design samples')}</span></div>
+ <div class="quake-explorer-body">
+  <div class="quake-chart">
+   <svg viewBox="0 0 760 420" data-quake-chart role="img" aria-label={t('融合样本的震级与震源深度散点图，颜色代表融合分组','Magnitude and depth of the fusion samples, coloured by fusion cluster')}>
+    <g stroke="#35394618" fill="none">{[0,100,200,300,400,500,600,700].filter(d=>d<=maxDepth).map(d=><path d={`M${65+d/maxDepth*650} 30 V350`}/>)}{[5.5,6,6.5,7,7.5,8,8.5,9].map(d=><path d={`M65 ${350-(d-5.5)/3.5*310} H715`}/>)}</g>
+    <g class="quake-chart-label">{[0,100,200,300,400,500,600,700].filter(d=>d<=maxDepth).map(d=><text x={65+d/maxDepth*650} y="377" text-anchor="middle">{d}</text>)}{[5.5,6,6.5,7,7.5,8,8.5,9].map(d=><text x="50" y={354-(d-5.5)/3.5*310} text-anchor="end">{d}</text>)}<text x="380" y="412" text-anchor="middle">{t('震源深度 / km','Depth / km')}</text><text x="65" y="19">{t('震级','Magnitude')}</text></g>
+    <g>{samples.map((d,i)=><circle data-quake-point={i} cx={65+d.Depth/maxDepth*650} cy={350-(d.Magnitude-5.5)/3.5*310} r={i===0?6:3.8} fill={colors[d.cluster%colors.length]} class:list={{'is-selected':i===0}}><title>{d.date} / M {d.Magnitude} / {d.Depth} km</title></circle>)}</g>
+   </svg>
+   <div class="quake-chart-legend">{colors.map((color,i)=><span><i style={`background:${color}`}></i>{t('分组','Cluster')} {i}</span>)}</div>
+  </div>
+  <div class="quake-readout">
+   <label for="quake-sample">{t('原始记录','Source record')}</label>
+   <select id="quake-sample" data-quake-sample>{samples.map((d,i)=><option value={i}>{String(i+1).padStart(3,'0')} / {d.date} / M {d.Magnitude.toFixed(1)}</option>)}</select>
+   <div class="quake-record-navigation"><button type="button" data-quake-prev aria-label={t('上一条记录','Previous record')}>←</button><span data-quake-counter>001 / {samples.length}</span><button type="button" data-quake-next aria-label={t('下一条记录','Next record')}>→</button></div>
+   <dl aria-live="polite" aria-atomic="true">
+    <div><dt>{t('震级','Magnitude')}</dt><dd data-quake-value="Magnitude">{initial.Magnitude.toFixed(1)}</dd></div>
+    <div><dt>{t('震源深度','Depth')}</dt><dd><span data-quake-value="Depth">{initial.Depth.toFixed(1)}</span> km</dd></div>
+    <div><dt>{t('几何尺度','Geometry scale')}</dt><dd><span data-quake-value="scale">{initial.scale.toFixed(3)}</span> ×</dd></div>
+    <div><dt>{t('垂直偏移','Vertical offset')}</dt><dd data-quake-value="z">{initial.z.toFixed(3)}</dd></div>
+    <div><dt>{t('碎片化参数','Fragmentation')}</dt><dd data-quake-value="fragmentation">{initial.fragmentation.toFixed(3)}</dd></div>
+    <div><dt>{t('材质分组','Material group')}</dt><dd data-quake-value="cluster">{initial.cluster}</dd></div>
+   </dl>
+   <code>scale = 1 + magnitude_norm × 4<br/>z = −depth_norm</code>
+  </div>
+ </div>
+ <p class="quake-explorer-note">{t('数值直接读取原始 final_fusion_data.csv。分组包含数值、语义与图像特征；样本之间的组合用于设计实验，不表示同一地震事件的对应关系。','Values come directly from the original final_fusion_data.csv. Clusters combine numerical, semantic, and image features. Sample pairings are design experiments, rather than verified matches to the same earthquake event.')}</p>
+ <script type="application/json" data-quake-samples set:html={JSON.stringify(samples)}/>
+</div>
+<script>
+import {initializeEarthquakeExplorer} from '../scripts/earthquake-explorer';
+initializeEarthquakeExplorer();
+</script>

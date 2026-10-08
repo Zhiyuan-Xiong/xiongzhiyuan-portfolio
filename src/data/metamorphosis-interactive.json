@@ -1,0 +1,25 @@
+{
+  "src": "/media/metamorphosis/butterfly-points.bin.gz",
+  "pointCount": 48000,
+  "vertices": 6503,
+  "triangles": 13110,
+  "bounds": [
+    [
+      -34.45409,
+      -38.594547,
+      -6.399945
+    ],
+    [
+      34.478043,
+      38.534946,
+      8.420539
+    ]
+  ],
+  "audio": {
+    "analysis": "RMS",
+    "gain": 5,
+    "smoothingSeconds": 0.22,
+    "scale": "1 + abs(audio)",
+    "source": "NewProject-pointcoud.toe"
+  }
+}

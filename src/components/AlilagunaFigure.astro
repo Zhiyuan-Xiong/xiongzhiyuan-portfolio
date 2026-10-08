@@ -1,0 +1,12 @@
+---
+import assets from '../data/alilaguna-assets.json';
+interface Props {image:keyof typeof assets;alt:string;caption?:string;class?:string}
+const {image,alt,caption,class:className}=Astro.props;
+const asset=assets[image];
+---
+<figure class:list={['restored-figure','alilaguna-figure',className]}>
+ <button type="button" class="image-button" data-lightbox={asset.large} data-alt={alt} data-caption={caption??''} aria-label={'放大查看：'+alt}>
+  <img src={asset.src} width={asset.width} height={asset.height} alt={alt} loading="lazy" decoding="async"/>
+  <span class="zoom-label">放大查看 ↗</span>
+ </button>{caption&&<figcaption>{caption}</figcaption>}
+</figure>

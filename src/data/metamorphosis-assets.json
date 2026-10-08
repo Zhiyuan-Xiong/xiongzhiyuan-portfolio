@@ -1,0 +1,62 @@
+{
+  "original-visual": {
+    "src": "/media/metamorphosis/original-visual.webp",
+    "large": "/media/metamorphosis/original-visual-large.webp",
+    "width": 2200,
+    "height": 1018
+  },
+  "operator-network": {
+    "src": "/media/metamorphosis/operator-network.webp",
+    "large": "/media/metamorphosis/operator-network-large.webp",
+    "width": 2200,
+    "height": 923
+  },
+  "development-sequence": {
+    "src": "/media/metamorphosis/development-sequence.webp",
+    "large": "/media/metamorphosis/development-sequence-large.webp",
+    "width": 2200,
+    "height": 457
+  },
+  "live-network": {
+    "src": "/media/metamorphosis/live-network.webp",
+    "large": "/media/metamorphosis/live-network-large.webp",
+    "width": 2200,
+    "height": 1075
+  },
+  "live-installation": {
+    "src": "/media/metamorphosis/live-installation.webp",
+    "large": "/media/metamorphosis/live-installation-large.webp",
+    "width": 1137,
+    "height": 733
+  },
+  "reactive-sequence": {
+    "src": "/media/metamorphosis/reactive-sequence.webp",
+    "large": "/media/metamorphosis/reactive-sequence-large.webp",
+    "width": 2200,
+    "height": 711
+  },
+  "source-model": {
+    "src": "/media/metamorphosis/source-model.webp",
+    "large": "/media/metamorphosis/source-model-large.webp",
+    "width": 2010,
+    "height": 978
+  },
+  "liquid-background": {
+    "src": "/media/metamorphosis/liquid-background.webp",
+    "large": "/media/metamorphosis/liquid-background-large.webp",
+    "width": 1080,
+    "height": 608
+  },
+  "transition-poster": {
+    "src": "/media/metamorphosis/transition-poster.webp",
+    "large": "/media/metamorphosis/transition-poster-large.webp",
+    "width": 720,
+    "height": 406
+  },
+  "hero-poster": {
+    "src": "/media/metamorphosis/hero-poster.webp",
+    "large": "/media/metamorphosis/hero-poster-large.webp",
+    "width": 720,
+    "height": 406
+  }
+}

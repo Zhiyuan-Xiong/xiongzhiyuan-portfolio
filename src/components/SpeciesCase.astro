@@ -1,0 +1,75 @@
+---
+import RestoredCaseShell from './RestoredCaseShell.astro';
+import SpeciesFigure from './SpeciesFigure.astro';
+import {species,deathSteps,deathFeatures,conversionSteps,rebornFeatures} from '../data/species';
+import assets from '../data/species-assets.json';
+import type {Lang} from '../data/site';
+import type {Project} from '../data/projects';
+import '../styles/species-case.css';
+const {lang,project}=Astro.props as {lang:Lang;project:Project};
+const t=(zh:string,en:string)=>lang==='zh'?zh:en;
+const chapters=[
+ {id:'worldview',label:{zh:'数字永生的世界',en:'Digital immortality'}},
+ {id:'research',label:{zh:'研究与构想',en:'Research & concept'}},
+ {id:'death',label:{zh:'死亡｜数字葬礼',en:'Death | Digital funeral'}},
+ {id:'convert',label:{zh:'转化｜资源循环',en:'Convert | Resource cycle'}},
+ {id:'reborn',label:{zh:'重生｜培育实验室',en:'Reborn | Cultivation'}},
+ {id:'archives',label:{zh:'新物种与档案',en:'Species & archives'}},
+ {id:'extension',label:{zh:'世界观延展',en:'World extension'}}
+];
+---
+<RestoredCaseShell lang={lang} project={project} theme="species" englishTitle="NO.3 Post-digital Species" chapters={chapters} hero={{...assets['cover-model'],alt:project.coverAlt!}}>
+ <div slot="hero-caption" class="species-hero-atmosphere" aria-hidden="true"><img class="species-hero-background" src={assets['cover-background'].src} width={assets['cover-background'].width} height={assets['cover-background'].height} alt=""/><img class="species-hero-ornaments" src={assets['cover-ornaments'].src} width={assets['cover-ornaments'].width} height={assets['cover-ornaments'].height} alt=""/></div>
+ <div slot="hero-caption" class="species-hero-caption"><p>{t('后数字物种','Post-digital Species')}</p><span>{species.subtitle[lang]}</span></div>
+ <div slot="intro"><p>{t('以数字遗产、资源转化与生物培育为线索，构建从死亡到重生的第三生命形态。','Digital inheritance, resource conversion, and biological cultivation form the path from death to a speculative third kind of life.')}</p></div>
+ <section id="worldview" class="restored-chapter case-section species-worldview">
+  <div class="species-world-stage">
+   <img class="species-world-grid" src={assets['world-grid'].src} width={assets['world-grid'].width} height={assets['world-grid'].height} alt="" aria-hidden="true" loading="lazy"/>
+   <img class="species-world-people" src={assets['world-people'].src} width={assets['world-people'].width} height={assets['world-people'].height} alt="" aria-hidden="true" loading="lazy"/>
+   <div class="species-wordmark"><img src={assets['logo-number'].src} width={assets['logo-number'].width} height={assets['logo-number'].height} alt="NO.3"/><img src={assets['logo-words'].src} width={assets['logo-words'].width} height={assets['logo-words'].height} alt="Post-digital Species"/></div>
+   <header class="restored-section-heading"><span class="restored-number">01 / DIGITAL IMMORTALITY</span><h2>{t('数字永生的世界','A World of Digital Immortality')}</h2></header>
+   <p class="species-question">{species.question[lang]}</p>
+   <div class="species-introduction">{species.introduction.map(copy=><p>{copy[lang]}</p>)}</div>
+   <div class="species-world-city" aria-hidden="true"><img src={assets.city.src} width={assets.city.width} height={assets.city.height} alt="" loading="lazy"/><img src={assets.city.src} width={assets.city.width} height={assets.city.height} alt="" loading="lazy"/></div>
+  </div>
+  <p>{species.worldview[lang]}</p><SpeciesFigure image="world-identities" lang={lang} alt={t('现实世界、真实人类、数字世界与数字化身的并行关系','Parallel physical and digital worlds, people, and avatars')}/>
+ </section>
+ <section id="research" class="restored-chapter case-section">
+  <header class="restored-section-heading"><span class="restored-number">02 / RESEARCH & CONCEPT</span><h2>{t('研究与构想','Research & Concept')}</h2></header>
+  <p>{species.research[lang]}</p><SpeciesFigure image="research" lang={lang} alt={t('研究板：逝者数字数据、数字世界的能源与污染、生物资源转化','Research board: post-mortem data, the energy and emissions of digitalisation, and biological resources')}/>
+  <div class="species-thinking"><div><h3>{t('三种生命的关系','Three Forms of Life')}</h3><p>{species.triangle[lang]}</p><nav class="species-stage-links" aria-label={t('生命循环三个阶段','Three stages of the life cycle')}><a href="#death">01 — DEATH</a><a href="#convert">02 — CONVERT</a><a href="#reborn">03 — REBORN</a></nav></div><SpeciesFigure image="life-triangle" lang={lang} alt={t('真实生命、数字生命与 NO.3 生命之间的三角循环图','A triangular cycle connecting physical life, digital life, and NO.3 life')}/></div>
+  <h3>{t('从生命循环到空间模型','From Life Cycle to Spatial Model')}</h3><p>{species.tree[lang]}</p><SpeciesFigure image="life-tree" lang={lang} alt={t('以生长树组织死亡、转化、重生的三阶段概念模型','A tree-like conceptual model organising death, conversion, and rebirth')}/>
+ </section>
+ <section id="death" class="restored-chapter case-section species-death">
+  <header class="species-phase-heading"><img src={assets['death-icon'].src} width={assets['death-icon'].width} height={assets['death-icon'].height} alt="" aria-hidden="true" loading="lazy"/><div><span class="restored-number">STAGE 1 / DEATH</span><h2>{t('死亡｜数字葬礼','Death | Digital Funeral')}</h2><p>{species.death[lang]}</p></div></header>
+  <div class="species-death-layout">
+   <div class="species-process"><h3>{t('数字葬礼服务流程','Digital Funeral Service Flow')}</h3><ol class="species-death-steps">{deathSteps.map((step,i)=><li><span class="species-step-number">{String(i+1).padStart(2,'0')}</span><h4>{step.title[lang]}</h4><p>{step.text[lang]}</p><img src={assets[('death-step-'+(i+1)) as keyof typeof assets].src} width={assets[('death-step-'+(i+1)) as keyof typeof assets].width} height={assets[('death-step-'+(i+1)) as keyof typeof assets].height} alt="" aria-hidden="true" loading="lazy"/></li>)}</ol></div>
+   <div class="species-death-model"><SpeciesFigure image="death-model" lang={lang} alt={t('数字葬礼的透明概念模型，灵柩、化身与挽歌装饰共同构成空间','Transparent conceptual model of a digital funeral with coffin, avatar, and memorial ornaments')}/><div class="species-death-features">{deathFeatures.map(feature=><div><h3>{feature.title[lang]}</h3><p>{feature.text[lang]}</p></div>)}</div></div>
+  </div>
+  <figure class="species-film"><video data-species-video loop muted playsinline preload="none" poster="/media/species/scene-1-poster.webp" aria-label={t('数字葬礼概念场景影片','Digital funeral concept scene')}><source data-src="/media/species/scene-1.mp4" type="video/mp4"/></video><figcaption>{t('数字葬礼：化身、灵柩与纪念空间的三维呈现','Digital funeral: a 3D scene of avatars, coffins, and memorial space')}</figcaption></figure>
+ </section>
+ <div class="species-two-phases">
+ <section id="convert" class="restored-chapter case-section species-convert">
+  <header class="species-phase-heading"><img src={assets['convert-icon'].src} width={assets['convert-icon'].width} height={assets['convert-icon'].height} alt="" aria-hidden="true" loading="lazy"/><div><span class="restored-number">STAGE 2 / CONVERT</span><h2>{t('转化｜资源循环','Convert | Resource Cycle')}</h2><p>{species.convert[lang]}</p></div></header>
+  <div class="species-convert-model"><SpeciesFigure image="convert-model" lang={lang} alt={t('收集碳源并进行生物资源转化的漏斗形机械装置','A funnel-like mechanical installation for collecting carbon sources and converting biological resources')}/><ol class="species-conversion-steps">{conversionSteps.map((step,i)=><li><h3>{String(i+1).padStart(2,'0')} — {step.title[lang]}</h3><img src={assets[('convert-diagram-'+(i+1)) as keyof typeof assets].src} width="400" height="120" alt={step.title[lang]} loading="lazy"/><p>{step.text[lang]}</p></li>)}</ol></div>
+  <figure class="species-film"><video data-species-video loop muted playsinline preload="none" poster="/media/species/scene-2-poster.webp" aria-label={t('资源转化装置概念影片','Resource conversion concept scene')}><source data-src="/media/species/scene-2.mp4" type="video/mp4"/></video><figcaption>{t('资源转化装置：碳源采集与生物转化','Resource conversion installation: carbon collection and biological transformation')}</figcaption></figure>
+ </section>
+ <section id="reborn" class="restored-chapter case-section species-reborn">
+  <header class="species-phase-heading"><img src={assets['reborn-icon'].src} width={assets['reborn-icon'].width} height={assets['reborn-icon'].height} alt="" aria-hidden="true" loading="lazy"/><div><span class="restored-number">STAGE 3 / REBORN</span><h2>{t('重生｜培育实验室','Reborn | Cultivation Laboratory')}</h2><p>{species.reborn[lang]}</p></div></header>
+  <div class="species-reborn-model"><div class="species-reborn-features">{rebornFeatures.map(feature=><div><h3>{feature.title[lang]}</h3><p>{feature.text[lang]}</p></div>)}</div><SpeciesFigure image="reborn-model" lang={lang} alt={t('HELLO WORLD 后数字物种培育模型，培养舱与生物资源系统相连接','HELLO WORLD cultivation model connecting the growth chamber with biological resource systems')}/></div>
+  <figure class="species-film"><video data-species-video loop muted playsinline preload="none" poster="/media/species/scene-3-poster.webp" aria-label={t('生物培育实验室概念影片','Biological cultivation laboratory concept scene')}><source data-src="/media/species/scene-3.mp4" type="video/mp4"/></video><figcaption>{t('生物培育实验室：培养舱与环境控制','Cultivation laboratory: growth chambers and environmental control')}</figcaption></figure>
+  <figure class="species-film"><video data-species-video loop muted playsinline preload="none" poster="/media/species/scene-4-poster.webp" aria-label={t('NO.3 后数字物种诞生场景','The emergence of NO.3')}><source data-src="/media/species/scene-4.mp4" type="video/mp4"/></video><figcaption>{t('HELLO WORLD：第三生命形态诞生','HELLO WORLD: the emergence of a third life form')}</figcaption></figure>
+ </section>
+ </div>
+ <section id="archives" class="restored-chapter case-section">
+  <header class="restored-section-heading"><span class="restored-number">03 / SPECIES & ARCHIVES</span><h2>{t('新物种与档案','New Species & Archives')}</h2></header>
+  <div class="species-archive-layout"><div><h3>{t('生物培育样本','Cultivation Specimens')}</h3><p>{species.laboratory[lang]}</p><div class="species-specimens">{(['archive-2','archive-7'] as const).map((image,i)=><article class="species-specimen-card"><header><h4>Infant-{String(i+1).padStart(5,'0')}</h4><span>{t('培育样本','Cultivation specimen')}</span></header><SpeciesFigure image={image} lang={lang} alt={t('NO.3 生物培育样本 '+(i+1),'NO.3 cultivation specimen '+(i+1))}/><dl><div><dt>{t('姓名','Name')}</dt><dd>Dolly</dd></div><div><dt>{t('性别','Gender')}</dt><dd>{t('无性别','Gender-neutral')}</dd></div><div><dt>{t('诞生日期','Birthday')}</dt><dd>2095.01.01</dd></div></dl></article>)}</div></div><div><h3>{t('新物种档案库','Species Records Archive')}</h3><p>{species.archives[lang]}</p><div class="species-records">{(['archive-3','archive-4','archive-5','archive-6'] as const).map((image,i)=><SpeciesFigure image={image} lang={lang} alt={t('NO.3 新物种独立档案 '+(i+1),'NO.3 individual species record '+(i+1))}/>)}</div></div></div>
+  <SpeciesFigure image="archive-1" lang={lang} class="species-archive-art" alt={t('新物种与档案墙：生物样本、遗传信息和生长记录','New species and the archive wall: specimens, genetic information, and growth records')}/>
+ </section>
+ <section id="extension" class="restored-chapter case-section species-extension">
+  <header class="restored-section-heading"><span class="restored-number">04 / WORLD EXTENSION</span><h2>{t('世界观延展','World Extension')}</h2></header>
+  {species.extension.map(copy=><p>{copy[lang]}</p>)}
+  <div class="species-extension-loop"><span>{t('数字遗产','Digital inheritance')}</span><span>{t('物种培育','Species cultivation')}</span><span>{t('生态管理','Ecological management')}</span><span>{t('文明演化','Civilisational evolution')}</span></div>
+ </section>
+</RestoredCaseShell>
+

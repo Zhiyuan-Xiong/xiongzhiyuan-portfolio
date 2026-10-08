@@ -1,0 +1,40 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="90.75" height="310.749" viewBox="0 0 90.75 310.749" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group">
+<path id="Vector" opacity="0.35" d="M44.9558 152.618L10.5418 145.258L4.03299 56.2021L32.8152 16.9746L44.9558 152.618Z" fill="url(#paint0_linear_0_30)" stroke="#DCC5FF" stroke-width="0.75"/>
+<g id="Group_2">
+<g id="Group_3">
+<path id="Vector_2" d="M36.375 0.375L50.2697 160.937L7.73791 150.066L0.375 52.2253L36.375 0.375ZM36.375 0.375H50.2863V0.876115L64.1894 160.937H63.832H50.2697" stroke="#DCC5FF" stroke-width="0.75" stroke-linejoin="round"/>
+<path id="Vector_3" d="M33.1007 16.2656L3.6492 56.4039L10.1894 145.879L45.3749 153.403L33.1007 16.2656Z" stroke="#DCC5FF" stroke-width="0.75" stroke-linejoin="round"/>
+<path id="Vector_4" d="M57.1423 79.8203H64.1894L65.8265 110.761L65.8099 110.846H59.6437" stroke="#DCC5FF" stroke-width="0.75" stroke-linejoin="round"/>
+<path id="Vector_5" d="M60.9235 119.96C65.8681 119.195 70.3224 121.99 71.5606 124.979C73.1478 128.81 69.4498 134.237 62.037 136.139" stroke="#DCC5FF" stroke-width="0.75" stroke-linejoin="round"/>
+<path id="Vector_6" d="M67.4636 134.174L75.6492 163.441" stroke="#DCC5FF" stroke-width="0.75" stroke-linejoin="round"/>
+<path id="Vector_7" d="M69.9235 131.66L78.1008 163.441" stroke="#DCC5FF" stroke-width="0.75" stroke-linejoin="round"/>
+<path id="Vector_8" d="M65.8265 188.395V197.728" stroke="#DCC5FF" stroke-width="0.75" stroke-linejoin="round"/>
+<path id="Vector_9" d="M81.375 189.363L86.2863 209.432L65.8265 197.729" stroke="#DCC5FF" stroke-width="0.75" stroke-linejoin="round"/>
+<path id="Vector_10" d="M9.37509 198.564L26.5607 215.295L90.375 211.949L84.2171 187.727" stroke="#DCC5FF" stroke-width="0.75" stroke-linejoin="round"/>
+<path id="Vector_11" d="M65.8265 197.729L9.37509 198.561L26.5607 211.946L86.2863 209.432" stroke="#DCC5FF" stroke-width="0.75" stroke-linejoin="round"/>
+<path id="Vector_12" d="M42.9235 161.771C50.2864 161.771 74.2199 162.893 77.2864 163.445C91.1977 165.95 92.8681 186.41 80.5606 189.365C66.2338 192.805 40.472 177.662 37.1977 175.989" stroke="#DCC5FF" stroke-width="0.75" stroke-linejoin="round"/>
+<path id="Vector_13" d="M42.9235 161.771L15.1008 154.246L11.0122 165.117V165.448L37.1895 175.988L42.9235 161.771Z" stroke="#DCC5FF" stroke-width="0.75" stroke-linejoin="round"/>
+</g>
+<path id="Vector_14" d="M26.5606 215.295V310.375" stroke="#DCC5FF" stroke-width="0.75" stroke-linejoin="round"/>
+<path id="Vector_15" d="M9.37509 198.562V310.374H90.375V211.948" stroke="#DCC5FF" stroke-width="0.75" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_30" x1="3.6492" y1="84.5178" x2="45.3749" y2="84.5178" gradientUnits="userSpaceOnUse">
+<stop stop-color="#754FD6"/>
+<stop offset="0.09" stop-color="#9D55DB"/>
+<stop offset="0.16" stop-color="#B659DE"/>
+<stop offset="0.2" stop-color="#C05BE0"/>
+<stop offset="0.31" stop-color="#D279CF"/>
+<stop offset="0.43" stop-color="#E092C2"/>
+<stop offset="0.5" stop-color="#E69BBE"/>
+<stop offset="0.57" stop-color="#E092C2"/>
+<stop offset="0.69" stop-color="#D279CF"/>
+<stop offset="0.8" stop-color="#C05BE0"/>
+<stop offset="0.84" stop-color="#B559DE"/>
+<stop offset="0.92" stop-color="#9A55DB"/>
+<stop offset="1" stop-color="#754FD6"/>
+</linearGradient>
+</defs>
+</svg>

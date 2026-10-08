@@ -1,0 +1,49 @@
+---
+import { projects } from '../data/projects';
+import { workIntros } from '../data/work-intros';
+import { categories, type Lang } from '../data/site';
+import { orderedSpacePlacements } from '../data/space';
+import planetImages from '../data/planet-images.json';
+interface Props { lang: Lang; explore?: boolean }
+const { lang, explore = false } = Astro.props;
+const other = lang === 'zh' ? 'en' : 'zh';
+const keys = planetImages;
+const spacePlacements = orderedSpacePlacements(projects.map(project=>project.slug));
+const sceneData = projects.map(project => ({ slug: project.slug, title: project.title[lang], cover: project.cover ?? null, ...spacePlacements[project.slug] }));
+---
+<section class="portfolio-space" data-portfolio-space data-mode={explore ? 'explore' : 'intro'} data-lang={lang} data-explore-path={`/${lang}/explore/`} data-home-path={`/${lang}/`} data-scene={JSON.stringify(sceneData)} data-atlas={JSON.stringify(keys)} aria-label={lang === 'zh' ? 'EUAN PLANET 作品星系' : 'EUAN PLANET portfolio galaxy'}>
+  <canvas class="space-canvas" aria-hidden="true"></canvas>
+  <div class="space-fallback" aria-hidden="true"><svg viewBox="0 0 1000 640"><defs><radialGradient id="galaxy-glow"><stop stop-color="#8c739d" stop-opacity=".35"/><stop offset="1" stop-color="#080808" stop-opacity="0"/></radialGradient></defs><ellipse cx="500" cy="320" rx="420" ry="220" fill="url(#galaxy-glow)"/><g class="fallback-orbits" fill="none" stroke="#ae93c6" stroke-opacity=".22"><ellipse cx="500" cy="320" rx="155" ry="66"/><ellipse cx="500" cy="320" rx="235" ry="103"/><ellipse cx="500" cy="320" rx="315" ry="145"/><ellipse cx="500" cy="320" rx="403" ry="187"/></g><g fill="#dacfe9"><circle cx="500" cy="320" r="3"/>{projects.map(project => <circle cx={500 + spacePlacements[project.slug].x / 23 * 400} cy={320 + spacePlacements[project.slug].y / 23 * 185} r={6 + spacePlacements[project.slug].radius * 3}/>)}</g></svg></div>
+  <div class="space-entry" data-entry hidden={explore}>
+    <p class="space-portfolio-label">PORTFOLIO</p><h1 class="space-name">EUAN PLANET</h1>
+    <a class="space-orb-hit" data-enter href={`/${lang}/explore/`} aria-label={lang === 'zh' ? '进入作品空间' : 'Enter the portfolio space'}></a>
+    <a class="space-enter" data-enter href={`/${lang}/explore/`}>ENTER / EXPLORE</a>
+  </div>
+  <nav class="space-navigation" data-space-navigation hidden={!explore} aria-label={lang === 'zh' ? '作品空间导航' : 'Portfolio space navigation'}>
+    <a href={`/${lang}/`} data-space-return aria-label={lang === 'zh' ? '返回 EUAN PLANET' : 'Back to EUAN PLANET'}>EUAN PLANET</a>
+    <div><a href={`/${lang}/explore/`} aria-current="page" data-space-reset>{lang === 'zh' ? '探索' : 'EXPLORE'}</a><a href={`/${lang}/works/`}>{lang === 'zh' ? '作品索引' : 'INDEX'}</a><a href={`/${lang}/about/`}>{lang === 'zh' ? '关于' : 'ABOUT'}</a><a href={`/${lang}/about/#contact`}>{lang === 'zh' ? '联系' : 'CONTACT'}</a><a href={`/${other}/explore/`} data-space-language lang={other}>{lang === 'zh' ? 'EN' : '中文'}</a></div>
+  </nav>
+  <svg class="space-index-constellation" data-index-constellation aria-hidden="true" fill="none">
+    <g class="index-constellation-rays">{projects.map(() => <path data-index-ray pathLength="1" />)}</g>
+    <g class="index-constellation-links">{projects.map(() => <path data-index-connection pathLength="1" />)}</g>
+  </svg>
+  <a class="space-index-star" data-space-index-star href={`/${lang}/works/`} hidden={!explore} aria-label={lang === 'zh' ? '中心恒星 · 进入作品索引' : 'Central star · Open work index'}>
+    <span class="index-star-halo" aria-hidden="true"></span><span class="index-star-outer" aria-hidden="true"></span><span class="index-star-orbit" aria-hidden="true"></span><span class="index-star-core" aria-hidden="true"></span>
+    <span class="index-star-label">{lang === 'zh' ? '作品索引' : 'INDEX'}</span>
+  </a>
+  <div class="space-projects" data-space-projects hidden={!explore}>
+    {projects.map((project, i) => <button type="button" class="space-project" style={`--planet-color:${spacePlacements[project.slug].color.map(c=>Math.round(c*255)).join(" ")}`} data-space-project={project.slug} data-space-index={i} aria-haspopup="dialog" aria-label={`${project.title[lang]} · ${lang === 'zh' ? '展开项目' : 'Reveal project'}`}>
+      <span class="space-project-dot" aria-hidden="true"></span><span class="space-project-label"><span class="space-project-number">{String(i+1).padStart(2,'0')}</span><span class="space-project-title">{project.title[lang]}</span></span>
+    </button>)}
+  </div>
+  <div class="space-reveal" data-space-reveal hidden role="dialog" aria-modal="true" aria-labelledby="space-reveal-title" tabindex="-1">
+    <button type="button" class="space-reveal-close" data-reveal-close aria-label={lang === 'zh' ? '返回星河' : 'Back to the galaxy'}><span aria-hidden="true">×</span> {lang === 'zh' ? '返回星河' : 'BACK TO GALAXY'}</button>
+    <div class="space-reveal-image" data-reveal-frame>{projects.map(project => project.cover && <img data-reveal-image={project.slug} src={`/images/${project.cover}-1280.webp`} width="1280" height="720" alt={project.coverAlt?.[lang] ?? project.title[lang]} hidden loading="lazy" />)}<p class="space-reveal-pending" data-reveal-pending hidden></p></div>
+    <div class="space-reveal-copy"><div><p class="space-reveal-keywords" data-reveal-keywords></p><h2 id="space-reveal-title" data-reveal-title></h2><p class="space-reveal-intro" data-reveal-intro></p></div><a class="space-reveal-link" data-reveal-link href={`/${lang}/works/`}>{lang === 'zh' ? '查看作品' : 'VIEW PROJECT'} <span aria-hidden="true">↗</span></a></div>
+    <script type="application/json" data-reveal-content set:html={JSON.stringify(projects.map(project => ({slug:project.slug,title:project.title[lang],intro:(workIntros[project.slug] ?? project.description)[lang],keywords:project.categories.slice(0,2).map(category=>categories.find(item=>item.id===category)!.label[lang]).join(' / '),status:project.status,cover:project.cover ?? null})))} />
+  </div>
+  <div class="space-explore-footer" data-space-footer hidden={!explore}><span data-space-hint>{lang === 'zh' ? '拖动探索 · 悬停点亮 · 点击展开' : 'DRAG TO EXPLORE · HOVER TO ILLUMINATE · CLICK TO REVEAL'}</span><button type="button" class="space-pause" data-space-pause aria-label={lang === 'zh' ? '暂停背景动效' : 'Pause ambient motion'} aria-pressed="false"><span aria-hidden="true">Ⅱ</span></button></div>
+  <p class="sr-only" role="status" aria-live="polite" data-space-announcement></p>
+  <noscript><nav class="space-no-script"><a href={`/${lang}/works/`}>{lang === 'zh' ? '浏览作品' : 'Browse work'}</a></nav></noscript>
+</section>
+<script src="../scripts/portfolio-space.ts"></script>

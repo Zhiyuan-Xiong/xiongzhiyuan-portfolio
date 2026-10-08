@@ -1,0 +1,50 @@
+---
+import {festival} from '../data/dating-festival';
+import type {Lang} from '../data/site';
+const {lang}=Astro.props as {lang:Lang};
+const t=(zh:string,en:string)=>lang==='zh'?zh:en;
+const base='/media/dating/diagram/';
+const slots=[
+ {node:'1-2273',x:450,y:110,id:'invitation-hall',name:t('邀请大厅','Invitation Hall')},
+ {node:'1-2286',x:745,y:280,id:'love-factory',name:t('爱情工厂','Love Factory')},
+ {node:'1-2299',x:745,y:620,id:'lucky-carnival',name:t('匹配中心／幸运狂欢','Matching Centre / Lucky Carnival')},
+ {node:'1-2312',x:450,y:790,id:'additive-roulette',name:t('情感轮盘','Additive Roulette')},
+ {node:'1-2325',x:155,y:620,id:'theater-of-gaze',name:t('监督木马／旁观剧场','Theater of Gaze')},
+ {node:'1-2339',x:155,y:280,id:'dating-paradise',name:t('约会乐园','Dating Paradise')},
+];
+const positions=[[450,285],[593,368],[593,533],[450,615],[307,533],[307,368]];
+const mechanisms=[festival.mechanisms[0],festival.mechanisms[1],festival.mechanisms[2],festival.mechanisms[3],festival.mechanisms[4],festival.mechanisms[5]];
+const lenses=[
+ {side:'top-left',asset:'1-2215-imgSubtract.svg',name:t('现实触点','Touchpoints'),english:'Touchpoints',text:t('多元渠道构成相亲入口链\n线上线下共同触达','Multiple channels form the entry chain.\nOnline and offline touchpoints.')},
+ {side:'top-right',asset:'1-2218-imgSubtract.svg',name:t('用户动机','Motivation'),english:'Motivation',text:t('婚恋诉求驱动用户参与链\n动机影响选择判断','Relationship needs drive participation.\nMotivation shapes judgement.')},
+ {side:'bottom-left',asset:'1-2221-imgSubtract.svg',name:t('信息模型','Data model'),english:'Data model',text:t('人物信息转为标签\n标签整合后形成人物画像','Personal information becomes tags.\nCombined tags form a profile.')},
+ {side:'bottom-right',asset:'1-2224-imgSubtract.svg',name:t('玩家策略','Strategy'),english:'Strategy',text:t('展示策略影响匹配\n策略选择影响最终关系值','Presentation influences matching.\nStrategy shapes relationship outcomes.')},
+];
+const rect=(x:number,y:number,w:number,h:number)=>`left:${x/9}%;top:${y/9}%;width:${w/9}%;height:${h/9}%;`;
+---
+<figure class="festival-mechanism-figure" id="mechanism-diagram" data-mechanism-figure>
+ <div class="festival-diagram-stage" data-diagram-stage role="group" aria-label={t('相亲营销游戏化转译：六个场景与六种机制的环形关系图','Circular diagram connecting six festival scenes, game mechanisms and four research lenses')}>
+  <img class="diagram-layer diagram-blend" src={base+'1-2232-imgEllipse456.png'} alt="" width="1000" height="1000" loading="lazy" style={rect(200,200,500,500)}/>
+  <img class="diagram-layer diagram-blend" src={base+'1-2230-imgEllipse457.svg'} alt="" loading="lazy" style={rect(175,175,550,550)}/>
+  <img class="diagram-layer" src={base+'1-2227-imgSubtract.svg'} alt="" loading="lazy" style={rect(171,171,558,558)}/>
+  <img class="diagram-layer diagram-blend" src={base+'1-2240.png'} alt="" width="683" height="666" loading="lazy" style={rect(108.5,120,683,666)}/>
+  <img class="diagram-layer diagram-blend" src={base+'1-2233.png'} alt="" width="350" height="326" loading="lazy" style={rect(275,288.7,350,326)}/>
+  <img class="diagram-layer diagram-blend" src={base+'1-2263.png'} alt="" width="434" height="250" loading="lazy" style={rect(233,200,434,250)}/>
+  <img class="diagram-layer diagram-blend" src={base+'1-2268.png'} alt="" width="434" height="250" loading="lazy" style={rect(233,450,434,250)}/>
+  <img class="diagram-layer diagram-blend" src={base+'1-2389.png'} alt={t('候选信息转入属性加工，加工信息进入匹配筛选，匹配对象进入互动验证，互动结果进入外部评价，外部评价进入最终选择，关系结果进入再次匹配。','Candidate information becomes attributes; profiles are matched; interactions verify trust; outside evaluation informs the final choice; relationship outcomes feed the next cycle.')} width="738" height="738" loading="lazy" style={rect(81,81,738,738)}/>
+  <img class="diagram-layer diagram-center-decoration" src={base+'1-2364.svg'} alt="" loading="lazy" style={rect(371.5,371.5,157,157)}/>
+  <img class="diagram-layer diagram-blend" src={base+'1-2231-imgEllipse445.svg'} alt="" loading="lazy" style={rect(370,370,160,160)}/>
+  <img class="diagram-layer diagram-center-symbol" src={base+'1-2384.svg'} alt="" loading="lazy" style={rect(411.5,411.5,77,77)}/>
+  <div class="diagram-center-copy" style={rect(390,405,120,92)}><strong>{t('相亲营销','MATCHMAKING')}<br/>{t('嘉年华','FESTIVAL')}</strong><span>{t('信息包装机制','PERSONA PACKAGING')}</span></div>
+  {positions.map(([x,y],i)=><div class="diagram-mechanism" style={rect(x-60,y-60,120,120)}><img src={base+'1-2247.svg'} alt="" loading="lazy"/><h3>{mechanisms[i].title[lang]}</h3><p>{mechanisms[i].text[lang]}</p></div>)}
+  {slots.map((slot,i)=><><a class="diagram-scene" href={'#'+slot.id} aria-label={t('阅读场景：','Read scene: ')+slot.name} style={rect(slot.x-95,slot.y-95,190,190)}><img src={base+slot.node+'.png'} alt={slot.name} width="190" height="190" loading="lazy"/></a><span class="diagram-number" style={rect(positions[i][0]*.49+229.5-15,positions[i][1]*.49+229.5-15,30,30)}>{i+1}</span></>)}
+  <img class="diagram-layer" src={base+'1-2259-imgVector200.svg'} alt="" loading="lazy" style={rect(449,345,2,25)}/>
+  <img class="diagram-layer" src={base+'1-2260-imgVector201.svg'} alt="" loading="lazy" style={rect(444,200,12,25)}/>
+  <img class="diagram-layer diagram-arrow-down" src={base+'1-2259-imgVector200.svg'} alt="" loading="lazy" style={rect(449,665,2,25)}/>
+  <img class="diagram-layer diagram-arrow-down" src={base+'1-2260-imgVector201.svg'} alt="" loading="lazy" style={rect(444,690,12,25)}/>
+  {lenses.map(lens=><div class:list={['diagram-lens','diagram-lens-'+lens.side]}><img src={base+lens.asset} alt="" loading="lazy"/><h3>{lens.name}{lang==='zh'&&<span>{lens.english}</span>}</h3><p>{lens.text}</p></div>)}
+ </div>
+ <figcaption>{t('相亲营销行为游戏化转译 · 六个场景、六种机制与四个研究视角。点击场景圆圈，阅读对应章节。','Matchmaking translated into gameplay: six spaces, six mechanisms and four research lenses. Select a scene to read its chapter.')}</figcaption>
+ <button class="festival-diagram-expand" data-diagram-expand type="button">{t('放大阅读环形机制图','ENLARGE THE MECHANISM DIAGRAM')} <span aria-hidden="true">↗</span></button>
+ <dialog class="festival-diagram-dialog" data-diagram-dialog aria-label={t('环形机制图放大视图','Enlarged mechanism diagram')}><button class="festival-diagram-close" data-diagram-close type="button">{t('关闭','CLOSE')} <span aria-hidden="true">×</span></button><div class="festival-diagram-zoom" data-diagram-zoom></div></dialog>
+</figure>
