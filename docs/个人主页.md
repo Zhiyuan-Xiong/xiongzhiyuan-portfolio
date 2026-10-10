@@ -21,7 +21,7 @@
 
 | 我关注的方向 | 我如何把想法落地 | 代表实践 |
 | --- | --- | --- |
-| **AI 设计工作流** | 完整任务说明 → 精准短指令迭代 → 人工评审与交付 | 骨骸共生系统、毒蘑菇、Earthquake |
+| **AI 设计工作流** | 完整任务说明 → 精准短指令迭代 → 人工评审与交付 | 茶园物语、骨骸共生系统、毒蘑菇、Earthquake |
 | **视觉与品牌设计** | 从概念、视觉语言与 Logo，延展到首饰、三维场景和影像 | SPRING、机械文明计划 |
 | **创意交互** | 用游戏、实时视觉、参数化设计与声音映射，让作品可以体验 | 毒蘑菇、无垠的宇宙、蜕变 |
 
@@ -29,7 +29,7 @@
 
 <table>
 <tr><td width="50%"><a href="https://github.com/Zhiyuan-Xiong/poisonous-mushrooms"><img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/images/mushrooms-cover-1280.webp" alt="《毒蘑菇》" width="100%"></a><br><strong>《毒蘑菇》</strong><br>AI 素材 → Godot 游戏 → 在线体验</td><td width="50%"><a href="https://github.com/Zhiyuan-Xiong/spring-skeleton-collection"><img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/images/bone-cover-white-1280.webp" alt="骨骸共生系统" width="100%"></a><br><strong>骨骸共生系统</strong><br>AI 图像与建模 → 人工雕刻 → 品牌与首饰</td></tr>
-<tr><td width="50%"><a href="https://github.com/Zhiyuan-Xiong/infinite-cosmos"><img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/images/cosmos-cover-1280.webp" alt="无垠的宇宙" width="100%"></a><br><strong>无垠的宇宙</strong><br>参数化模型 → Processing → ComfyUI 影像</td><td width="50%"><a href="https://github.com/Zhiyuan-Xiong/BARC0074-Digital-Skills-Report-Codebook-25097154"><img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/images/earthquake-cover-1280.webp" alt="地震：数据转译" width="100%"></a><br><strong>地震：数据转译</strong><br>多模态分析 → 人工映射 → 空间与动态视觉</td></tr>
+<tr><td width="50%"><a href="https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/tea-garden-story.md"><img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/docs/media/tea-garden-home-cover-1280.webp" alt="茶园物语" width="100%"></a><br><strong>茶园物语</strong><br>AI 全流程协作 → 审美与规则控制 → 可体验原型</td><td width="50%"><a href="https://github.com/Zhiyuan-Xiong/BARC0074-Digital-Skills-Report-Codebook-25097154"><img src="https://raw.githubusercontent.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/main/public/images/earthquake-cover-1280.webp" alt="地震：数据转译" width="100%"></a><br><strong>地震：数据转译</strong><br>多模态分析 → 人工映射 → 空间与动态视觉</td></tr>
 </table>
 
 ## 我的 AI 设计与迭代方法
@@ -77,13 +77,21 @@ flowchart TB
 | **连接 AI 与专业制作** | AI 探索方向或初始形体，我用专业工具完成结构与细节 | 骨骸共生：Midjourney → Tripo 3D → ZBrush／Nomad |
 | **按任务设计策略** | 区分资产生成、多模态分析、产品 UX 和生成影像 | Earthquake、饭搭子、无垠的宇宙 |
 | **用实际反馈迭代** | 视觉评审、原型运行与测试，推动提示词、代码和方案更新 | 毒蘑菇在线试玩、作品集交互与公开制作记录 |
+| **组织完整设计系统** | 将参考、提示词、素材、规则和工程接入同一流程，逐轮检查 | [茶园物语：完整指令 → 分批制作 → 精准反馈 → 交付](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/tea-garden-story.md) |
 
 **[查看完整八阶段流程、项目策略与质量控制](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/AI设计工作流.md)**
+
+### 茶园物语：从 AI 协作到可控交付
+
+我先确定文化体验、淡彩国风基准与经营规则，再用完整指令组织素材和 Godot 实现；之后以精准短指令修正比例、锚点、UI 与状态反馈。每轮对照画面和功能结果，保留已有设计。**AI 承担生成与实现，我负责审美、体验取舍和质量标准。**
+
+[查看八阶段流程图、输入输出与三次精选迭代](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/tea-garden-story.md) · [直接体验网页核心流程](https://xiongzhiyuan-portfolio.pages.dev/zh/work/tea-garden/#play)
 
 ## 项目精选与我的贡献
 
 | 项目 | 我的具体贡献 | 项目材料 | 在线案例 |
 | --- | --- | --- | --- |
+| **茶园物语** | 文化体验架构、玩法规则、视觉方向；AI 素材与 Codex／Godot 实现的逐轮控制和验收 | [工作流与材料说明](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/tea-garden-story.md) | [打开](https://xiongzhiyuan-portfolio.pages.dev/zh/work/tea-garden/) |
 | **《毒蘑菇》** | 视觉概念与分镜；AI 素材、Godot 搭建和体验验证；参与 MV 视觉统一 | [查看](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms) | [打开](https://xiongzhiyuan-portfolio.pages.dev/zh/work/poisonous-mushrooms/) |
 | **骨骸共生系统** | SPRING 品牌视觉与 Logo；Midjourney、Tripo 3D 与 ZBrush／Nomad 首饰制作 | [查看](https://github.com/Zhiyuan-Xiong/spring-skeleton-collection) | [打开](https://xiongzhiyuan-portfolio.pages.dev/zh/work/bone-series/) |
 | **无垠的宇宙** | 参数化建模、交互编程与生成影像设计 | [查看](https://github.com/Zhiyuan-Xiong/infinite-cosmos) | [打开](https://xiongzhiyuan-portfolio.pages.dev/zh/work/infinite-cosmos/) |

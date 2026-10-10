@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc"><title id="title">茶园物语：AI 协作与设计控制流程</title><desc id="desc">八个阶段形成循环：完整指令建立上下文，分批生成与 Godot 实现，人工评审与精准短指令迭代，最后组织工程与网页交付。</desc><rect width="1200" height="720" rx="24" fill="#151d1a"/><g font-family="Microsoft YaHei, PingFang SC, Noto Sans CJK SC, sans-serif">
+<text x="46" y="60" font-size="15" letter-spacing="3" fill="#bacabe">TEA GARDEN TALES / AI DESIGN WORKFLOW</text>
+<text x="46" y="109" font-size="32" font-weight="700" fill="#edf3e8">完整指令建立方向，精准反馈控制品质</text>
+<text x="46" y="145" font-size="17" fill="#bacabe">我的职责：文化体验定位、审美基准、玩法规则、迭代取舍与最终验收</text>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#b6ce9b"/></marker></defs>
+<rect x="46" y="190" width="256" height="164" rx="16" fill="#23372d" stroke="#577360"/>
+<text x="64" y="221" font-size="14" font-weight="700" fill="#b6ce9b">01</text>
+<text x="64" y="259" font-size="23" font-weight="700" fill="#edf3e8">文化与体验定位</text>
+<text x="64" y="294" font-size="15" fill="#bacabe">把工艺放回玩家行动</text>
+<text x="64" y="329" font-size="14" fill="#edf3e8">我确定设计问题</text>
+<path d="M 305 272 H 326" stroke="#b6ce9b" stroke-width="2" marker-end="url(#arrow)" fill="none"/>
+<rect x="330" y="190" width="256" height="164" rx="16" fill="#302e42" stroke="#577360"/>
+<text x="348" y="221" font-size="14" font-weight="700" fill="#b6ce9b">02</text>
+<text x="348" y="259" font-size="23" font-weight="700" fill="#edf3e8">检索与参考核对</text>
+<text x="348" y="294" font-size="15" fill="#bacabe">工艺资料 · Figma 基准</text>
+<text x="348" y="329" font-size="14" fill="#edf3e8">AI 组织，我核对</text>
+<path d="M 589 272 H 610" stroke="#b6ce9b" stroke-width="2" marker-end="url(#arrow)" fill="none"/>
+<rect x="614" y="190" width="256" height="164" rx="16" fill="#23372d" stroke="#577360"/>
+<text x="632" y="221" font-size="14" font-weight="700" fill="#b6ce9b">03</text>
+<text x="632" y="259" font-size="23" font-weight="700" fill="#edf3e8">结构与规则组织</text>
+<text x="632" y="294" font-size="15" fill="#bacabe">四区旅程 · 五日成长</text>
+<text x="632" y="329" font-size="14" fill="#edf3e8">我决定体验与取舍</text>
+<path d="M 873 272 H 894" stroke="#b6ce9b" stroke-width="2" marker-end="url(#arrow)" fill="none"/>
+<rect x="898" y="190" width="256" height="164" rx="16" fill="#302e42" stroke="#577360"/>
+<text x="916" y="221" font-size="14" font-weight="700" fill="#b6ce9b">04</text>
+<text x="916" y="259" font-size="23" font-weight="700" fill="#edf3e8">任务与提示词</text>
+<text x="916" y="294" font-size="15" fill="#bacabe">用途 · 参考 · 规格 · 验收</text>
+<text x="916" y="329" font-size="14" fill="#edf3e8">完整指令建立上下文</text>
+<path d="M 1026 356 V 397" stroke="#b6ce9b" stroke-width="2" marker-end="url(#arrow)" fill="none"/>
+<rect x="898" y="402" width="256" height="164" rx="16" fill="#302e42" stroke="#577360"/>
+<text x="916" y="433" font-size="14" font-weight="700" fill="#b6ce9b">05</text>
+<text x="916" y="471" font-size="23" font-weight="700" fill="#edf3e8">分批素材与原型</text>
+<text x="916" y="506" font-size="15" fill="#bacabe">imagegen → Codex → Godot</text>
+<text x="916" y="541" font-size="14" fill="#edf3e8">生成与工程协作</text>
+<path d="M 895 484 H 874" stroke="#b6ce9b" stroke-width="2" marker-end="url(#arrow)" fill="none"/>
+<rect x="614" y="402" width="256" height="164" rx="16" fill="#23372d" stroke="#577360"/>
+<text x="632" y="433" font-size="14" font-weight="700" fill="#b6ce9b">06</text>
+<text x="632" y="471" font-size="23" font-weight="700" fill="#edf3e8">画面与功能评审</text>
+<text x="632" y="506" font-size="15" fill="#bacabe">风格 · 锚点 · 状态 · 存档</text>
+<text x="632" y="541" font-size="14" fill="#edf3e8">我评审，AI 辅助检查</text>
+<path d="M 611 484 H 590" stroke="#b6ce9b" stroke-width="2" marker-end="url(#arrow)" fill="none"/>
+<rect x="330" y="402" width="256" height="164" rx="16" fill="#23372d" stroke="#577360"/>
+<text x="348" y="433" font-size="14" font-weight="700" fill="#b6ce9b">07</text>
+<text x="348" y="471" font-size="23" font-weight="700" fill="#edf3e8">精准反馈与再实现</text>
+<text x="348" y="506" font-size="15" fill="#bacabe">短指令 → 局部修正 → 对照</text>
+<text x="348" y="541" font-size="14" fill="#edf3e8">保留基准，控制变量</text>
+<path d="M 327 484 H 306" stroke="#b6ce9b" stroke-width="2" marker-end="url(#arrow)" fill="none"/>
+<rect x="46" y="402" width="256" height="164" rx="16" fill="#23372d" stroke="#577360"/>
+<text x="64" y="433" font-size="14" font-weight="700" fill="#b6ce9b">08</text>
+<text x="64" y="471" font-size="23" font-weight="700" fill="#edf3e8">组织与可体验交付</text>
+<text x="64" y="506" font-size="15" fill="#bacabe">工程 · 网页 · 索引 · 证据</text>
+<text x="64" y="541" font-size="14" fill="#edf3e8">我确认范围与质量</text>
+<path d="M 430 570 V 602 H 1174 V 272 H 1158" stroke="#b6ce9b" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#arrow)" fill="none"/>
+<text x="500" y="631" font-size="17" fill="#bacabe">发现偏差 → 定位问题 → 补充参考或改写提示词 → 再实现、再评审</text>
+<text x="46" y="685" font-size="16" fill="#edf3e8">质量门槛：风格一致 → 文件可用 → 场景接入正确 → 真实交互成立</text></g></svg>

@@ -66,10 +66,11 @@ flowchart TB
 
 例如“改成五秒”放在既有动画上下文中，含义是延长时间并维持原画风格与动作关系；“改为线性流程图”放在既有 UX 框架中，含义是调整表达形式并保留实际用户路径。短指令的准确性来自清楚的上下文与我的持续判断。
 
-## 三个精选迭代案例
+## 四个精选迭代案例
 
 | 项目与初始任务 | 后续精准控制 | 产出与验收 |
 | --- | --- | --- |
+| **茶园物语**：文化体验、Figma 基准、完整规格与分批任务 | 保留画风与身份 → 用可见边界和脚底锚点接入 → 统一五层 14 位与五日规则 → 分离 UI 文字和状态 | 图像检查、坐标与实机截图、规则及存档记录；[八阶段工作流与三次决策](projects/tea-garden-story.md) |
 | **毒蘑菇 UI 动画**：三张原画、动作顺序、关键帧、时长与风格保留 | 卡片首帧可见 → 改成 5 秒并增强植物运动 → 虚线随点亮生长 | 三段 5 秒视频、关键帧总览、动画参数与解码检查 |
 | **饭搭子 UX 框架**：八页 SVG、1920 × 1080、可编辑文本、栅格与页面内容 | 参考已有 Figma → 线性流程图 → 补贴纸手账与后续建议 | 可编辑页面和图标；与 Godot 原型核对，区分已有与待验证状态 |
 | **作品集入场体验**：页面与粒子交互需求 | 根据录屏发现重复标题与方形底图，要求调整真实加载过程和过渡 | 统一真实首帧，修改资源加载与淡入；检查移动端和重复刷新 |
@@ -80,6 +81,7 @@ flowchart TB
 
 | 任务与项目 | 为什么选择这条路线 | 我保留的设计判断 |
 | --- | --- | --- |
+| **茶园物语 · 完整设计系统** | 用 Figma 与工艺资料确立基准，分批生成独立资产；Codex 连接 Godot，并用精准短指令分别修正视觉、空间和行为 | 文化转译、低压力规则、五日节奏、原始标识、色彩与锚点；透明检查和场景可用分开验收 |
 | **毒蘑菇 · 资产与游戏** | 参考约束 imagegen，Codex 连接 Godot；动画局部改动用参数和时序控制 | 角色服装、比例、色彩、原画保留、玩法与视觉反馈 |
 | **骨骸共生 · 品牌与三维** | Midjourney 发散、Tripo 3D 起形，再用 ZBrush／Nomad 人工雕刻 | 系列语言、体块、连接、表面细节与身体关系 |
 | **无垠的宇宙 · 生成影像** | 参数化模型与粒子提供结构，ComfyUI 扩展同一视觉世界 | 几何可辨识、构图、动态连续与节奏 |
@@ -100,8 +102,15 @@ flowchart TB
 
 Seedance 的视频生成定位可参见[官方模型介绍](https://seed.bytedance.com/en/seedance)。具体项目沿用各自的制作证据：毒蘑菇本页精选 UI 动画记录为 imagegen 背景修补与 Codex 动画实现。
 
+## 茶园物语怎样扩展这套方法
+
+这个项目把 AI 使用从单项素材扩展到完整设计系统：**文化与交互资料 → 我定义体验和审美 → 完整任务与规格 → 分批生成和 Godot 实现 → 精准短指令调整 → 画面与功能验证 → 资料交接和网页体验**。
+
+我按问题选择返工环节：风格偏差改提示词，落地与遮挡问题改锚点和布局，规则与操作问题改数据或代码。既保留原始 Figma 构图与书法标识，也让 UI 文字、状态与交互可以独立控制。详细阶段输入输出与精选迭代见[茶园物语工作流](projects/tea-garden-story.md)。
+
 ## 过程证据与进一步阅读
 
+- **茶园物语**：[八阶段流程图、提示词结构与质量门槛](projects/tea-garden-story.md)、[逐场景前后版本与核心流程体验](https://xiongzhiyuan-portfolio.pages.dev/zh/work/tea-garden/)。
 - **毒蘑菇**：[完整工作流](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms/blob/main/工作流.md)、[制作提示词](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms/blob/main/制作提示词.json)、[运行验证](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms/tree/main/verification)。
 - **骨骸共生系统**：[工具分工、形体精修与品牌控制](https://github.com/Zhiyuan-Xiong/spring-skeleton-collection/blob/main/工作流.md)。
 - **无垠的宇宙**：[结构、粒子与 ComfyUI 过程](https://github.com/Zhiyuan-Xiong/infinite-cosmos/blob/main/工作流.md)。

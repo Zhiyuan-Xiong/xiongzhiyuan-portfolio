@@ -18,6 +18,7 @@
 
 | 项目 | 我的具体贡献 | 项目入口 |
 | --- | --- | --- |
+| **茶园物语** | 文化体验架构、玩法规则、视觉方向与迭代；AI 素材、Codex／Godot 原型和验收 | [工作流与材料说明](docs/projects/tea-garden-story.md) |
 | **《毒蘑菇》** | 前期概念、场景与分镜；AI 素材生成与整理、Godot 小游戏搭建和体验验证；参与 MV 调色与视觉统一 | [查看](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms) |
 | **骨骸共生系统** | SPRING 品牌视觉与 Logo；Midjourney 图像探索、Tripo 3D 初始建模、ZBrush／Nomad 人工雕刻与首饰细化 | [查看](https://github.com/Zhiyuan-Xiong/spring-skeleton-collection) |
 | **无垠的宇宙** | 参数化建模、交互编程与生成影像设计 | [查看](https://github.com/Zhiyuan-Xiong/infinite-cosmos) |
@@ -33,7 +34,7 @@
 <td width="50%"><a href="https://github.com/Zhiyuan-Xiong/poisonous-mushrooms"><img src="public/images/mushrooms-cover-1280.webp" alt="《毒蘑菇》" width="100%"></a><br><strong>《毒蘑菇》</strong><br>AI 素材工作流、可编辑 Godot 跑酷游戏与浏览器试玩。</td>
 <td width="50%"><a href="https://github.com/Zhiyuan-Xiong/spring-skeleton-collection"><img src="public/images/bone-cover-white-1280.webp" alt="骨骸共生系统" width="100%"></a><br><strong>骨骸共生系统</strong><br>SPRING 品牌视觉与骨骸首饰：AI 图像、辅助建模和人工细化。</td>
 </tr><tr>
-<td width="50%"><a href="https://github.com/Zhiyuan-Xiong/infinite-cosmos"><img src="public/images/cosmos-cover-1280.webp" alt="无垠的宇宙" width="100%"></a><br><strong>无垠的宇宙</strong><br>Rhino、Grasshopper、Processing 与 ComfyUI 的跨工具创作。</td>
+<td width="50%"><a href="docs/projects/tea-garden-story.md"><img src="docs/media/tea-garden-home-cover-1280.webp" alt="茶园物语" width="100%"></a><br><strong>茶园物语</strong><br>完整指令、分批素材、Godot 实现与精准反馈，连接可体验网页。</td>
 <td width="50%"><a href="https://github.com/Zhiyuan-Xiong/metamorphosis"><img src="public/images/metamorphosis-cover-1280.webp" alt="蜕变" width="100%"></a><br><strong>蜕变</strong><br>TouchDesigner 几何、粒子与实时声音响应。</td>
 </tr></table>
 
@@ -78,6 +79,7 @@ flowchart TB
 
 | 项目任务 | 我的 AI 策略 | 我掌握的质量判断 |
 | --- | --- | --- |
+| **茶园物语：完整设计系统** | Figma 基准 → 完整指令 → 分批生成 → Codex／Godot → 精准短指令迭代 | 风格、锚点、规则、原生 UI 与真实操作；[完整工作流](docs/projects/tea-garden-story.md) |
 | **毒蘑菇：游戏资产与实现** | 权威参考约束 imagegen，多素材与 Codex／Godot 原型同步迭代 | 角色与风格一致性、透明素材、中文排字、玩法体验 |
 | **骨骸共生：品牌与首饰** | Midjourney 发散 → Tripo 3D 初始形体 → 人工雕刻 | 系列语言、体块、佩戴结构和细节 |
 | **无垠的宇宙：生成影像** | 参数化结构与粒子作为基础，ComfyUI 延展视觉 | 形态连续性、构图和运动节奏 |
@@ -102,10 +104,11 @@ flowchart TB
 
 ## 求职项目索引
 
-10 个精选项目均已建立独立仓库，分别保存详细中文说明、工作流、过程材料与个人贡献。饭搭子为进行中的 UX 原型。
+11 个精选项目已按项目整理。茶园物语提供公开案例与详细工作流，完整素材、工程和交接存放于独立私有仓库；其他项目沿用原有仓库。饭搭子为进行中的 UX 原型。
 
 | 项目 | 类型 | 项目说明／仓库 | 完整案例 |
 | --- | --- | --- | --- |
+| 茶园物语 | AI 全流程协作／文化体验／游戏 UX | [公开工作流](docs/projects/tea-garden-story.md) · [私有资料库](https://github.com/Zhiyuan-Xiong/tea-garden-story-assets) | [案例与体验](https://xiongzhiyuan-portfolio.pages.dev/zh/work/tea-garden/) |
 | 病名异化实验场 | XR／交互体验 · 协作项目 | [仓库](https://github.com/Zhiyuan-Xiong/the-big-bang-stigma) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/stigma/) |
 | 相亲营销嘉年华 | 交互叙事／三维空间 | [仓库](https://github.com/Zhiyuan-Xiong/dating-carnival) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/dating-carnival/) |
 | 《毒蘑菇》 | 音乐影像／商业协作 | [仓库](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/poisonous-mushrooms/) |
