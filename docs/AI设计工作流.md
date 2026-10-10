@@ -119,3 +119,5 @@ Seedance 的视频生成定位可参见[官方模型介绍](https://seed.bytedan
 - **作品集网站**：[源码](../src/)、[检查脚本](../scripts/)、[个人贡献](个人贡献.md)、[提交记录](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/commits/main)。
 
 每个项目只选能解释设计决策的过程材料。工具链依据作者说明和现有文件整理；协作项目按个人职责展示，进行中的原型标注当前范围。
+
+[茶园物语公开项目仓库、完整交接与实机画面](https://github.com/Zhiyuan-Xiong/tea-garden-story-assets)

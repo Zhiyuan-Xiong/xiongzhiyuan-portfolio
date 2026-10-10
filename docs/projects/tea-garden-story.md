@@ -88,7 +88,19 @@ flowchart LR
 | **早期梯田布局与 Figma 参考、成长规则不一致** | 以原始 Figma 构图为依据，统一五层、14 个种植位；五日逐层开放，职业成长独立推进 | 调整底图、坐标与规则数据；用第 1–5 日实机截图和坐标报告核对。装饰茶树与生产种植位分开管理 |
 | **底板裁切、文字与状态混杂，影响操作判断** | 保留国风题签与圆形图标；采用完整底板和独立文字，让单株生长状态、今日待办与弹窗分层表达 | 分层素材与 Godot 原生文字配合；对照倒计时、可采摘、待办收起、新一天等截图，检查弹窗输入遮挡 |
 
-对应记录：[逐场景前后版本](https://xiongzhiyuan-portfolio.pages.dev/zh/work/tea-garden/#iteration) · [分类素材展示](https://xiongzhiyuan-portfolio.pages.dev/zh/work/tea-garden/#asset-library) · [工艺来源与说明](https://xiongzhiyuan-portfolio.pages.dev/zh/work/tea-garden/#craft)。原始提示词、工程和完整验收档案存放于私有资料库
+对应记录：[逐场景前后版本](https://xiongzhiyuan-portfolio.pages.dev/zh/work/tea-garden/#iteration) · [分类素材展示](https://xiongzhiyuan-portfolio.pages.dev/zh/work/tea-garden/#asset-library) · [工艺来源与说明](https://xiongzhiyuan-portfolio.pages.dev/zh/work/tea-garden/#craft)。原始[提示词与生成记录](https://github.com/Zhiyuan-Xiong/tea-garden-story-assets/tree/main/assets/source/09_%E7%94%9F%E6%88%90%E8%AE%B0%E5%BD%95)、[完整工程与交接](https://github.com/Zhiyuan-Xiong/tea-garden-story-assets/blob/main/PROJECT_HANDOFF.md)现已公开，可对应检查每一阶段的实际产出。
+
+## 实际游戏画面
+
+以下为既有 Godot 原型的实机记录；公开工程字体已改为 Noto Sans SC。每张图对应一个可检查的场景或交互环节。
+
+<table>
+<tr><td width="50%"><img src="https://media.githubusercontent.com/media/Zhiyuan-Xiong/tea-garden-story-assets/main/previews/village-current.webp" alt="茶村 · 入口与场景层级" width="100%"><br>茶村 · 入口与场景层级</td><td width="50%"><img src="https://media.githubusercontent.com/media/Zhiyuan-Xiong/tea-garden-story-assets/main/previews/garden-current.webp" alt="云雾茶园 · 茶树状态与五日开放" width="100%"><br>云雾茶园 · 茶树状态与五日开放</td></tr>
+<tr><td width="50%"><img src="https://media.githubusercontent.com/media/Zhiyuan-Xiong/tea-garden-story-assets/main/previews/workshop-current.webp" alt="制茶工坊 · 工序与待办" width="100%"><br>制茶工坊 · 工序与待办</td><td width="50%"><img src="https://media.githubusercontent.com/media/Zhiyuan-Xiong/tea-garden-story-assets/main/previews/teashop-current.webp" alt="临水茶铺 · 订单与交付" width="100%"><br>临水茶铺 · 订单与交付</td></tr>
+<tr><td width="50%"><img src="https://media.githubusercontent.com/media/Zhiyuan-Xiong/tea-garden-story-assets/main/previews/layout-current.webp" alt="自由布置 · 遮挡与图层控制" width="100%"><br>自由布置 · 遮挡与图层控制</td><td width="50%"><img src="https://media.githubusercontent.com/media/Zhiyuan-Xiong/tea-garden-story-assets/main/previews/summary.webp" alt="阶段结算 · 经营成长反馈" width="100%"><br>阶段结算 · 经营成长反馈</td></tr>
+</table>
+
+[项目仓库：完整素材、7 张截图与 Godot 工程](https://github.com/Zhiyuan-Xiong/tea-garden-story-assets) · [在线体验与前后迭代](https://xiongzhiyuan-portfolio.pages.dev/zh/work/tea-garden/)
 
 ## 工具分工与成果范围
 
@@ -103,4 +115,4 @@ flowchart LR
 
 [返回个人主页](https://github.com/Zhiyuan-Xiong) · [全部项目](../../README.md) · [通用 AI 方法与项目策略](../AI设计工作流.md)
 
-完整源文件存放于[私有资料库 tea-garden-story-assets](https://github.com/Zhiyuan-Xiong/tea-garden-story-assets)，仅已获授权的账号可访问。面试官可直接阅读本页、查看公开素材和体验网页，无需访问私有仓库。
+完整源文件、可编辑 Godot 工程和设计规范位于[公开项目仓库](https://github.com/Zhiyuan-Xiong/tea-garden-story-assets)。查看[完整交接](https://github.com/Zhiyuan-Xiong/tea-garden-story-assets/blob/main/PROJECT_HANDOFF.md)，或克隆后通过 Git LFS 获取原始质量素材。

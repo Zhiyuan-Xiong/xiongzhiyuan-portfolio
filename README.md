@@ -18,7 +18,7 @@
 
 | 项目 | 我的具体贡献 | 项目入口 |
 | --- | --- | --- |
-| **茶园物语** | 文化体验架构、玩法规则、视觉方向与迭代；AI 素材、Codex／Godot 原型和验收 | [工作流与材料说明](docs/projects/tea-garden-story.md) |
+| **茶园物语** | 文化体验架构、玩法规则、视觉方向与迭代；AI 素材、Codex／Godot 原型和验收 | [项目仓库](https://github.com/Zhiyuan-Xiong/tea-garden-story-assets) · [AI 工作流](docs/projects/tea-garden-story.md) |
 | **《毒蘑菇》** | 前期概念、场景与分镜；AI 素材生成与整理、Godot 小游戏搭建和体验验证；参与 MV 调色与视觉统一 | [查看](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms) |
 | **骨骸共生系统** | SPRING 品牌视觉与 Logo；Midjourney 图像探索、Tripo 3D 初始建模、ZBrush／Nomad 人工雕刻与首饰细化 | [查看](https://github.com/Zhiyuan-Xiong/spring-skeleton-collection) |
 | **无垠的宇宙** | 参数化建模、交互编程与生成影像设计 | [查看](https://github.com/Zhiyuan-Xiong/infinite-cosmos) |
@@ -34,9 +34,22 @@
 <td width="50%"><a href="https://github.com/Zhiyuan-Xiong/poisonous-mushrooms"><img src="public/images/mushrooms-cover-1280.webp" alt="《毒蘑菇》" width="100%"></a><br><strong>《毒蘑菇》</strong><br>AI 素材工作流、可编辑 Godot 跑酷游戏与浏览器试玩。</td>
 <td width="50%"><a href="https://github.com/Zhiyuan-Xiong/spring-skeleton-collection"><img src="public/images/bone-cover-white-1280.webp" alt="骨骸共生系统" width="100%"></a><br><strong>骨骸共生系统</strong><br>SPRING 品牌视觉与骨骸首饰：AI 图像、辅助建模和人工细化。</td>
 </tr><tr>
-<td width="50%"><a href="docs/projects/tea-garden-story.md"><img src="docs/media/tea-garden-home-cover-1280.webp" alt="茶园物语" width="100%"></a><br><strong>茶园物语</strong><br>完整指令、分批素材、Godot 实现与精准反馈，连接可体验网页。</td>
+<td width="50%"><a href="https://github.com/Zhiyuan-Xiong/tea-garden-story-assets"><img src="docs/media/tea-garden-home-cover-1280.webp" alt="茶园物语" width="100%"></a><br><strong>茶园物语</strong><br>完整指令、分批素材、Godot 实现与精准反馈，连接可体验网页。</td>
 <td width="50%"><a href="https://github.com/Zhiyuan-Xiong/metamorphosis"><img src="public/images/metamorphosis-cover-1280.webp" alt="蜕变" width="100%"></a><br><strong>蜕变</strong><br>TouchDesigner 几何、粒子与实时声音响应。</td>
 </tr></table>
+
+<details>
+<summary>茶园物语 · 查看实机画面</summary>
+
+<table>
+<tr><td width="50%"><img src="https://media.githubusercontent.com/media/Zhiyuan-Xiong/tea-garden-story-assets/main/previews/garden-current.webp" alt="云雾茶园 · 五层十四位与生长反馈" width="100%"><br>云雾茶园 · 五层十四位与生长反馈</td><td width="50%"><img src="https://media.githubusercontent.com/media/Zhiyuan-Xiong/tea-garden-story-assets/main/previews/workshop-current.webp" alt="制茶工坊 · 工序与今日待办" width="100%"><br>制茶工坊 · 工序与今日待办</td></tr>
+</table>
+
+[项目仓库与全部 7 张实机画面](https://github.com/Zhiyuan-Xiong/tea-garden-story-assets) · [完整 AI 工作流](https://github.com/Zhiyuan-Xiong/xiongzhiyuan-portfolio/blob/main/docs/projects/tea-garden-story.md)
+
+截图保留原制作状态，公开 Godot 工程使用 Noto Sans SC。
+
+</details>
 
 ## 我的 AI 工作方式
 
@@ -104,11 +117,11 @@ flowchart TB
 
 ## 求职项目索引
 
-11 个精选项目已按项目整理。茶园物语提供公开案例与详细工作流，完整素材、工程和交接存放于独立私有仓库；其他项目沿用原有仓库。饭搭子为进行中的 UX 原型。
+11 个精选项目各有独立仓库。茶园物语现已公开完整素材、Godot 工程、设计交接与 AI 工作流；饭搭子为进行中的 UX 原型。
 
 | 项目 | 类型 | 项目说明／仓库 | 完整案例 |
 | --- | --- | --- | --- |
-| 茶园物语 | AI 全流程协作／文化体验／游戏 UX | [公开工作流](docs/projects/tea-garden-story.md) · [私有资料库](https://github.com/Zhiyuan-Xiong/tea-garden-story-assets) | [案例与体验](https://xiongzhiyuan-portfolio.pages.dev/zh/work/tea-garden/) |
+| 茶园物语 | AI 全流程协作／文化体验／游戏 UX | [公开工作流](docs/projects/tea-garden-story.md) · [项目仓库](https://github.com/Zhiyuan-Xiong/tea-garden-story-assets) | [案例与体验](https://xiongzhiyuan-portfolio.pages.dev/zh/work/tea-garden/) |
 | 病名异化实验场 | XR／交互体验 · 协作项目 | [仓库](https://github.com/Zhiyuan-Xiong/the-big-bang-stigma) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/stigma/) |
 | 相亲营销嘉年华 | 交互叙事／三维空间 | [仓库](https://github.com/Zhiyuan-Xiong/dating-carnival) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/dating-carnival/) |
 | 《毒蘑菇》 | 音乐影像／商业协作 | [仓库](https://github.com/Zhiyuan-Xiong/poisonous-mushrooms) | [案例](https://xiongzhiyuan-portfolio.pages.dev/zh/work/poisonous-mushrooms/) |
